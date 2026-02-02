@@ -278,43 +278,16 @@
                     "width": 20
                   },
                   "blocks": {
-                    "text_8xpKHw": {
-                      "type": "text",
-                      "name": "t:names.text",
-                      "settings": {
-                        "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
-                        "width": "fit-content",
-                        "max_width": "normal",
-                        "alignment": "left",
-                        "type_preset": "rte",
-                        "font": "var(--font-body--family)",
-                        "font_size": "1rem",
-                        "line_height": "normal",
-                        "letter_spacing": "normal",
-                        "case": "none",
-                        "wrap": "pretty",
-                        "color": "var(--color-foreground)",
-                        "background": false,
-                        "background_color": "#00000026",
-                        "corner_radius": 0,
-                        "padding-block-start": 0,
-                        "padding-block-end": 0,
-                        "padding-inline-start": 0,
-                        "padding-inline-end": 0
-                      },
-                      "blocks": {}
-                    },
                     "custom_liquid_AjzeEH": {
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
                       "settings": {
-                        "custom_liquid": "{% assign speaker_serie = product.metafields.speaker.serie.value %}\n{% assign amp_serie = product.metafields.amplifier.serie.value %}\n\n{% if speaker_serie != blank %}\n  <div>Speaker Series: {{ speaker_serie.label }}</div>\n{% endif %}\n\n{% if amp_serie != blank %}\n  <div>Amplifier Series: {{ amp_serie.label }}</div>\n{% endif %}"
+                        "custom_liquid": "{% assign s_serie = product.metafields.speaker.serie.value %}\n{% assign a_serie = product.metafields.amplifier.serie.value %}\n\n{% if s_serie != blank %}\n  <h4>{{ s_serie.label }}</h4>\n  <ul>\n    {% if s_serie.audio.type != blank %}\n      <li>Audio Type: {{ s_serie.audio.type }}</li>\n    {% endif %}\n    {% if s_serie.has_grill == true %}\n      <li>Contain Grill</li>\n    {% else %}\n      <li>No Grill</li>\n    {% endif %}\n    {% if s_serie.tweeter_design != blank %}\n      <li>{{ s_serie.tweeter_design }} Tweeter</li>\n    {% endif %}\n  </ul>\n{% endif %}\n\n{% if a_serie != blank %}\n  <h4>{{ a_serie.label }}</h4>\n{% endif %}"
                       },
                       "blocks": {}
                     }
                   },
                   "block_order": [
-                    "text_8xpKHw",
                     "custom_liquid_AjzeEH"
                   ]
                 },
