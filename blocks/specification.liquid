@@ -1,0 +1,113 @@
+{% stylesheet %}
+  .grid-container {
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #eee;
+    max-width: 100%;
+    font-size: 0.95em;
+  }
+  .spec-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+    align-items: center;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+  .spec-label {
+    font-weight: bold;
+  }
+{% endstylesheet %}
+
+<div class='container'>
+  {% if block.settings.caption %}
+    <p class='caption'>
+      {{ block.settings.caption }}
+    </p>
+  {% endif %}
+  <div class='spec-table'>
+    {% if block.settings.select_table %}
+      {% case block.settings.select_table %}
+        {% when 'none' %}
+          {% comment %}
+            {% when 'speaker_spec' %}
+            {% render 'speaker-spec' %}
+          {% endcomment %}
+        {% when 'speaker_spec_metafields' | default %}
+          {% render 'speaker-spec-metafields' %}
+        {% when 'subwoofer_tech_data' %}
+          {% render 'subwoofer-tech-data' %}
+          {% comment %}
+            {% when 'amplifier_spec' %}
+            {% render 'amplifier-spec' %}
+          {% endcomment %}
+        {% when 'amplifier_spec_metafields' %}
+          {% render 'amplifier-spec-metafields' %}
+      {% endcase %}
+    {% endif %}
+  </div>
+</div>
+
+{% if block.settings.add_richtext %}
+  {{ block.settings.add_richtext }}
+{% endif %}
+{% schema %}
+{
+  "name": "Specification",
+  "tag": "block",
+  "settings": [
+    {
+      "type": "text",
+      "id": "caption",
+      "label": "Caption"
+    },
+    {
+      "type": "select",
+      "id": "select_table",
+      "label": "Submit table",
+      "options": [
+        {
+          "value": "none",
+          "label": ""
+        },
+        {
+          "value": "speaker_spec",
+          "label": "Speaker Spec"
+        },
+        {
+          "value": "speaker_spec_metafields",
+          "label": "Speaker Spec Metafields"
+        },
+        {
+          "value": "subwoofer_tech_data",
+          "label": "Subwoofer Tech Data"
+        },
+        {
+          "value": "amplifier_spec",
+          "label": "Amplifier Spec"
+        },
+        {
+          "value": "amplifier_spec_metafields",
+          "label": "Amplifier Spec Metafields"
+        }
+      ],
+      "default": "none"
+    },
+    {
+      "type": "richtext",
+      "id": "add_richtext",
+      "label": "Add custom table or text",
+      "info": "Content will be rendered as HTML. Supports paragraphs, lists, and other formatted text."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Specification",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

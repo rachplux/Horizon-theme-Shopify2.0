@@ -1,0 +1,48 @@
+{% assign specs = product.metafields.amplifier.specification.value %}
+
+{% if specs != blank %}
+  <div class='grid-container'>
+    {% assign spec_fields = 'label,Model,text,false|rms_1_ohm,RMS @ 1 Ohm,text,false|rms_2_ohm,RMS @ 2 Ohm,text,false|rms_4_ohm,RMS @ 4 Ohm,text,false|rms_bridged_4_ohm,RMS @ bridged_4 Ohm,text,false|max_power,Max Power|frequency_response,Frequency Response,text,false|input_sensitivity,Input Sensitivity,text,false|thd,T.H.D,text,false|sn,S/N,text,false|high_pass_fiter,High Pass Filter,text,false|low_pass_filter,Low Pass Filter,text,false|subsonic,Subsonic,text,false|bass_boost,Bass Boost,text,false|phase,Phase,boolean,false|input,Input,text,false|output,Output,text,false|fuse_rate,Fuse Rate,text,false|remote_control,Remote Control,boolean,false'
+      | split: '|'
+    %}
+    {% for field in spec_fields %}
+      {% liquid
+        assign key_title_type_range = field | split: ','
+        assign key = key_title_type_range[0]
+        assign title = key_title_type_range[1]
+        assign type = key_title_type_range[2]
+      %}
+      {% if specs[key] != blank %}
+        <div>
+          <strong>{{ title }}</strong>
+        </div>
+
+        {% if type == 'text' %}
+          <div>{{ specs[key] | default: 'N/A' }}</div>
+        {% elsif type == 'weight' %}
+          <div>{{ specs[key] | weight_with_unit }}</div>
+        {% elsif type == 'dimension' %}
+          <div>
+            {{ specs[key].value }}
+            {{ specs[key].unit }}
+          </div>
+
+        {% elsif type == 'boolean' %}
+          <div>
+            {% if specs[key] == true %}
+              Yes
+            {% else %}
+              No
+            {% endif %}
+          </div>
+
+        {% else %}
+          <div>N/A</div>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+
+{% else %}
+  <p>Amplifier specification is unavailable</p>
+{% endif %}

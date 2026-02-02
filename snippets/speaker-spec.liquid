@@ -1,0 +1,35 @@
+<div class='grid-container'>
+  {%- comment -%} Model 固定第一列（依你的資料結構調整取值） {%- endcomment -%}
+  {% assign model = product.metafields.system.model_number.value %}
+  <div class='spec-row'>
+    <div class='spec-label'>Model</div>
+    <div>{{ model | default: 'N/A' }}</div>
+  </div>
+
+  {%- comment -%} 其他欄位：每個 field 都輸出一列，沒值就 N/A {%- endcomment -%}
+  {% for field in fields %}
+    {% liquid
+      assign parts = field | split: ','
+      assign label = parts[0] | strip
+      assign key = parts[1] | strip
+      assign val = speaker[key].value
+    %}
+
+    <div class='spec-row'>
+      <div class='spec-label'>{{ label }}</div>
+      <div>
+        {% if val == blank %}
+          N/A
+        {% else %}
+          {% if label contains 'Power' %}
+            {{ val }} Watts
+          {% elsif label contains 'Sensitivity' %}
+            {{ val }} dB
+          {% else %}
+            {{ val }}
+          {% endif %}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
+</div>

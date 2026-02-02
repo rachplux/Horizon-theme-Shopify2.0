@@ -1,0 +1,39 @@
+{% liquid
+  assign speaker = product.metafields.speaker
+  assign model = product.metafields.system.model_number.value
+
+  assign fields = 'Speaker Size,size|Speaker Type,type|Sold Unit,sold_unit|Voice Coil Size,vc_size|RMS Power,rms_power|Peak Power,peak_power|Tweeter Diaphragm,tweeter_diaphragm|Show Tweeter Design,show_series_tweeter|Show Midrange Design,show_series_midrange|Frequency Response,fs|Sensitivity @ 1M/1W,sn|Impedance,impedance|Mounting Depth,mounting_depth|Mounting Type,mounting_type|Package Contains,contains|Light Included,lights|Magnet Weight (lb.),magnet_weight' | split: '|'
+%}
+
+<div class='grid-container'>
+  <div class='spec-row'>
+    <div class='spec-label'>Model</div>
+    <div>{{ model | default: 'N/A' }}</div>
+  </div>
+
+  {% for field in fields %}
+    {% liquid
+      assign label_key = field | split: ','
+      assign label = label_key[0] | strip
+      assign key = label_key[1] | strip
+      assign value = speaker[key].value
+    %}
+
+    {% if value != blank %}
+      <div class='spec-row'>
+        <div class='spec-label'>{{ label }}</div>
+        <div>
+          {% if label contains 'Power' %}
+            {{ value }} Watts
+          {% elsif label contains 'Sensitivity' %}
+            {{ value }} dB
+          {% elsif label contains 'Magnet Weight' %}
+            {{ value }}
+          {% else %}
+            {{ value }}
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

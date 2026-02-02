@@ -1,0 +1,50 @@
+{% assign specs = product.metafields.subwoofer.technical_data.value %}
+{% if specs != blank %}
+  <div class='grid-container'>
+    {% assign labels = '' %}
+    {% for spec in specs %}
+      {% if spec.label %}
+        {% assign labels = labels | append: spec.label | append: '|' %}
+      {% endif %}
+    {% endfor %}
+
+    {% assign unique_labels = labels | split: '|' | uniq %}
+
+    {% comment %} 定義表格欄位 {% endcomment %}
+    {% assign spec_fields = 'label,Model,text,false|sealed_box_volume,Sealed Box Volume,text,false|ported_box_volume,Ported Box Volume,text,false|port_diameter,Port Diameter,text,false|port_length,Port Length,text,false|vas,Vas,text,false|fs,FS,text,false|qts,QTS,text,false|xmax,Xmax,text,false'
+      | split: '|'
+    %}
+    {% comment %} 開始寫Grid {% endcomment %}
+
+    {% for field in spec_fields %}
+      {% liquid
+        assign keys_title_type = field | split: ','
+        assign keys = keys_title_type[0]
+        assign title = keys_title_type[1]
+        assign type = keys_title_type[2]
+      %}
+      <div class='spec-row'>
+        <div class='spec-label'>
+          {{ title }}
+        </div>
+        {% for label in unique_labels %}
+          {% for spec in specs %}
+            {% if spec.label == label %}
+              {% if type == 'text' %}
+                <div>{{ spec[keys] | default: 'N/A' }}</div>
+              {% elsif type == 'boolean' %}
+                {% if spec[keys] == true %}
+                  <div>Yes</div>
+                {% else %}
+                  <div>No</div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    {% endfor %}
+  </div>
+{% else %}
+  <p>Technical data is unavailable</p>
+{% endif %}
