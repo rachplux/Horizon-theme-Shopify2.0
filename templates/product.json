@@ -157,7 +157,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_xrnftG", "price_tVjtKg"]
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg"
+              ]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -264,6 +267,31 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "accordion_row_7mPwDY": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "Amplifier Specs",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "specification_Tib7gc": {
+                      "type": "specification",
+                      "name": "Amplifier Spec",
+                      "settings": {
+                        "caption": "",
+                        "select_table": "amplifier_spec",
+                        "add_richtext": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "specification_Tib7gc"
+                  ]
+                },
                 "accordion_row_xDEgrC": {
                   "type": "_accordion-row",
                   "name": "t:names.accordion_row",
@@ -276,28 +304,17 @@
                   "blocks": {
                     "specification_TA7KQX": {
                       "type": "specification",
-                      "name": "Specification",
+                      "name": "Speaker Specs",
                       "settings": {
                         "caption": "Metafeilds",
                         "select_table": "amplifier_spec_metafields",
                         "add_richtext": ""
                       },
                       "blocks": {}
-                    },
-                    "specification_6JLgqD": {
-                      "type": "specification",
-                      "name": "Specification",
-                      "settings": {
-                        "caption": "Amp Sepc Demo",
-                        "select_table": "amplifier_spec",
-                        "add_richtext": ""
-                      },
-                      "blocks": {}
                     }
                   },
                   "block_order": [
-                    "specification_TA7KQX",
-                    "specification_6JLgqD"
+                    "specification_TA7KQX"
                   ]
                 },
                 "accordion_row_dMc8bc": {
@@ -308,10 +325,28 @@
                     "icon": "none",
                     "width": 20
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "specification_3zCyrm": {
+                      "type": "specification",
+                      "name": "Subwoofer Tech Data",
+                      "settings": {
+                        "caption": "",
+                        "select_table": "subwoofer_tech_data",
+                        "add_richtext": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "specification_3zCyrm"
+                  ]
                 }
               },
-              "block_order": ["accordion_row_xDEgrC", "accordion_row_dMc8bc"]
+              "block_order": [
+                "accordion_row_7mPwDY",
+                "accordion_row_xDEgrC",
+                "accordion_row_dMc8bc"
+              ]
             }
           },
           "block_order": [
@@ -454,7 +489,9 @@
           ]
         }
       },
-      "block_order": ["text_cbcgyb"],
+      "block_order": [
+        "text_cbcgyb"
+      ],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -476,5 +513,8 @@
       }
     }
   },
-  "order": ["main", "product_recommendations_qggXJq"]
+  "order": [
+    "main",
+    "product_recommendations_qggXJq"
+  ]
 }
