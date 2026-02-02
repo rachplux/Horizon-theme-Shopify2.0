@@ -278,16 +278,43 @@
                     "width": 20
                   },
                   "blocks": {
+                    "text_8xpKHw": {
+                      "type": "text",
+                      "name": "t:names.text",
+                      "settings": {
+                        "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+                        "width": "fit-content",
+                        "max_width": "normal",
+                        "alignment": "left",
+                        "type_preset": "rte",
+                        "font": "var(--font-body--family)",
+                        "font_size": "1rem",
+                        "line_height": "normal",
+                        "letter_spacing": "normal",
+                        "case": "none",
+                        "wrap": "pretty",
+                        "color": "var(--color-foreground)",
+                        "background": false,
+                        "background_color": "#00000026",
+                        "corner_radius": 0,
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    },
                     "custom_liquid_AjzeEH": {
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
                       "settings": {
-                        "custom_liquid": "{% assign series = product.metafields.system.serie.value %}\n\n{% if series != blank %}\n  {% for s in series %}\n    {% assign speaker = s.serie_speaker.value %}\n    {% assign amp = s.serie_amp.value %}\n\n    {% if speaker != blank %}\n      <div>Speaker Series: {{ speaker.label }}</div>\n    {% endif %}\n\n    {% if amp != blank %}\n      <div>Amplifier Series: {{ amp.label }}</div>\n    {% endif %}\n  {% endfor %}\n{% endif %}"
+                        "custom_liquid": "{% assign speaker_serie = product.metafields.speaker.serie.value %}\n{% assign amp_serie = product.metafields.amplifier.serie.value %}\n\n{% if speaker_serie != blank %}\n  <div>Speaker Series: {{ speaker_serie.label }}</div>\n{% endif %}\n\n{% if amp_serie != blank %}\n  <div>Amplifier Series: {{ amp_serie.label }}</div>\n{% endif %}"
                       },
                       "blocks": {}
                     }
                   },
                   "block_order": [
+                    "text_8xpKHw",
                     "custom_liquid_AjzeEH"
                   ]
                 },
