@@ -282,7 +282,7 @@
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
                       "settings": {
-                        "custom_liquid": "assign series = product.metafields.system.serie\n.value\n{% for item in series %}\n{{ item.label }}\n{% endfor %}"
+                        "custom_liquid": "{% assign series = product.metafields.system.serie\n.value %}\n{% for item in series %}\n{{ item.label }}\n{% endfor %}"
                       },
                       "blocks": {}
                     }
