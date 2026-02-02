@@ -282,7 +282,7 @@
                       "type": "custom-liquid",
                       "name": "t:names.custom_liquid",
                       "settings": {
-                        "custom_liquid": "{% assign series = product.metafields.system.serie.value %}\n\n{% if series != blank %}\n  {% for item in series %}\n    {{ item.label }}{% unless forloop.last %}, {% endunless %}\n  {% endfor %}\n{% endif %}"
+                        "custom_liquid": "{% assign series = product.metafields.system.serie.value %}\n\n{% if series != blank %}\n  {% for s in series %}\n    {% assign speaker = s.serie_speaker.value %}\n    {% assign amp = s.serie_amp.value %}\n\n    {% if speaker != blank %}\n      <div>Speaker Series: {{ speaker.label }}</div>\n    {% endif %}\n\n    {% if amp != blank %}\n      <div>Amplifier Series: {{ amp.label }}</div>\n    {% endif %}\n  {% endfor %}\n{% endif %}"
                       },
                       "blocks": {}
                     }
