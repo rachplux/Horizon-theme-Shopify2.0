@@ -136,6 +136,7 @@
                 },
                 "price_tVjtKg": {
                   "type": "price",
+                  "disabled": true,
                   "settings": {
                     "show_sale_price_first": true,
                     "show_installments": false,
@@ -267,6 +268,29 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "accordion_row_LHWrUL": {
+                  "type": "_accordion-row",
+                  "name": "t:names.accordion_row",
+                  "settings": {
+                    "heading": "When will I get my order?",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "custom_liquid_AjzeEH": {
+                      "type": "custom-liquid",
+                      "name": "t:names.custom_liquid",
+                      "settings": {
+                        "custom_liquid": "assign series = product.metafields.system.serie\n.value\n{% for item in series %}\n{{ item.label }}\n{% endfor %}"
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "custom_liquid_AjzeEH"
+                  ]
+                },
                 "accordion_row_xDEgrC": {
                   "type": "_accordion-row",
                   "name": "Speaker Spec",
@@ -344,6 +368,7 @@
                 }
               },
               "block_order": [
+                "accordion_row_LHWrUL",
                 "accordion_row_xDEgrC",
                 "accordion_row_dMc8bc",
                 "accordion_row_7mPwDY"
@@ -462,6 +487,7 @@
             },
             "price_gLWgA6": {
               "type": "price",
+              "disabled": true,
               "settings": {
                 "show_sale_price_first": true,
                 "show_installments": false,
