@@ -332,7 +332,7 @@
                       "name": "Amplifier Spec",
                       "settings": {
                         "caption": "",
-                        "select_table": "amplifier_spec",
+                        "select_table": "amplifier_spec_metafields",
                         "add_richtext": ""
                       },
                       "blocks": {}
