@@ -267,34 +267,9 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "accordion_row_7mPwDY": {
-                  "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
-                  "settings": {
-                    "heading": "Amplifier Specs",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "specification_Tib7gc": {
-                      "type": "specification",
-                      "name": "Amplifier Spec",
-                      "settings": {
-                        "caption": "",
-                        "select_table": "amplifier_spec",
-                        "add_richtext": ""
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "specification_Tib7gc"
-                  ]
-                },
                 "accordion_row_xDEgrC": {
                   "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
+                  "name": "Speaker Spec",
                   "settings": {
                     "heading": "Sepcification",
                     "open_by_default": false,
@@ -319,6 +294,7 @@
                 },
                 "accordion_row_dMc8bc": {
                   "type": "_accordion-row",
+                  "name": "Subwoofer Spec",
                   "settings": {
                     "heading": "Tech Data",
                     "open_by_default": false,
@@ -340,12 +316,37 @@
                   "block_order": [
                     "specification_3zCyrm"
                   ]
+                },
+                "accordion_row_7mPwDY": {
+                  "type": "_accordion-row",
+                  "name": "Amp Spec",
+                  "settings": {
+                    "heading": "Amplifier Specs",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "specification_Tib7gc": {
+                      "type": "specification",
+                      "name": "Amplifier Spec",
+                      "settings": {
+                        "caption": "",
+                        "select_table": "amplifier_spec",
+                        "add_richtext": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "specification_Tib7gc"
+                  ]
                 }
               },
               "block_order": [
-                "accordion_row_7mPwDY",
                 "accordion_row_xDEgrC",
-                "accordion_row_dMc8bc"
+                "accordion_row_dMc8bc",
+                "accordion_row_7mPwDY"
               ]
             }
           },
