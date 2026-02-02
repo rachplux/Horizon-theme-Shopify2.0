@@ -271,7 +271,7 @@
                   "type": "_accordion-row",
                   "name": "Speaker Spec",
                   "settings": {
-                    "heading": "Sepcification",
+                    "heading": "Speaker Sepcification",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
