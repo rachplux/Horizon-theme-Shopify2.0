@@ -296,7 +296,7 @@
                   "type": "_accordion-row",
                   "name": "Subwoofer Spec",
                   "settings": {
-                    "heading": "Tech Data",
+                    "heading": "Subwoofer Tech Data",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
