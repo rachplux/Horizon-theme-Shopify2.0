@@ -272,7 +272,7 @@
                   "type": "_accordion-row",
                   "name": "Series",
                   "settings": {
-                    "heading": "When will I get my order?",
+                    "heading": "Serie Description",
                     "open_by_default": false,
                     "icon": "none",
                     "width": 20
