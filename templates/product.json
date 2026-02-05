@@ -270,7 +270,7 @@
               "blocks": {
                 "accordion_row_fGcdki": {
                   "type": "_accordion-row",
-                  "name": "t:names.accordion_row",
+                  "name": "Series",
                   "settings": {
                     "heading": "When will I get my order?",
                     "open_by_default": false,
