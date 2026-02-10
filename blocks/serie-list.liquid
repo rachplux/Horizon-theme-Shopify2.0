@@ -1,0 +1,128 @@
+{% stylesheet %}
+  .label {
+    font-weight: 700;
+    padding: 10px 30px;
+
+    /* main color = primary（依 Horizon settings_schema.json） */
+    --label-main: var(--color-primary, var(--color-foreground));
+
+    border-left: 5px solid var(--label-main) !important;
+
+    /* 背景 = primary 30% + background 70%（更像你原本 #ffefe8 那種淡底） */
+    background-color: color-mix(in srgb, var(--label-main) 10%, var(--color-background));
+  }
+
+  @supports not (background-color: color-mix(in srgb, black 10%, white)) {
+    .label {
+      background-color: var(--color-background);
+    }
+  }
+
+  .serie-block {
+    padding-left: 30px;
+  }
+
+  .serie-block p {
+    margin: 2px;
+  }
+{% endstylesheet %}
+
+{% liquid
+  assign s_serie = closest.product.metafields.speaker.serie.value
+  assign a_serie = closest.product.metafields.amplifier.serie.value
+  assign fields = block.settings.serie_fields | strip_newlines | split: ','
+%}
+{% if s_serie != blank %}
+  <p
+    class='
+      label
+        {% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}
+      {% endif %}
+    '
+  >
+    {{ s_serie.label.value | metafield_tag }}
+  </p>
+  <div class='serie-block'>
+    {% for field in fields %}
+      {% assign item = s_serie[field] %}
+      {% if item == s_serie.label %}
+      {% elsif item == s_serie.audio_type %}
+        <p>{{ item.value }} Audio</p>
+      {% elsif item == s_serie.extra_features %}
+        {{ item | metafield_tag }}
+      {% else %}
+        <p>{{ item.value }}</p>
+      {% endif %}
+      {% comment %}
+        {% if item != blank %}
+          {% if item != s_serie.label %}
+            <p>{{ item | metafield_tag }}</p>
+          {% elsif item == s_serie.extra_features %}
+            {{ item | metafield_tag }}
+          {% else %}
+            <p>{{ item.value }}</p>
+          {% endif %}
+        {% endif %}
+      {% endcomment %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% if a_serie != blank %}
+  <div
+    class='
+      label
+        {% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}
+      {% endif %}
+    '
+  >
+    {{ a_serie.label.value | metafield_tag }}
+  </div>
+  <div class='serie-block'>
+    {% for field in fields %}
+      {% assign item = a_serie[field] %}
+      {% if item == a_serie.label %}
+      {% elsif item == a_serie.audio_type %}
+        <p>{{ item.value }} Audio</p>
+      {% elsif item == a_serie.extra_features %}
+        {{ item | metafield_tag }}
+      {% else %}
+        <p>{{ item.value }}</p>
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Serie List",
+  "tag": "block",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "inherit_color_scheme",
+      "label": "Inherit color scheme",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-1",
+      "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+    },
+    {
+      "type": "textarea",
+      "id": "serie_fields",
+      "label": "Serie fields (comma separated)",
+      "default": "audio_type,voice_coil_material"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Serie List",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}
