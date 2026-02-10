@@ -158,10 +158,7 @@
                   "blocks": {}
                 }
               },
-              "block_order": [
-                "text_xrnftG",
-                "price_tVjtKg"
-              ]
+              "block_order": ["text_xrnftG", "price_tVjtKg"]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -222,6 +219,16 @@
                 }
               },
               "block_order": []
+            },
+            "serie_list_VFQYbR": {
+              "type": "serie-list",
+              "name": "Serie List",
+              "settings": {
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-7",
+                "serie_fields": "audio_type,voice_coil_material"
+              },
+              "blocks": {}
             },
             "text_aEtTtq": {
               "type": "text",
@@ -304,9 +311,7 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": [
-                    "text_KbNgef"
-                  ]
+                  "block_order": ["text_KbNgef"]
                 },
                 "accordion_row_xDEgrC": {
                   "type": "_accordion-row",
@@ -322,16 +327,14 @@
                       "type": "specification",
                       "name": "Speaker Specs",
                       "settings": {
-                        "caption": "Metafeilds",
+                        "caption": "",
                         "select_table": "speaker_spec_metafields",
                         "add_richtext": ""
                       },
                       "blocks": {}
                     }
                   },
-                  "block_order": [
-                    "specification_TA7KQX"
-                  ]
+                  "block_order": ["specification_TA7KQX"]
                 },
                 "accordion_row_dMc8bc": {
                   "type": "_accordion-row",
@@ -354,9 +357,7 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": [
-                    "specification_3zCyrm"
-                  ]
+                  "block_order": ["specification_3zCyrm"]
                 },
                 "accordion_row_7mPwDY": {
                   "type": "_accordion-row",
@@ -379,9 +380,7 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": [
-                    "specification_Tib7gc"
-                  ]
+                  "block_order": ["specification_Tib7gc"]
                 }
               },
               "block_order": [
@@ -397,6 +396,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "serie_list_VFQYbR",
             "text_aEtTtq",
             "accordion_br7En3"
           ]
@@ -409,7 +409,7 @@
         "limit_details_width": false,
         "gap": 48,
         "enable_sticky_add_to_cart": true,
-        "color_scheme": "",
+        "color_scheme": "scheme-1",
         "padding-block-start": 0,
         "padding-block-end": 0
       }
@@ -533,9 +533,7 @@
           ]
         }
       },
-      "block_order": [
-        "text_cbcgyb"
-      ],
+      "block_order": ["text_cbcgyb"],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -557,8 +555,5 @@
       }
     }
   },
-  "order": [
-    "main",
-    "product_recommendations_qggXJq"
-  ]
+  "order": ["main", "product_recommendations_qggXJq"]
 }
