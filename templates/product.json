@@ -223,6 +223,16 @@
               },
               "block_order": []
             },
+            "serie_list_VFQYbR": {
+              "type": "serie-list",
+              "name": "Serie List",
+              "settings": {
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-7",
+                "serie_fields": "audio_type,voice_coil_material"
+              },
+              "blocks": {}
+            },
             "text_aEtTtq": {
               "type": "text",
               "name": "Product description",
@@ -322,7 +332,7 @@
                       "type": "specification",
                       "name": "Speaker Specs",
                       "settings": {
-                        "caption": "Metafeilds",
+                        "caption": "",
                         "select_table": "speaker_spec_metafields",
                         "add_richtext": ""
                       },
@@ -397,6 +407,7 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
+            "serie_list_VFQYbR",
             "text_aEtTtq",
             "accordion_br7En3"
           ]
