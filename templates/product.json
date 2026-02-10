@@ -158,7 +158,10 @@
                   "blocks": {}
                 }
               },
-              "block_order": ["text_xrnftG", "price_tVjtKg"]
+              "block_order": [
+                "text_xrnftG",
+                "price_tVjtKg"
+              ]
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -226,7 +229,7 @@
               "settings": {
                 "inherit_color_scheme": false,
                 "color_scheme": "scheme-7",
-                "serie_fields": "audio_type,voice_coil_material"
+                "serie_fields": "audio_type,tweeter_design,midrange_design,basket,surround,cone,spider,voice_coil_material,enclosure,bridge,terminal,vent,magnet,motor,slim_compact_design,connection,lighting,mounting_clamps,waterproof,extra_features"
               },
               "blocks": {}
             },
@@ -311,7 +314,9 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["text_KbNgef"]
+                  "block_order": [
+                    "text_KbNgef"
+                  ]
                 },
                 "accordion_row_xDEgrC": {
                   "type": "_accordion-row",
@@ -334,7 +339,9 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["specification_TA7KQX"]
+                  "block_order": [
+                    "specification_TA7KQX"
+                  ]
                 },
                 "accordion_row_dMc8bc": {
                   "type": "_accordion-row",
@@ -357,7 +364,9 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["specification_3zCyrm"]
+                  "block_order": [
+                    "specification_3zCyrm"
+                  ]
                 },
                 "accordion_row_7mPwDY": {
                   "type": "_accordion-row",
@@ -380,7 +389,9 @@
                       "blocks": {}
                     }
                   },
-                  "block_order": ["specification_Tib7gc"]
+                  "block_order": [
+                    "specification_Tib7gc"
+                  ]
                 }
               },
               "block_order": [
@@ -533,7 +544,9 @@
           ]
         }
       },
-      "block_order": ["text_cbcgyb"],
+      "block_order": [
+        "text_cbcgyb"
+      ],
       "name": "t:names.product_recommendations",
       "settings": {
         "product": "{{ closest.product }}",
@@ -555,5 +568,8 @@
       }
     }
   },
-  "order": ["main", "product_recommendations_qggXJq"]
+  "order": [
+    "main",
+    "product_recommendations_qggXJq"
+  ]
 }
