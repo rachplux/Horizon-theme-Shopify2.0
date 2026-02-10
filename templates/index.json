@@ -1179,7 +1179,7 @@
         "content_width": "content-center-aligned",
         "desktop_media_position": "left",
         "equal_columns": true,
-        "limit_details_width": true,
+        "limit_details_width": false,
         "gap": 20,
         "color_scheme": "scheme-5",
         "padding-block-start": 40,
