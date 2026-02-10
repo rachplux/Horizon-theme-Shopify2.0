@@ -86,7 +86,7 @@
         "show_search": true,
         "search_position": "right",
         "search_row": "top",
-        "show_country": true,
+        "show_country": false,
         "country_selector_style": false,
         "show_language": false,
         "localization_font": "heading",
@@ -104,9 +104,9 @@
         "color_scheme_transparent": "scheme-1",
         "enable_transparent_header_home": false,
         "home_color_scheme": "inverse",
-        "enable_transparent_header_product": true,
+        "enable_transparent_header_product": false,
         "product_color_scheme": "default",
-        "enable_transparent_header_collection": false,
+        "enable_transparent_header_collection": true,
         "collection_color_scheme": "default"
       }
     }
