@@ -693,7 +693,7 @@
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 12,
-        "color_scheme": "scheme-8",
+        "color_scheme": "scheme-5",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
@@ -863,7 +863,7 @@
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 12,
-        "color_scheme": "scheme-8",
+        "color_scheme": "scheme-5",
         "padding-block-start": 30,
         "padding-block-end": 30
       }
@@ -1180,7 +1180,7 @@
         "equal_columns": true,
         "limit_details_width": true,
         "gap": 20,
-        "color_scheme": "scheme-8",
+        "color_scheme": "scheme-5",
         "padding-block-start": 40,
         "padding-block-end": 40
       }
@@ -1452,7 +1452,7 @@
         "section_width": "page-width",
         "horizontal_alignment": "flex-start",
         "gap": 37,
-        "color_scheme": "scheme-8",
+        "color_scheme": "scheme-5",
         "padding-block-start": 30,
         "padding-block-end": 42
       }
