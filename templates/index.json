@@ -655,7 +655,7 @@
               "settings": {
                 "image_ratio": "portrait",
                 "toggle_overlay": true,
-                "overlay_color": "#ff782038",
+                "overlay_color": "#ff78201d",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
                 "border": "none",
