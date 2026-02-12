@@ -47,7 +47,7 @@
       {% assign item = s_serie[field] %}
       {% if item == s_serie.label %}
       {% elsif item == s_serie.audio_type %}
-        <p>{{ item.value }} Audio</p>
+        <p>{{ item.value }}</p>
       {% elsif item == s_serie.extra_features %}
         {{ item | metafield_tag }}
       {% else %}
