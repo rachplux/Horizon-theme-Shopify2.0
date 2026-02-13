@@ -1282,7 +1282,7 @@
             "border_opacity": 100,
             "border_radius": 8,
             "padding-block-start": 0,
-            "padding-block-end": 10,
+            "padding-block-end": 15,
             "padding-inline-start": 8,
             "padding-inline-end": 8
           },
@@ -1390,6 +1390,7 @@
             "buy_buttons_P9nnJb": {
               "type": "buy-buttons",
               "name": "t:names.product_buy_buttons",
+              "disabled": true,
               "settings": {
                 "stacking": true,
                 "show_pickup_availability": false,
@@ -1447,7 +1448,7 @@
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 15,
-        "rows_gap": 10,
+        "rows_gap": 15,
         "icons_style": "arrow",
         "icons_shape": "none",
         "section_width": "page-width",
