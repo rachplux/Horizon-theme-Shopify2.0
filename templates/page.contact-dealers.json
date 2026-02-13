@@ -168,7 +168,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p><strong>US Line</strong>: <em>+1 (305 ) 400-2340</em></p><p><strong>Panama Line</strong>: <em>+507 6264-8062</em></p><p></p>",
+                "text": "<p><strong>US Line</strong>: <em>+1 (305 ) 400-2340<br/></em><strong>Panama Line</strong>: <em>+507 6264-8062</em></p><p><a href=\"https://www.cadenceamericas.com/\" title=\"https://www.cadenceamericas.com/\">https://www.cadenceamericas.com/</a></p><p></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
