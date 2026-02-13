@@ -61,7 +61,7 @@
           "static": true,
           "settings": {
             "menu": "main-menu",
-            "color_scheme": "scheme-3",
+            "color_scheme": "scheme-6",
             "type_font_primary_size": "0.875rem",
             "menu_font_style": "inverse_large",
             "type_font_primary_link": "subheading",
@@ -105,7 +105,7 @@
         "enable_transparent_header_home": false,
         "home_color_scheme": "inverse",
         "enable_transparent_header_product": false,
-        "product_color_scheme": "default",
+        "product_color_scheme": "inverse",
         "enable_transparent_header_collection": false,
         "collection_color_scheme": "default"
       }
