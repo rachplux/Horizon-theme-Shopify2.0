@@ -100,11 +100,11 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_n4PBA6": {
+            "text_xmQb7r": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Intentional design</h2>",
+                "text": "<h2>the United States & Mexico</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -126,15 +126,15 @@
               },
               "blocks": {}
             },
-            "text_LnUNP4": {
+            "text_n4PBA6": {
               "type": "text",
-              "name": "t:names.description",
+              "name": "t:names.heading",
               "settings": {
-                "text": "<p>We create with intention. Our products solve real problems with clean design and honest materials.</p>",
+                "text": "<h2>Cadence America Corp. </h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "type_preset": "rte",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -151,14 +151,54 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "divider_8nqVUT": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "text_M3fPe3": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p><strong>US Line</strong>: <em>+1 (305 ) 400-2340</em></p><p><strong>Panama Line</strong>: <em>+507 6264-8062</em></p><p></p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
+            "text_xmQb7r",
             "text_n4PBA6",
-            "text_LnUNP4"
+            "divider_8nqVUT",
+            "text_M3fPe3"
           ]
         },
-        "group_yH3cEa": {
+        "group_4WU4b8": {
           "type": "group",
           "name": "t:names.column",
           "settings": {
@@ -198,11 +238,11 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_qPcG3J": {
+            "text_ptHaVx": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Quality first</h2>",
+                "text": "<h2>International</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -224,15 +264,15 @@
               },
               "blocks": {}
             },
-            "text_xnyyCU": {
+            "text_CffawD": {
               "type": "text",
-              "name": "t:names.description",
+              "name": "t:names.heading",
               "settings": {
-                "text": "<p>We obsess over the details and strive to deliver the best products at the best prices, every time.</p>",
+                "text": "<h2>Cadence Sound Intl.</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "type_preset": "rte",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -249,17 +289,57 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
+            },
+            "divider_LJk9aR": {
+              "type": "_divider",
+              "name": "t:names.divider",
+              "settings": {
+                "thickness": 1,
+                "corner_radius": "square",
+                "width_percent": 100,
+                "padding-block-start": 0,
+                "padding-block-end": 0
+              },
+              "blocks": {}
+            },
+            "text_tkimKW": {
+              "type": "text",
+              "name": "t:names.description",
+              "settings": {
+                "text": "<p>Click links to <a href=\"/pages/contact\" title=\"Contact\"><strong>contact us</strong></a> or <a href=\"/pages/becoming-distributors\" title=\"Becoming Distributors\"><strong>applying for international partnership</strong></a></p><p><strong>Email</strong>: <a href=\"mailto:info@cadenceamericas.com\"><em>marketing@cadencsound.com</em></a></p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 20,
+                "padding-block-end": 20,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "text_qPcG3J",
-            "text_xnyyCU"
+            "text_ptHaVx",
+            "text_CffawD",
+            "divider_LJk9aR",
+            "text_tkimKW"
           ]
         }
       },
       "block_order": [
         "group_4YGPxE",
-        "group_yH3cEa"
+        "group_4WU4b8"
       ],
       "name": "t:names.multicolumn",
       "settings": {
