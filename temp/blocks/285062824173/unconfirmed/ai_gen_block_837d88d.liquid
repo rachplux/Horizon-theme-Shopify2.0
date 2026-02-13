@@ -1,6 +1,198 @@
+{% doc %}
+  @prompt
+    generate a check box, for applying for an international distributors
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-distributor-checkbox-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-distributor-checkbox-wrapper-{{ ai_gen_id }} {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: {{ block.settings.padding }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+  }
+
+  .ai-distributor-checkbox-input-{{ ai_gen_id }} {
+    flex-shrink: 0;
+    width: {{ block.settings.checkbox_size }}px;
+    height: {{ block.settings.checkbox_size }}px;
+    margin-top: 2px;
+    cursor: pointer;
+    accent-color: {{ block.settings.checkbox_color }};
+  }
+
+  .ai-distributor-checkbox-label-{{ ai_gen_id }} {
+    flex-grow: 1;
+    cursor: pointer;
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+  }
+
+  .ai-distributor-checkbox-label-{{ ai_gen_id }} strong {
+    font-weight: 600;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-distributor-checkbox-{{ ai_gen_id }} {
+      width: 100%;
+    }
+  }
+{% endstyle %}
+
+<div
+  class="ai-distributor-checkbox-{{ ai_gen_id }}"
+  {{ block.shopify_attributes }}
+>
+  <div class="ai-distributor-checkbox-wrapper-{{ ai_gen_id }}">
+    <input
+      type="checkbox"
+      id="distributor-application-{{ ai_gen_id }}"
+      name="contact[international_distributor]"
+      value="yes"
+      class="ai-distributor-checkbox-input-{{ ai_gen_id }}"
+      {% if block.settings.checked_by_default %}checked{% endif %}
+    >
+    <label
+      for="distributor-application-{{ ai_gen_id }}"
+      class="ai-distributor-checkbox-label-{{ ai_gen_id }}"
+    >
+      {% if block.settings.label_text != blank %}
+        {{ block.settings.label_text }}
+      {% else %}
+        I am interested in applying for an <strong>international distributor</strong> partnership
+      {% endif %}
+    </label>
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Distributor checkbox",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "id": "label_text",
+      "label": "Label text",
+      "default": "<p>I am interested in applying for an <strong>international distributor</strong> partnership</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "checked_by_default",
+      "label": "Checked by default",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "range",
+      "id": "padding",
+      "label": "Padding",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 0,
+      "max": 4,
+      "step": 1,
+      "unit": "px",
+      "default": 1
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f5f5f5"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#dfdfdf"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Checkbox"
+    },
+    {
+      "type": "range",
+      "id": "checkbox_size",
+      "label": "Checkbox size",
+      "min": 16,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "color",
+      "id": "checkbox_color",
+      "label": "Checkbox color",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "label": "Text size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    }
+  ],
+  "presets": [
+    {
+      "name": "Distributor checkbox"
+    }
+  ]
+}
 {% endschema %}
