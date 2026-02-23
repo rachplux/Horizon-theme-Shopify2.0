@@ -1309,7 +1309,7 @@
               "settings": {
                 "width": "100%",
                 "max_width": "normal",
-                "alignment": "center",
+                "alignment": "left",
                 "type_preset": "h6",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
@@ -1328,37 +1328,11 @@
               },
               "blocks": {}
             },
-            "text_RTxQUL": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "{{ closest.product.metafields.speaker.serie.value.audio_type | metafield_tag }}",
-                "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": true,
-                "background_color": "#00000040",
-                "corner_radius": 10,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 10,
-                "padding-inline-end": 10
-              },
-              "blocks": {}
-            },
             "custom_liquid_UQtFXh": {
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": ""
+                "custom_liquid": "<style>\n    .tag {\n    padding: 3px 8px ;\n    border-radius:5px;\n    font-size:0.8rem;\n    }\n  .car-audio {\n    background-color: #303030;\n    color:#f26a28;\n  }\n  .pro-audio {\n    background-color: #303030;\n    color:#16659c;\n\n  }\n  .marine-audio {\n    background-color: #16659c;\n    color:#b1cadb;\n  }\n  .powersports {\n     background-color: #04AA6D;\n    color:#ffffff;\n  }\n   .default {\n   background-color:#333333;\n   color:#999999;\n}\n</style>\n\n\n{% liquid\n  assign s_audio_type = closest.product.metafields.speaker.serie.value.audio_type.value\n  assign a_audio_type = closest.product.metafields.speaker.amplifier.value.audio_type.value\n%}\n\n{% if s_audio_type != blank %}\n  {% for item in s_audio_type %}\n    {% if item contains 'Car' %}\n      <span class=\"tag car-audio\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n      {% elsif item contains 'Pro' %}\n        <span class=\"tag pro-audio\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n        {% elsif item contains 'Marine' %}\n          <span class=\"tag marine-audio\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n          {% elsif item contains 'Powersports' %}\n            <span class=\"tag powersports\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n          {% else %}\n            <span class=\"tag default\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n    {% endif %}\n  \n{% endfor %}\n{% endif %}\n\n{% if a_audio_type != blank %}\n  {% for item in a_audio_type %}\n  {{ item }}{% unless forloop.last %}, {% endunless %}\n{% endfor %}\n{% endif %}"
               },
               "blocks": {}
             },
@@ -1465,7 +1439,6 @@
           "block_order": [
             "product_card_gallery_677WP3",
             "product_title_YXxMTj",
-            "text_RTxQUL",
             "custom_liquid_UQtFXh",
             "swatches_DLpE3Q",
             "price_JQzVV4",
