@@ -1328,6 +1328,40 @@
               },
               "blocks": {}
             },
+            "text_RTxQUL": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>{{ closest.product.metafields.speaker.serie.value.audio_type.value }}</p>",
+                "width": "fit-content",
+                "max_width": "none",
+                "alignment": "left",
+                "type_preset": "custom",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": true,
+                "background_color": "#00000041",
+                "corner_radius": 10,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 10,
+                "padding-inline-end": 10
+              },
+              "blocks": {}
+            },
+            "custom_liquid_UQtFXh": {
+              "type": "custom-liquid",
+              "name": "t:names.custom_liquid",
+              "settings": {
+                "custom_liquid": ""
+              },
+              "blocks": {}
+            },
             "swatches_DLpE3Q": {
               "type": "swatches",
               "name": "t:names.swatches",
@@ -1431,6 +1465,8 @@
           "block_order": [
             "product_card_gallery_677WP3",
             "product_title_YXxMTj",
+            "text_RTxQUL",
+            "custom_liquid_UQtFXh",
             "swatches_DLpE3Q",
             "price_JQzVV4",
             "sku_hzyzNp",
