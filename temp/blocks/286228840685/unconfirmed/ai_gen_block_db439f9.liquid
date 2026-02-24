@@ -1,6 +1,342 @@
+{% doc %}
+  @prompt
+    Generate a block under product catagories using following setup 
+    
+    <style>
+        .tag {
+        padding: 3px .8em ;
+        border-radius:8px;
+        font-size:0.65rem;
+        }
+      .car-audio {
+        background-color: #2b2b2b;
+        color:#f26a28;
+      }
+      .pro-audio {
+        background-color: #2b2b2b;
+        color:#2a8fd3;
+    
+      }
+      .marine-audio {
+        background-color: #16659c;
+        color:#b1cadb;
+      }
+      .powersports {
+         background-color: #04AA6D;
+        color:#6eefbe;
+      }
+       .default {
+       background-color:#333333;
+       color:#999999;
+    }
+    </style>
+    
+    
+    {% liquid
+      assign s_audio_type = closest.product.metafields.speaker.serie.value.audio_type.value
+      assign a_audio_type = closest.product.metafields.speaker.amplifier.value.audio_type.value
+    %}
+    
+    {% if s_audio_type != blank %}
+      {% for item in s_audio_type %}
+        {% if item contains 'Car' %}
+          <span class="tag car-audio">{{ item }}</span>{% unless forloop.last %}, {% endunless %}
+          {% elsif item contains 'Pro' %}
+            <span class="tag pro-audio">{{ item }}</span>{% unless forloop.last %}, {% endunless %}
+            {% elsif item contains 'Marine' %}
+              <span class="tag marine-audio">{{ item }}</span>{% unless forloop.last %}, {% endunless %}
+              {% elsif item contains 'Powersports' %}
+                <span class="tag powersports">{{ item }}</span>{% unless forloop.last %}, {% endunless %}
+              {% else %}
+                <span class="tag default">{{ item }}</span>{% unless forloop.last %}, {% endunless %}
+        {% endif %}
+      
+    {% endfor %}
+    {% endif %}
+    
+    {% if a_audio_type != blank %}
+      {% for item in a_audio_type %}
+      {{ item }}{% unless forloop.last %}, {% endunless %}
+    {% endfor %}
+    {% endif %}
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-product-categories-{{ ai_gen_id }} {
+    display: block;
+    width: {{ block.settings.desktop_width_percent }}%;
+    max-width: 100%;
+  }
+
+  .ai-product-categories__wrapper-{{ ai_gen_id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: {{ block.settings.tag_spacing }}px;
+    align-items: center;
+  }
+
+  .ai-product-categories__tag-{{ ai_gen_id }} {
+    padding: {{ block.settings.tag_padding_vertical }}px {{ block.settings.tag_padding_horizontal }}px;
+    border-radius: {{ block.settings.tag_border_radius }}px;
+    font-size: {{ block.settings.tag_font_size }}px;
+    font-weight: {{ block.settings.tag_font_weight }};
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .ai-product-categories__tag-{{ ai_gen_id }}--car-audio {
+    background-color: {{ block.settings.car_audio_bg }};
+    color: {{ block.settings.car_audio_text }};
+  }
+
+  .ai-product-categories__tag-{{ ai_gen_id }}--pro-audio {
+    background-color: {{ block.settings.pro_audio_bg }};
+    color: {{ block.settings.pro_audio_text }};
+  }
+
+  .ai-product-categories__tag-{{ ai_gen_id }}--marine-audio {
+    background-color: {{ block.settings.marine_audio_bg }};
+    color: {{ block.settings.marine_audio_text }};
+  }
+
+  .ai-product-categories__tag-{{ ai_gen_id }}--powersports {
+    background-color: {{ block.settings.powersports_bg }};
+    color: {{ block.settings.powersports_text }};
+  }
+
+  .ai-product-categories__tag-{{ ai_gen_id }}--default {
+    background-color: {{ block.settings.default_bg }};
+    color: {{ block.settings.default_text }};
+  }
+{% endstyle %}
+
+<div class="ai-product-categories-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-product-categories__wrapper-{{ ai_gen_id }}">
+    {% liquid
+      assign s_audio_type = product.metafields.speaker.serie.value.audio_type.value
+      assign a_audio_type = product.metafields.speaker.amplifier.value.audio_type.value
+    %}
+
+    {% if s_audio_type != blank %}
+      {% for item in s_audio_type %}
+        {% liquid
+          assign tag_class = 'default'
+          if item contains 'Car'
+            assign tag_class = 'car-audio'
+          elsif item contains 'Pro'
+            assign tag_class = 'pro-audio'
+          elsif item contains 'Marine'
+            assign tag_class = 'marine-audio'
+          elsif item contains 'Powersports'
+            assign tag_class = 'powersports'
+          endif
+        %}
+        <span class="ai-product-categories__tag-{{ ai_gen_id }} ai-product-categories__tag-{{ ai_gen_id }}--{{ tag_class }}">
+          {{ item }}
+        </span>
+      {% endfor %}
+    {% endif %}
+
+    {% if a_audio_type != blank %}
+      {% for item in a_audio_type %}
+        {% liquid
+          assign tag_class = 'default'
+          if item contains 'Car'
+            assign tag_class = 'car-audio'
+          elsif item contains 'Pro'
+            assign tag_class = 'pro-audio'
+          elsif item contains 'Marine'
+            assign tag_class = 'marine-audio'
+          elsif item contains 'Powersports'
+            assign tag_class = 'powersports'
+          endif
+        %}
+        <span class="ai-product-categories__tag-{{ ai_gen_id }} ai-product-categories__tag-{{ ai_gen_id }}--{{ tag_class }}">
+          {{ item }}
+        </span>
+      {% endfor %}
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Product categories",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Tag style"
+    },
+    {
+      "type": "range",
+      "id": "tag_font_size",
+      "label": "Font size",
+      "min": 10,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 11
+    },
+    {
+      "type": "select",
+      "id": "tag_font_weight",
+      "label": "Font weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "500"
+    },
+    {
+      "type": "range",
+      "id": "tag_padding_vertical",
+      "label": "Vertical padding",
+      "min": 2,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "tag_padding_horizontal",
+      "label": "Horizontal padding",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "tag_border_radius",
+      "label": "Border radius",
+      "min": 0,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "tag_spacing",
+      "label": "Spacing between tags",
+      "min": 4,
+      "max": 16,
+      "step": 2,
+      "unit": "px",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "desktop_width_percent",
+      "label": "Desktop width",
+      "min": 50,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Car audio"
+    },
+    {
+      "type": "color",
+      "id": "car_audio_bg",
+      "label": "Background",
+      "default": "#2b2b2b"
+    },
+    {
+      "type": "color",
+      "id": "car_audio_text",
+      "label": "Text",
+      "default": "#f26a28"
+    },
+    {
+      "type": "header",
+      "content": "Pro audio"
+    },
+    {
+      "type": "color",
+      "id": "pro_audio_bg",
+      "label": "Background",
+      "default": "#2b2b2b"
+    },
+    {
+      "type": "color",
+      "id": "pro_audio_text",
+      "label": "Text",
+      "default": "#2a8fd3"
+    },
+    {
+      "type": "header",
+      "content": "Marine audio"
+    },
+    {
+      "type": "color",
+      "id": "marine_audio_bg",
+      "label": "Background",
+      "default": "#16659c"
+    },
+    {
+      "type": "color",
+      "id": "marine_audio_text",
+      "label": "Text",
+      "default": "#b1cadb"
+    },
+    {
+      "type": "header",
+      "content": "Powersports"
+    },
+    {
+      "type": "color",
+      "id": "powersports_bg",
+      "label": "Background",
+      "default": "#04AA6D"
+    },
+    {
+      "type": "color",
+      "id": "powersports_text",
+      "label": "Text",
+      "default": "#6eefbe"
+    },
+    {
+      "type": "header",
+      "content": "Default"
+    },
+    {
+      "type": "color",
+      "id": "default_bg",
+      "label": "Background",
+      "default": "#333333"
+    },
+    {
+      "type": "color",
+      "id": "default_text",
+      "label": "Text",
+      "default": "#999999"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product categories"
+    }
+  ]
+}
 {% endschema %}
