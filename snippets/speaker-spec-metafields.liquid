@@ -1,55 +1,114 @@
 {% liquid
   assign speaker = product.metafields.speaker
-  assign tweeter_design = product.metafields.speaker.serie.value.tweeter_design.value
+  assign shopify_ns = product.metafields.shopify
   assign model = product.metafields.system.model_number.value
-  assign fields = 'Speaker Size,size|Speaker Type,type|Sold Unit,sold_unit|Voice Coil Size,vc_size|RMS Power,rms_power|Peak Power,peak_power|Tweeter Diaphragm,tweeter_diaphragm|Show Tweeter Design,show_series_tweeter|Show Midrange Design,show_series_midrange|Frequency Response,fs|Sensitivity @ 1M/1W,sn|Impedance,impedance|Mounting Depth,mounting_depth|Mounting Type,mounting_type|Package Contains,contains|Light Included,lights|Magnet Weight (lb.),magnet_weight' | split: '|'
+  assign fields_list = 'Speaker Size,size|Speaker Type,type|Sold Unit,sold_unit|Speakers,soundbar_speakers|Tweeters,soundbar_tweeters|Speaker Features,speaker_features|Voice Coil Size,vc_size|Power Output,power_output|RMS Power,rms_power|Peak Power,peak_power|Tweeter Diaphragm,tweeter_diaphragm|Tweeter Design,tweeter_design|Show Midrange Design,show_series_midrange|Frequency Response,fs|Sensitivity @ 1M/1W,sn|Impedance,impedance|LED lighting,integrated-led-lighting|Auxiliary_input,auxiliary_input|Device Interface,device-interface|Connectivity Tech,connectivity-technology|Wire Length,wire_length|Mounting Depth,mounting_depth|Mounting Type,mounting_type|Package Contains,contains|Magnet Weight (lb.),magnet_weight' | split: '|'
 %}
 
 <div class='grid-container'>
-  <div class='spec-row'>
-    <div class='spec-label'>Model</div>
-    <div>{{ model | default: 'N/A' }}</div>
-  </div>
+  {% if model != blank %}
+    <div class='spec-row'>
+      <div class='spec-label'>Model</div>
+      <div class='spec-value'>{{ model }}</div>
+    </div>
+  {% endif %}
 
-  {% for field in fields %}
+  {% for field_item in fields_list %}
     {% liquid
-      assign label_key = field | split: ','
-      assign label = label_key[0] | strip
-      assign key = label_key[1] | strip
-      assign value = speaker[key].value
-    %}
+      # 1. 基礎解析 - 拆分當下的這一筆 field_item
+      assign parts = field_item | split: ','
+      assign label = parts[0] | strip
+      assign key = parts[1] | strip
 
-    {% if value != blank %}
-      {% if label contains 'Show Tweeter Design' and value == true %}
-        <div class='spec-row'>
-          <div class='spec-label'>Tweeter Design</div>
-          <div>{{ tweeter_design }}</div>
-        </div>
-      {% else %}
-        <div class='spec-row'>
-          <div class='spec-label'>{{ label }}</div>
-          <div>
-            {% if label contains 'Power' %}
-              {{ value }} Watts
-            {% elsif label contains 'Sensitivity' %}
-              {{ value }} dB
-            {% elsif label contains 'Magnet Weight' %}
-              {{ value }}
-            {% else %}
-              {% liquid
-                assign rendered = value
-                if value.first != blank
-                  assign rendered = value | join: ' '
-                endif
-              %}
-              {%- comment -%}
-                上面的 if 在判斷是否是array
-              {%- endcomment -%}
-              {{ rendered }}
-            {% endif %}
-          </div>
-        </div>
-      {% endif %}
-    {% endif %}
+      # 尋找資料源
+      assign target = speaker[key] | default: shopify_ns[key]
+
+      if target.value == blank
+        continue
+      endif
+
+      # 2. 變數準備
+      assign active_value = target.value
+      assign meta_type = target.type
+      assign unit = ''
+      assign rendered_value = ''
+
+      # 3. 單位判斷
+      if key contains 'power'
+        assign unit = ' Watts'
+      elsif key contains 'sn'
+        assign unit = ' dB'
+      endif
+
+      # 4. 核心渲染邏輯
+      if meta_type contains 'list.metaobject'
+        # 處理 Metaobject 列表
+        assign items_array = '' | split: ''
+        for obj in active_value
+          assign val = obj.label.value | default: obj.name.value | default: obj.display_name
+          assign val_as_arr = val | split: '||'
+          assign items_array = items_array | concat: val_as_arr
+        endfor
+        assign rendered_value = items_array | join: ', '
+
+      elsif meta_type == 'metaobject_reference'
+        # 處理單一 Metaobject
+        assign rendered_value = active_value.label.value | default: active_value.name.value | default: active_value.display_name
+
+      elsif active_value.first != blank
+        # 處理一般文字列表
+        assign rendered_value = active_value | join: ', '
+      else
+        # 處理單一數值或字串
+        assign rendered_value = active_value
+      endif
+
+      # 5. 封裝輸出
+      capture rendered_output
+        echo rendered_value | append: unit
+      endcapture
+    %}
+    {% comment %}
+      <div>
+        <h5>{{ label }}</h5>
+        <ul>
+          <li>
+            <span class='spec-label'>meta_type</span>
+            | {{ meta_type }}
+          </li>
+          <li>
+            <span class='spec-label'>items</span>
+            | {{ items }}
+          </li>
+
+          <li>
+            <span class='spec-label'>val</span>
+            | {{ val }}
+          </li>
+          <li>
+            <span class='spec-label'>val_as_arr</span>
+            | {{ val_as_arr }}
+          </li>
+          <li>
+            <span class='spec-label'>items_array</span>
+            | {{ items_array }}
+          </li>
+          <li>
+            <span class='spec-label'>active_value</span>
+            | {{ active_value }}
+          </li>
+
+          <li>
+            <span class='spec-label'>rendered_output</span>
+            | {{ rendered_output }}
+          </li>
+        </ul>
+      </div>
+    {% endcomment %}
+
+    <div class='spec-row'>
+      <div class='spec-label'>{{ label }}</div>
+      <div class='spec-value'>{{ rendered_output }}</div>
+    </div>
   {% endfor %}
 </div>
