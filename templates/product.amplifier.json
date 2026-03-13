@@ -224,6 +224,16 @@
               },
               "block_order": []
             },
+            "serie_list_VFQYbR": {
+              "type": "serie-list",
+              "name": "Serie List",
+              "settings": {
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-7",
+                "serie_fields": "audio_type,tweeter_design,midrange_design,basket,surround,cone,spider,voice_coil_material,enclosure,bridge,terminal,vent,magnet,motor,slim_compact_design,connection,lighting,mounting_clamps,waterproof,extra_features"
+              },
+              "blocks": {}
+            },
             "text_aEtTtq": {
               "type": "text",
               "name": "Product description",
@@ -247,16 +257,6 @@
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "serie_list_VFQYbR": {
-              "type": "serie-list",
-              "name": "Serie List",
-              "settings": {
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-7",
-                "serie_fields": "audio_type,tweeter_design,midrange_design,basket,surround,cone,spider,voice_coil_material,enclosure,bridge,terminal,vent,magnet,motor,slim_compact_design,connection,lighting,mounting_clamps,waterproof,extra_features"
               },
               "blocks": {}
             },
@@ -315,8 +315,8 @@
             "divider_VJhene",
             "variant_picker_R3rGDr",
             "buy_buttons_eYQEYi",
-            "text_aEtTtq",
             "serie_list_VFQYbR",
+            "text_aEtTtq",
             "accordion_br7En3"
           ]
         }

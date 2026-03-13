@@ -1173,6 +1173,7 @@
           ]
         }
       },
+      "disabled": true,
       "name": "t:names.featured_product_information",
       "settings": {
         "product": "marine-waterproof-monoblock-1200-watts-max-sqa-1200-1",
