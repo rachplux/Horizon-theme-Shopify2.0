@@ -1,121 +1,69 @@
 {% liquid
-  assign amp = product.metafields.amplifier
-  assign power = amp.power.value
-  assign speaker = product.metafields.speaker
-  assign system = product.metafields.system
-  assign model = system.model_number.value
-  assign classes = product.metafields.shopify['amplifier-class'].value
-  assign channels = product.metafields.shopify['amplifier-configuration'].value
+  assign amp = product.metafields.amplifier 
+  assign shopify_ns = product.metafields.shopify 
+  assign system_ns = product.metafields.system 
+  assign power_ns = amp.power.value
+  assign fields_list = 'Model,model_number,text|Amplifier Class,amplifier-class,array|Channels,amplifier-configuration,array|RMS 1 Ohm,rms_1_ohm,text|RMS 2 Ohm,rms_2_ohm,text|RMS 4 Ohm,rms_4_ohm,text|RMS Bridge 4 Ohm,rms_bridge_4_ohm,text|Max Power,max_power,text|Frequency Response,fs,text|T.H.D,t_h_d,text|S/N Ratio,s_n,text|Channel Seperation,channel_seperation,text|All Pass Filter,all_pass_range,text|High Power Filter,high_pass_filter,text|Low Pass Filter,low_pass_filter,text|Subsonic Filter,subsonic,text|Bass Boost,bass_boost,text|Input,input,text|Input Sensitivity,input_sensitivity,text|Output,output,text|Phase,phase,text|Remote Control,remote_control,boolean|Connectivity technology,connectivity-technology,text|Device Interface,device-interface,text|IP Rating,ingress-protection-ip-rating,text|Dimension,dimension,text' | split: '|'
+
 %}
 
-<div class='grid-container'>
-  {% assign fields = 'T.H.D,t_h_d,text|S/N,s_n,text|High Power Filter,high_pass_filter,text|Low Pass Filter,low_pass_filter,text|Subsonic Filter,subsonic,text|Bass Boost,bass_boost,text|Input,input,text|Output,output,text|Phase,phase,text'
-    | split: '|'
-  %}
+<div class="grid-container">
 
-  <div class='spec-row'>
-    <div class='spec-label'>Model</div>
-    <div>{{ model | default: '-' }}</div>
-  </div>
+	{% for field_item in fields_list %}
+		{% liquid
+			assign parts = field_item | split: ','
+			assign label = parts[0] | strip
+			assign key = parts[1] | strip
 
-  {% if classes != blank %}
-    <div class='spec-row'>
-      <div class='spec-label'>Amplifier Class</div>
-      <div>
-        {% for item in classes %}
-          {%- if item.label -%}
-            {{ item.label }}
-          {%- else -%}
-            {{ item }}
-          {%- endif -%}
-          {% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
+			assign target = amp[key] | default:power_ns[key] | default:shopify_ns[key] | default: system_ns[key]
 
-  {% if channels != blank %}
-    <div class='spec-row'>
-      <div class='spec-label'>Channels</div>
-      <div>
-        {% for item in channels %}
-          {%- if item.label -%}
-            {{ item.label }}
-          {%- else -%}
-            {{ item }}
-          {%- endif -%}
-          {% unless forloop.last %}, {% endunless %}
-        {% endfor %}
-      </div>
-    </div>
-  {% endif %}
+			if target.value == blank
+			continue
+			endif
 
-  {% if power %}
-    {% if power.rms_1_ohm.value != blank %}
-      <div class='spec-row'>
-        <div class='spec-label'>RMS 1 Ohm</div>
-        <div>{{ power.rms_1_ohm.value }}</div>
-      </div>
-    {% endif %}
-    {% if power.rms_2_ohm.value != blank %}
-      <div class='spec-row'>
-        <div class='spec-label'>RMS 2 Ohm</div>
-        <div>{{ power.rms_2_ohm.value }}</div>
-      </div>
-    {% endif %}
-    {% if power.rms_4_ohm.value != blank %}
-      <div class='spec-row'>
-        <div class='spec-label'>RMS 4 Ohm</div>
-        <div>{{ power.rms_4_ohm.value }}</div>
-      </div>
-    {% endif %}
-    {% if power.rms_bridge_4_ohm.value != blank %}
-      <div class='spec-row'>
-        <div class='spec-label'>RMS Bridge 4 Ohm</div>
-        <div>{{ power.rms_bridge_4_ohm.value }}</div>
-      </div>
-    {% endif %}
-    {% if power.max_power.value != blank %}
-      <div class='spec-row'>
-        <div class='spec-label'>Max Power</div>
-        <div>{{ power.max_power.value }}</div>
-      </div>
-    {% endif %}
-  {% endif %}
+			assign active_value = target.value
+			assign meta_type = target.type
+			assign rendered_value = ''
 
-  {% if speaker.fs.value != blank %}
-    <div class='spec-row'>
-      <div class='spec-label'>Frequency Response</div>
-      <div>{{ speaker.fs.value }}</div>
-    </div>
-  {% endif %}
+			# 處理 MetaobjectListDrop conflict
+			      if meta_type contains 'list.metaobject_reference'
+        # 處理 Metaobject 列表
+        assign items_array = '' | split: ''
+        for obj in active_value
+          assign val = obj.label.value | default: obj.name.value | default: obj.display_name
+          assign val_as_arr = val | split: '||'
+          assign items_array = items_array | concat: val_as_arr
+        endfor
+        assign rendered_value = items_array | join: ', '
 
-  {% for field in fields %}
-    {% liquid
-      assign parts = field | split: ','
-      assign label = parts[0]
-      assign key = parts[1]
-      assign type = parts[2]
-    %}
+      elsif meta_type == 'metaobject_reference'
+        # 處理單一 Metaobject
+        assign rendered_value = active_value.label.value | default: active_value.name.value | default: active_value.display_name
 
-    {% if amp[key].value != blank %}
-      <div class='spec-row'>
-        <div class='spec-label'>{{ label }}</div>
-        <div>
-          {% if type == 'boolean' %}
-            {% if amp[key].value %}Yes{% else %}No{% endif %}
-          {% else %}
-            {{ amp[key].value }}
-          {% endif %}
-        </div>
-      </div>
-    {% endif %}
-  {% endfor %}
+      elsif active_value.first != blank
+        # 處理一般文字列表
+        assign rendered_value = active_value | join: ' '
+      else
+        # 處理單一數值或字串
+        assign rendered_value = active_value
+      endif
+		capture rendered_output
+        echo rendered_value | append: unit
+      endcapture	
 
-  {% if system.remote_control.value %}
-    <div class='spec-row'>
-      <div class='spec-label'>Remote Control</div>
-      <div>Yes</div>
-    </div>
-  {% endif %}
+		%}
+
+	<div class='spec-row'>
+			<div class='spec-label'>{{ label }}</div>
+			<div class='spec-value'>
+				{% if rendered_output == 'true' %}
+					Yes
+					{% else %}
+					{{ rendered_output }}	
+				{% endif %}
+				</div>
+		</div> 
+	{% endfor %}
+	
 </div>
+

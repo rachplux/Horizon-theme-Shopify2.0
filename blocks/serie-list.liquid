@@ -49,7 +49,7 @@
       {% elsif item == s_serie.audio_type %}
         <p>{{ item.value }}</p>
       {% elsif item == s_serie.extra_features %}
-        {{ item | metafield_tag }}
+        <p>{{ item | metafield_tag }}</p>
       {% else %}
         <p>{{ item.value }}</p>
       {% endif %}
@@ -87,7 +87,7 @@
       {% elsif item == a_serie.extra_features %}
         {{ item | metafield_tag }}
       {% else %}
-        <p>{{ item.value }}</p>
+        <p>{{ item.value | split: ' ' }}</p>
       {% endif %}
     {% endfor %}
   </div>
@@ -96,7 +96,7 @@
 {% schema %}
 {
   "name": "Serie List",
-  "tag": "block",
+  "tag": null,
   "settings": [
     {
       "type": "checkbox",

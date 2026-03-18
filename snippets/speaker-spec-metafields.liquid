@@ -57,7 +57,7 @@
 
       elsif active_value.first != blank
         # 處理一般文字列表
-        assign rendered_value = active_value | join: ', '
+        assign rendered_value = active_value | join: ' '
       else
         # 處理單一數值或字串
         assign rendered_value = active_value

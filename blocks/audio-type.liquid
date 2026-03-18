@@ -1,0 +1,63 @@
+{%- stylesheet -%}
+  .tag {
+    padding: 3px 0.8em;
+    border-radius: 8px;
+    font-size: 0.65rem;
+  }
+  .car-audio {
+    background-color: #2b2b2b;
+    color: #f26a28;
+  }
+  .pro-audio {
+    background-color: #2b2b2b;
+    color: #2a8fd3;
+  }
+  .marine-audio {
+    background-color: #16659c;
+    color: #b1cadb;
+  }
+  .powersports {
+    background-color: #04aa6d;
+    color: #6eefbe;
+  }
+  .default {
+    background-color: #333333;
+    color: #999999;
+  }
+{%- endstylesheet -%}
+
+{% assign audio_type = closest.product.metafields.system.product_type.value %}
+
+{% if audio_type != blank %}
+  {% for item in audio_type %}
+    {% if item contains 'Car' %}
+      <span class='tag car-audio'>{{ item }}</span>
+      {%- unless forloop.last %}, {% endunless %}
+    {% elsif item contains 'Pro' %}
+      <span class='tag pro-audio'>{{ item }}</span>
+      {%- unless forloop.last %}, {% endunless %}
+    {% elsif item contains 'Marine' %}
+      <span class='tag marine-audio'>{{ item }}</span>
+      {%- unless forloop.last %}, {% endunless %}
+    {% elsif item contains 'Powersports' %}
+      <span class='tag powersports'>{{ item }}</span>
+      {%- unless forloop.last %}, {% endunless %}
+    {% else %}
+      <span class='tag default'>{{ item }}</span>
+      {%- unless forloop.last %}, {% endunless %}
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Audio Type",
+  "tag": null,
+  "presets": [
+    {
+      "name": "Audio Type",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}
