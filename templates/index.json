@@ -697,7 +697,7 @@
         "gap": 12,
         "color_scheme": "scheme-8",
         "padding-block-start": 60,
-        "padding-block-end": 48
+        "padding-block-end": 60
       }
     },
     "collection_list_JHb9jC": {
@@ -1538,7 +1538,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Our signature product</h2>",
+                "text": "<h2>Cadence Powersport</h2>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1563,7 +1563,7 @@
             "text_amaUEb": {
               "type": "text",
               "settings": {
-                "text": "<p>Made with care and unconditionally loved by our customers, this signature bestseller exceeds all expectations.</p>",
+                "text": "<p>From rough trails to open water, Cadence powersports audio brings bold, aggressive sound built to perform where ordinary speakers fall short.</p>",
                 "width": "fit-content",
                 "max_width": "narrow",
                 "alignment": "left",
