@@ -26,7 +26,7 @@
   }
 {%- endstylesheet -%}
 
-{% assign audio_type = closest.product.metafields.system.product_type.value %}
+{% assign audio_type = closest.product.metafields.system.audio_type.value %}
 
 {% if audio_type != blank %}
   {% for item in audio_type %}
