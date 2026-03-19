@@ -1334,7 +1334,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "<style>\n    .tag {\n    padding: 3px .8em ;\n    border-radius:8px;\n    font-size:0.65rem;\n    }\n  .car-audio {\n    background-color: #2b2b2b;\n    color:#f26a28;\n  }\n  .pro-audio {\n    background-color: #2b2b2b;\n    color:#2a8fd3;\n\n  }\n  .marine-audio {\n    background-color: #16659c;\n    color:#b1cadb;\n  }\n  .powersports {\n     background-color: #04AA6D;\n    color:#6eefbe;\n  }\n   .default {\n   background-color:#333333;\n   color:#999999;\n}\n</style>\n\n\n{% \n  assign audio_type = closest.product.metafields.system.product_type.value\n%}\n\n{% if audio_type != blank %}\n  {% for item in audio_type %}\n    {% if item contains 'Car' %}\n      <span class=\"tag car-audio\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n      {% elsif item contains 'Pro' %}\n        <span class=\"tag pro-audio\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n        {% elsif item contains 'Marine' %}\n          <span class=\"tag marine-audio\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n          {% elsif item contains 'Powersports' %}\n            <span class=\"tag powersports\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n          {% else %}\n            <span class=\"tag default\">{{ item }}</span>{% unless forloop.last %}, {% endunless %}\n    {% endif %}\n  \n{% endfor %}\n{% endif %}"
+                "custom_liquid": "<style>\n  .tag {\n    padding: 3px 0.8em;\n    border-radius: 8px;\n    font-size: 0.65rem;\n  }\n  .car-audio {\n    background-color: #2b2b2b;\n    color: #f26a28;\n  }\n  .pro-audio {\n    background-color: #2b2b2b;\n    color: #2a8fd3;\n  }\n  .marine-audio {\n    background-color: #16659c;\n    color: #b1cadb;\n  }\n  .powersports {\n    background-color: #04aa6d;\n    color: #6eefbe;\n  }\n  .default {\n    background-color: #333333;\n    color: #999999;\n  }\n</style>\n\n{% assign audio_type = closest.product.metafields.system.audio_type.value %}\n\n{% if audio_type != blank %}\n  {% for item in audio_type %}\n    {% if item contains 'Car' %}\n      <span class='tag car-audio'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% elsif item contains 'Pro' %}\n      <span class='tag pro-audio'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% elsif item contains 'Marine' %}\n      <span class='tag marine-audio'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% elsif item contains 'Powersports' %}\n      <span class='tag powersports'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% else %}\n      <span class='tag default'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% endif %}\n  {% endfor %}\n{% endif %}"
               },
               "blocks": {}
             },
@@ -1589,7 +1589,7 @@
               "type": "button",
               "settings": {
                 "label": "Shop now",
-                "link": "shopify://collections/all",
+                "link": "shopify://collections/powersports",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "width": "fit-content",
