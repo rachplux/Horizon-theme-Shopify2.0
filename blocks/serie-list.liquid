@@ -53,17 +53,6 @@
       {% else %}
         <p>{{ item.value }}</p>
       {% endif %}
-      {% comment %}
-        {% if item != blank %}
-          {% if item != s_serie.label %}
-            <p>{{ item | metafield_tag }}</p>
-          {% elsif item == s_serie.extra_features %}
-            {{ item | metafield_tag }}
-          {% else %}
-            <p>{{ item.value }}</p>
-          {% endif %}
-        {% endif %}
-      {% endcomment %}
     {% endfor %}
   </div>
 {% endif %}
