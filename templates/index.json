@@ -328,10 +328,10 @@
           "type": "jumbo-text",
           "name": "t:names.jumbo_text",
           "settings": {
-            "text": "Be bold.",
+            "text": "Stay Bold,\nRock the Boat.",
             "font": "heading",
             "alignment": "center",
-            "line_height": "0.8",
+            "line_height": "1",
             "letter_spacing": "normal",
             "case": "none",
             "text_effect": "reveal",
