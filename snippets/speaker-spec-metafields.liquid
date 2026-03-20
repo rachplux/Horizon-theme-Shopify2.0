@@ -1,8 +1,9 @@
 {% liquid
   assign speaker = product.metafields.speaker
   assign shopify_ns = product.metafields.shopify
+  assign system_ns = product.metafields.system
   assign model = product.metafields.system.model_number.value
-  assign fields_list = 'Speaker Size,size|Speaker Type,type|Sold Unit,sold_unit|Speakers,soundbar_speakers|Tweeters,soundbar_tweeters|Speaker Features,speaker_features|Voice Coil Size,vc_size|Power Output,power_output|RMS Power,rms_power|Peak Power,peak_power|Tweeter Diaphragm,tweeter_diaphragm|Tweeter Design,tweeter_design|Show Midrange Design,show_series_midrange|Frequency Response,fs|Sensitivity @ 1M/1W,sn|Impedance,impedance|LED lighting,integrated-led-lighting|IP Rating,ingress-protection-ip-rating,text|Speaker Design,speaker-design|Speaker Features,speaker-features|Auxiliary_input,auxiliary_input|Device Interface,device-interface|Connectivity Tech,connectivity-technology|Wire Length,wire_length|Mounting Depth,mounting_depth|Mounting Type,mounting_type|With Grills,grills|Package Contains,contains|Magnet Weight (lb.),magnet_weight' | split: '|'
+  assign fields_list = 'Speaker Size,size|Speaker Type,type|Sold Unit,sold_unit|Speakers,soundbar_speakers|Tweeters,soundbar_tweeters|Speaker Features,speaker_features|Voice Coil Size,vc_size|Power Output,power_output|RMS Power,rms_power|Peak Power,peak_power|Tweeter Diaphragm,tweeter_diaphragm|Tweeter Design,tweeter_design|Midrange Design,midrange_design|Frequency Response,fs|Sensitivity @ 1M/1W,sn|Impedance,impedance|LED lighting,integrated-led-lighting|IP Rating,ingress-protection-ip-rating,text|Speaker Design,speaker-design|Speaker Features,speaker-features|Auxiliary_input,auxiliary_input|Device Interface,device-interface|Connectivity Tech,connectivity-technology|Wire Length,wire_length|Mounting Depth,mounting_depth|Mounting Type,mounting_type|With Grills,grills|Package Contains,contains|Magnet Weight (lb.),magnet_weight' | split: '|'
 %}
 
 <div class='grid-container'>
@@ -21,7 +22,7 @@
       assign key = parts[1] | strip
 
       # 尋找資料源
-      assign target = speaker[key] | default: shopify_ns[key]
+      assign target = speaker[key] | default: shopify_ns[key] | default: system_ns[key]
 
       if target.value == blank
         continue
