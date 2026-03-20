@@ -410,7 +410,7 @@
               "type": "button",
               "name": "t:names.button",
               "settings": {
-                "label": "Shop now",
+                "label": "Check Now",
                 "link": "shopify://collections/all",
                 "open_in_new_tab": false,
                 "style_class": "button",
@@ -420,26 +420,10 @@
                 "custom_width_mobile": 100
               },
               "blocks": {}
-            },
-            "button_gYnGnN": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Shop now",
-                "link": "shopify://collections/all",
-                "open_in_new_tab": false,
-                "style_class": "button-secondary",
-                "width": "fit-content",
-                "custom_width": 100,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "button_tf9bTP",
-            "button_gYnGnN"
+            "button_tf9bTP"
           ]
         }
       },
