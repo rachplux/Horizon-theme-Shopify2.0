@@ -360,8 +360,8 @@
             "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-start": 30,
+            "padding-inline-end": 30
           },
           "blocks": {
             "text_p4bqDe": {
@@ -395,7 +395,7 @@
               "type": "jumbo-text",
               "name": "t:names.jumbo_text",
               "settings": {
-                "text": "Bring the Concert to the Sea",
+                "text": "Bring the Concert \nto the Sea",
                 "font": "heading",
                 "alignment": "center",
                 "line_height": "1",
@@ -461,7 +461,7 @@
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "blurred_reflection": true,
-        "reflection_opacity": 20,
+        "reflection_opacity": 35,
         "padding-block-start": 50,
         "padding-block-end": 50
       }
