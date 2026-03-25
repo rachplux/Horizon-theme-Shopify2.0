@@ -328,18 +328,18 @@
           "type": "group",
           "name": "t:names.group",
           "settings": {
-            "content_direction": "row",
+            "content_direction": "column",
             "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-end",
+            "horizontal_alignment": "space-between",
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 12,
+            "gap": 0,
             "width": "fill",
-            "custom_width": 100,
+            "custom_width": 62,
             "width_mobile": "fill",
-            "custom_width_mobile": 100,
+            "custom_width_mobile": 60,
             "height": "fit",
             "custom_height": 100,
             "inherit_color_scheme": true,
@@ -360,10 +360,37 @@
             "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 50,
-            "padding-inline-end": 50
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {
+            "text_p4bqDe": {
+              "type": "text",
+              "name": "t:names.heading",
+              "disabled": true,
+              "settings": {
+                "text": "<h1>Bring the Concert to the Sea</h1>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h1",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground-heading)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "jumbo_text_A83xpe": {
               "type": "jumbo-text",
               "name": "t:names.jumbo_text",
@@ -372,65 +399,38 @@
                 "font": "heading",
                 "alignment": "center",
                 "line_height": "1",
-                "letter_spacing": "-0.03em",
+                "letter_spacing": "normal",
                 "case": "none",
-                "text_effect": "none",
+                "text_effect": "reveal",
                 "animation_repeat": false
+              },
+              "blocks": {}
+            },
+            "button_6cRYrf": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Check Now",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "button",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             }
           },
           "block_order": [
-            "jumbo_text_A83xpe"
+            "text_p4bqDe",
+            "jumbo_text_A83xpe",
+            "button_6cRYrf"
           ]
-        },
-        "text_3wX4hk": {
-          "type": "text",
-          "name": "t:names.heading",
-          "disabled": true,
-          "settings": {
-            "text": "<h2>New arrivals</h2>",
-            "width": "fit-content",
-            "max_width": "normal",
-            "alignment": "left",
-            "type_preset": "h1",
-            "font": "var(--font-body--family)",
-            "font_size": "1rem",
-            "line_height": "normal",
-            "letter_spacing": "normal",
-            "case": "none",
-            "wrap": "pretty",
-            "color": "var(--color-foreground)",
-            "background": false,
-            "background_color": "#00000026",
-            "corner_radius": 0,
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "button_w6kDmL": {
-          "type": "button",
-          "name": "t:names.button",
-          "settings": {
-            "label": "Check Now",
-            "link": "shopify://collections/all",
-            "open_in_new_tab": false,
-            "style_class": "button",
-            "width": "fit-content",
-            "custom_width": 100,
-            "width_mobile": "fit-content",
-            "custom_width_mobile": 100
-          },
-          "blocks": {}
         }
       },
       "block_order": [
-        "group_pXgzg7",
-        "text_3wX4hk",
-        "button_w6kDmL"
+        "group_pXgzg7"
       ],
       "name": "t:names.hero",
       "settings": {
