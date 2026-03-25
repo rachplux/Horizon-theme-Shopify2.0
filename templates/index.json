@@ -355,7 +355,7 @@
           "type": "jumbo-text",
           "name": "t:names.jumbo_text",
           "settings": {
-            "text": "Rock the boat",
+            "text": "Bring the Concert to the Sea",
             "font": "heading",
             "alignment": "center",
             "line_height": "1",
@@ -454,7 +454,7 @@
         "section_width": "page-width",
         "section_height": "large",
         "section_height_custom": 50,
-        "color_scheme": "scheme-7",
+        "color_scheme": "scheme-8",
         "toggle_overlay": false,
         "overlay_color": "#12121266",
         "overlay_style": "solid",
