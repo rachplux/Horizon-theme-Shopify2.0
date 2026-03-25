@@ -324,22 +324,6 @@
     "hero_jVaWmY": {
       "type": "hero",
       "blocks": {
-        "jumbo_text_LPjECe": {
-          "type": "jumbo-text",
-          "name": "t:names.jumbo_text",
-          "disabled": true,
-          "settings": {
-            "text": "Rock the boat",
-            "font": "heading",
-            "alignment": "center",
-            "line_height": "1",
-            "letter_spacing": "normal",
-            "case": "none",
-            "text_effect": "reveal",
-            "animation_repeat": false
-          },
-          "blocks": {}
-        },
         "text_3wX4hk": {
           "type": "text",
           "name": "t:names.heading",
@@ -364,6 +348,21 @@
             "padding-block-end": 0,
             "padding-inline-start": 0,
             "padding-inline-end": 0
+          },
+          "blocks": {}
+        },
+        "jumbo_text_TenQcM": {
+          "type": "jumbo-text",
+          "name": "t:names.jumbo_text",
+          "settings": {
+            "text": "Rock the boat",
+            "font": "heading",
+            "alignment": "center",
+            "line_height": "1",
+            "letter_spacing": "normal",
+            "case": "none",
+            "text_effect": "reveal",
+            "animation_repeat": false
           },
           "blocks": {}
         },
@@ -429,14 +428,14 @@
         }
       },
       "block_order": [
-        "jumbo_text_LPjECe",
         "text_3wX4hk",
+        "jumbo_text_TenQcM",
         "group_pXgzg7"
       ],
       "name": "t:names.hero",
       "settings": {
         "media_type_1": "image",
-        "image_1": "shopify://shop_images/stock-photo-yacht-view-on-board-on-the-sea-2305666419.jpg",
+        "image_1": "shopify://shop_images/stock-photo-that-s-a-luxurious-yacht-bow-deck-with-white-sunpads-and-u-shaped-seating-on-teak-flooring-all-2700599067.jpg",
         "media_type_2": "image",
         "stack_media_on_mobile": false,
         "custom_mobile_media": false,
