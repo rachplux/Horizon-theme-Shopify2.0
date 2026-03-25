@@ -462,8 +462,8 @@
         "gradient_direction": "to top",
         "blurred_reflection": true,
         "reflection_opacity": 20,
-        "padding-block-start": 70,
-        "padding-block-end": 70
+        "padding-block-start": 50,
+        "padding-block-end": 50
       }
     },
     "marquee_PUGmmk": {
