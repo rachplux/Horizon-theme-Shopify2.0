@@ -2,8 +2,9 @@
   assign speaker = product.metafields.speaker
   assign shopify_ns = product.metafields.shopify
   assign system_ns = product.metafields.system
+  assign serie_ns = product.metafields.speaker.serie.value
   assign model = product.metafields.system.model_number.value
-  assign fields_list = 'Speaker Size,size|Speaker Type,type|Sold Unit,sold_unit|Speakers,soundbar_speakers|Tweeters,soundbar_tweeters|Speaker Features,speaker_features|Voice Coil Size,vc_size|Power Output,power_output|RMS Power,rms_power|Peak Power,peak_power|Tweeter Diaphragm,tweeter_diaphragm|Tweeter Design,tweeter_design|Midrange Design,midrange_design|Frequency Response,fs|Sensitivity @ 1M/1W,sn|Impedance,impedance|LED lighting,integrated-led-lighting|IP Rating,ingress-protection-ip-rating,text|Speaker Design,speaker-design|Speaker Features,speaker-features|Auxiliary_input,auxiliary_input|Device Interface,device-interface|Connectivity Tech,connectivity-technology|Wire Length,wire_length|Mounting Depth,mounting_depth|Mounting Type,mounting_type|With Grills,grills|Package Contains,contains|Magnet Weight (lb.),magnet_weight' | split: '|'
+  assign fields_list = 'Speaker Size,size,text|Speaker Type,type,text|Sold Unit,sold_unit,text|Speakers,soundbar_speakers,text|Tweeters,soundbar_tweeters,text|Speaker Features,speaker_features,text|Voice Coil,vc_size,text||Power Output,power_output,text|RMS Power,rms_power,integer|Peak Power,peak_power,integer|Tweeter Diaphragm,tweeter_diaphragm,text|Tweeter Design,tweeter_design,text|Midrange Design,midrange_design,text|Frequency Response,fs,text|Sensitivity @ 1M/1W,sn,integer|Impedance,impedance,text|LED lighting,integrated-led-lighting,text|IP Rating,ingress-protection-ip-rating,text|Speaker Design,speaker-design,text|Speaker Features,speaker-features,text|Auxiliary_input,auxiliary_input,text|Device Interface,device-interface,text|Connectivity Tech,connectivity-technology,text|Wire Length,wire_length,text|Mounting Depth,mounting_depth,text|Mounting Type,mounting_type,text|With Grills,grills,boolean|Package Contains,contains,text|Magnet Weight (oz.),magnet_weight,text' | split: '|'
 %}
 
 <div class='grid-container'>
@@ -20,9 +21,10 @@
       assign parts = field_item | split: ','
       assign label = parts[0] | strip
       assign key = parts[1] | strip
+	  assign type = parts[2] | strip
 
       # 尋找資料源
-      assign target = speaker[key] | default: shopify_ns[key] | default: system_ns[key]
+      assign target = speaker[key] | default: shopify_ns[key] | default: system_ns[key] | default: serie_ns[key]
 
       if target.value == blank
         continue
@@ -40,6 +42,15 @@
       elsif key contains 'sn'
         assign unit = ' dB'
       endif
+	  
+	  	if type contains 'boolean'
+			if active_value == true
+			assign active_value = 'Yes'
+			elsif active_value == false
+			assign active_value = 'N/A'
+			endif
+	    endif 
+
 
       # 4. 核心渲染邏輯
       if meta_type contains 'list.metaobject'
@@ -50,7 +61,7 @@
           assign val_as_arr = val | split: '||'
           assign items_array = items_array | concat: val_as_arr
         endfor
-        assign rendered_value = items_array | join: ', '
+          assign rendered_value = items_array | join: ', '
 
       elsif meta_type == 'metaobject_reference'
         # 處理單一 Metaobject
@@ -63,6 +74,16 @@
         # 處理單一數值或字串
         assign rendered_value = active_value
       endif
+
+
+	    if key contains 'vc_size'
+	    	assign mat = serie_ns['voice_coil_material'].value 
+			if mat != blank
+			assign rendered_value = rendered_value | append: ' ' | append: mat
+			endif
+		endif
+
+
 
       # 5. 封裝輸出
       capture rendered_output
