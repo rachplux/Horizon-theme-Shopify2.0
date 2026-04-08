@@ -1831,7 +1831,7 @@
                     "letter_spacing": "normal",
                     "case": "none",
                     "wrap": "pretty",
-                    "color": "var(--color-foreground)",
+                    "color": "var(--color-foreground-heading)",
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
@@ -1852,7 +1852,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>We make things that work better and last longer. Our products solve real problems with clean design and honest materials.</p>",
+                "text": "<p>Engineered for the elements, refined for the ear. Our waterproof, rustproof audio systems deliver professional-grade acoustics that thrive in environments where others fail.  <br/>See Marine & Powersports Now</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
