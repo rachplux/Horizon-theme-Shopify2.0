@@ -1852,7 +1852,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Engineered for the elements, refined for the ear. Our waterproof, rustproof audio systems deliver professional-grade acoustics that thrive in environments where others fail.  <br/>See Marine & Powersports Now</p>",
+                "text": "<p>Engineered for the elements, refined for the ear. Our waterproof, rustproof audio systems deliver professional-grade acoustics that thrive in environments where others fail.  <br/><strong>Go to  Marine & Powersports Now  →</strong></p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
