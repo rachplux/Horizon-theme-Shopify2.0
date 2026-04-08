@@ -411,7 +411,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "Check Now",
-                "link": "shopify://collections/all",
+                "link": "shopify://collections/marine-audio",
                 "open_in_new_tab": false,
                 "style_class": "button",
                 "width": "fit-content",
@@ -1908,7 +1908,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#aac5cd3c",
+        "overlay_color": "#aac5cd3d",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
