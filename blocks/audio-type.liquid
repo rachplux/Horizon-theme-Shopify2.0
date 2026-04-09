@@ -31,19 +31,19 @@
 {% if audio_type != blank %}
   {% for item in audio_type %}
     {% if item contains 'Car' %}
-      <span class='tag car-audio'>{{ item }}</span>
+      <div class='tag car-audio'>{{ item }}</div>
       {%- unless forloop.last %}, {% endunless %}
     {% elsif item contains 'Pro' %}
-      <span class='tag pro-audio'>{{ item }}</span>
+      <div class='tag pro-audio'>{{ item }}</div>
       {%- unless forloop.last %}, {% endunless %}
     {% elsif item contains 'Marine' %}
-      <span class='tag marine-audio'>{{ item }}</span>
+      <div class='tag marine-audio'>{{ item }}</div>
       {%- unless forloop.last %}, {% endunless %}
     {% elsif item contains 'Powersports' %}
-      <span class='tag powersports'>{{ item }}</span>
+      <div class='tag powersports'>{{ item }}</div>
       {%- unless forloop.last %}, {% endunless %}
     {% else %}
-      <span class='tag default'>{{ item }}</span>
+      <div class='tag default'>{{ item }}</div>
       {%- unless forloop.last %}, {% endunless %}
     {% endif %}
   {% endfor %}
