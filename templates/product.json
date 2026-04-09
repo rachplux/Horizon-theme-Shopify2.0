@@ -251,9 +251,35 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "accordion_row_8hKerp": {
+                  "type": "_accordion-row",
+                  "name": "Product Spec",
+                  "settings": {
+                    "heading": "Product Spec",
+                    "open_by_default": false,
+                    "icon": "box",
+                    "width": 20
+                  },
+                  "blocks": {
+                    "specification_wmBbQG": {
+                      "type": "specification",
+                      "name": "Specification",
+                      "settings": {
+                        "caption": "",
+                        "select_table": "amplifier_spec_metafields",
+                        "add_richtext": ""
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "specification_wmBbQG"
+                  ]
+                },
                 "accordion_row_xDEgrC": {
                   "type": "_accordion-row",
                   "name": "Speaker Spec",
+                  "disabled": true,
                   "settings": {
                     "heading": "Speaker Sepcification",
                     "open_by_default": true,
@@ -279,6 +305,7 @@
                 "accordion_row_dMc8bc": {
                   "type": "_accordion-row",
                   "name": "Subwoofer Spec",
+                  "disabled": true,
                   "settings": {
                     "heading": "Subwoofer Tech Data",
                     "open_by_default": false,
@@ -304,6 +331,7 @@
                 "accordion_row_7mPwDY": {
                   "type": "_accordion-row",
                   "name": "Amp Spec",
+                  "disabled": true,
                   "settings": {
                     "heading": "Amplifier Specs",
                     "open_by_default": false,
@@ -328,6 +356,7 @@
                 }
               },
               "block_order": [
+                "accordion_row_8hKerp",
                 "accordion_row_xDEgrC",
                 "accordion_row_dMc8bc",
                 "accordion_row_7mPwDY"
