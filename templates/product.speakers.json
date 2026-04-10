@@ -163,6 +163,26 @@
                 "price_tVjtKg"
               ]
             },
+            "sku_4NAPFr": {
+              "type": "sku",
+              "name": "t:names.product_sku",
+              "settings": {
+                "type_preset": "custom",
+                "width": "fit-content",
+                "alignment": "left",
+                "font": "var(--font-body--family)",
+                "font_size": "0.75rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "color": "var(--color-foreground)",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "divider_VJhene": {
               "type": "_divider",
               "name": "t:names.divider",
@@ -181,26 +201,6 @@
                 "variant_style": "buttons",
                 "show_swatches": false,
                 "alignment": "left",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "sku_QJtWKE": {
-              "type": "sku",
-              "name": "t:names.product_sku",
-              "settings": {
-                "type_preset": "custom",
-                "width": "fit-content",
-                "alignment": "left",
-                "font": "var(--font-body--family)",
-                "font_size": "0.75rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "color": "var(--color-foreground)",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -345,9 +345,9 @@
           },
           "block_order": [
             "group_icgrde",
+            "sku_4NAPFr",
             "divider_VJhene",
             "variant_picker_R3rGDr",
-            "sku_QJtWKE",
             "buy_buttons_eYQEYi",
             "serie_list_VFQYbR",
             "divider_9V848L",
