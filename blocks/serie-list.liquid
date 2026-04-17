@@ -26,61 +26,55 @@
     margin: 2px;
   }
 {% endstylesheet %}
-
 {% liquid
-  assign s_serie = closest.product.metafields.speaker.serie.value
-  assign a_serie = closest.product.metafields.amplifier.serie.value
-  assign fields = block.settings.serie_fields | strip_newlines | split: ','
+  assign s_serie = product.metafields.speaker.serie.value
+  assign a_serie = product.metafields.amplifier.serie.value
+  assign field_list = 'audio_type,array|tweeter_design,text|midrange_design,text|basket,text|surround,text|cone,text|spider,text|voice_coil_material,text|enclosure,text|bridge,text|terminal,text|vent,text|magnet,text|motor,text|slim_compact_design,text|connection,text|lighting,array|mounting_clamps,text|waterproof,text|extra_features,text' | split: '|'
+  assign serie_label = s_serie.label.value | default: a_serie.label.value
 %}
-{% if s_serie != blank %}
-  <p
-    class='
-      label
-        {% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}
-      {% endif %}
-    '
-  >
-    {{ s_serie.label.value | metafield_tag }}
-  </p>
-  <div class='serie-block'>
-    {% for field in fields %}
-      {% assign item = s_serie[field] %}
-      {% if item == s_serie.label %}
-      {% elsif item == s_serie.audio_type %}
-        <p>{{ item.value }}</p>
-      {% elsif item == s_serie.extra_features %}
-        <p>{{ item | metafield_tag }}</p>
-      {% else %}
-        <p>{{ item.value }}</p>
-      {% endif %}
-    {% endfor %}
-  </div>
-{% endif %}
 
-{% if a_serie != blank %}
-  <div
-    class='
-      label
-        {% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}
-      {% endif %}
-    '
-  >
-    {{ a_serie.label.value | metafield_tag }}
-  </div>
-  <div class='serie-block'>
-    {% for field in fields %}
-      {% assign item = a_serie[field] %}
-      {% if item == a_serie.label %}
-      {% elsif item == a_serie.audio_type %}
-        <p>{{ item.value }} Audio</p>
-      {% elsif item == a_serie.extra_features %}
-        {{ item | metafield_tag }}
+<div
+  class='
+    label
+    {% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}
+     {% endif %}
+  '
+>
+  {{ serie_label | metafield_tag }}
+</div>
+<div class='serie-block'>
+  {% for fields in field_list %}
+    {% liquid
+      assign field = fields | split: ','
+      assign key = field[0] | strip
+      assign type = field[1] | strip
+
+      assign divider = ', '
+
+      assign meta = s_serie[key]
+      if meta == null
+        assign meta = a_serie[key]
+      endif
+
+      if meta == blank
+        continue
+      endif
+
+      assign val = meta.value
+      assign out = ''
+    %}
+
+    {% if val != blank %}
+      {% if meta.type contains 'list' %}
+        <p>{{ val | join: divider }}</p>
+      {% elsif meta.type contains 'rich_text' %}
+        {{ meta | metafield_tag }}
       {% else %}
-        <p>{{ item.value | split: ' ' }}</p>
+        <p>{{ val }}</p>
       {% endif %}
-    {% endfor %}
-  </div>
-{% endif %}
+    {% endif %}
+  {% endfor %}
+</div>
 
 {% schema %}
 {
@@ -90,7 +84,7 @@
     {
       "type": "checkbox",
       "id": "inherit_color_scheme",
-      "label": "Inherit color scheme",
+      "label": "Inherit Color scheme",
       "default": true
     },
     {
@@ -99,12 +93,6 @@
       "label": "Color Scheme",
       "default": "scheme-1",
       "visible_if": "{{ block.settings.inherit_color_scheme == false }}"
-    },
-    {
-      "type": "textarea",
-      "id": "serie_fields",
-      "label": "Serie fields (comma separated)",
-      "default": "audio_type,voice_coil_material"
     }
   ],
   "presets": [
@@ -115,3 +103,123 @@
   ]
 }
 {% endschema %}
+{% comment %}
+  {% stylesheet %}
+  .label {
+  	font-weight: 700;
+  	padding: 10px 30px;
+
+  	/* main color = primary（依 Horizon settings_schema.json） */
+  	--label-main: var(--color-primary, var(--color-foreground));
+
+  	border-left: 5px solid var(--label-main) !important;
+
+  	/* 背景 = primary 30% + background 70%（更像你原本 #ffefe8 那種淡底） */
+  	background-color: color-mix(in srgb, var(--label-main) 10%, var(--color-background));
+  }
+
+  @supports not (background-color: color-mix(in srgb, black 10%, white)) {
+  	.label {
+  	background-color: var(--color-background);
+  	}
+  }
+
+  .serie-block {
+  	padding-left: 30px;
+  }
+
+  .serie-block p {
+  	margin: 2px;
+  }
+  {% endstylesheet %}
+
+  {% liquid
+  assign s_serie = closest.product.metafields.speaker.serie.value
+  assign a_serie = closest.product.metafields.amplifier.serie.value
+  assign fields = block.settings.serie_fields | strip_newlines | split: ','
+  %}
+  {% if s_serie != blank %}
+
+  <p
+  	class='
+  	label
+  		{% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}
+  	{% endif %}
+  	'
+  >
+  	{{ s_serie.label.value | metafield_tag }}
+  </p>
+  <div class='serie-block'>
+  	{% for field in fields %}
+  	{% assign item = s_serie[field] %}
+  	{% if item == s_serie.label %}
+  	{% elsif item == s_serie.audio_type %}
+  		<p>{{ item.value }}</p>
+  	{% elsif item == s_serie.extra_features %}
+  		<p>{{ item | metafield_tag }}</p>
+  	{% else %}
+  		<p>{{ item.value }}</p>
+  	{% endif %}
+  	{% endfor %}
+  </div>
+  {% endif %}
+
+  {% if a_serie != blank %}
+  <div
+  	class='
+  	label
+  		{% if block.settings.inherit_color_scheme == false %} color-{{ block.settings.color_scheme }}
+  	{% endif %}
+  	'
+  >
+  	{{ a_serie.label.value | metafield_tag }}
+  </div>
+  <div class='serie-block'>
+  	{% for field in fields %}
+  	{% assign item = a_serie[field] %}
+  	{% if item == a_serie.label %}
+  	{% elsif item == a_serie.audio_type %}
+  		<p>{{ item.value }} Audio</p>
+  	{% elsif item == a_serie.extra_features %}
+  		{{ item | metafield_tag }}
+  	{% else %}
+  		<p>{{ item.value | split: ' ' }}</p>
+  	{% endif %}
+  	{% endfor %}
+  </div>
+  {% endif %}
+
+  {% schema %}
+  {
+  "name": "Serie List",
+  "tag": null,
+  "settings": [
+  	{
+  	"type": "checkbox",
+  	"id": "inherit_color_scheme",
+  	"label": "Inherit color scheme",
+  	"default": true
+  	},
+  	{
+  	"type": "color_scheme",
+  	"id": "color_scheme",
+  	"label": "Color Scheme",
+  	"default": "scheme-1",
+  	"visible_if": "{{ block.settings.inherit_color_scheme == false }}"
+  	},
+  	{
+  	"type": "textarea",
+  	"id": "serie_fields",
+  	"label": "Serie fields (comma separated)",
+  	"default": "audio_type,voice_coil_material"
+  	}
+  ],
+  "presets": [
+  	{
+  	"name": "Serie List",
+  	"category": "t:categories.product"
+  	}
+  ]
+  }
+  {% endschema %}
+{% endcomment %}

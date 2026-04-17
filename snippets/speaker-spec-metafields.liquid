@@ -5,152 +5,57 @@
   assign serie_ns = product.metafields.speaker.serie.value
   assign amp_ns = product.metafields.amplifier
   assign model = product.metafields.system.model_number.value
-  
+
   assign fields_raw = 'Best Uses,best-uses,array|Speaker Type,type,text|Speaker Design,speaker-design,text|Speaker Features,speaker-features,text|Channels,amplifier-configuration,array|Speaker Size,size,text|Speaker Design,speaker-design,text|Sold Unit,sold_unit,text|Speakers,soundbar_speakers,text|Tweeters,soundbar_tweeters,text|Voice Coil,vc_size,text|Power Output,power_output,text|RMS Power,rms_power,integer|Peak Power,peak_power,integer|Tweeter Diaphragm,tweeter_diaphragm,text|Tweeter Design,tweeter_design,text|Midrange Design,midrange_design,text|Frequency Response,fs,text|Sensitivity @ 1M/1W,sn,integer|Impedance,impedance,text|LED lighting,integrated-led-lighting,text|IP Rating,ingress-protection-ip-rating,text|Auxiliary_input,auxiliary_input,text|Device Interface,device-interface,text|Connectivity Tech,connectivity-technology,text|Wire Length,wire_length,text|Mounting Depth,mounting_depth,text|Mounting Type,mounting_type,text|With Grills,grills,boolean|Package Contains,contains,text|Magnet Weight (oz.),magnet_weight,text|Dimension,dimension,text'
   assign fields_list = fields_raw | split: '|'
 %}
 
-<div class="grid-container">
-	{%- if model != blank -%}
-		<div class="spec-row">
-			<div class="spec-label">Model</div>
-			<div class="spec-value">{{ model }}</div>
-		</div>
-	{%- endif -%}
-	{%- for field_item in fields_list -%}
-	  {%- liquid
-		#1. 解析欄位與變數初始化
-		assign parts = field_item | split: ','
-		assign label = parts[0] | strip
-		assign key   = parts[1] | strip
-		assign type  = parts[2] | strip
-
-		assign divider = ', '
-		if key == 'type'
-		  assign divider = ' '
-		endif
-
-		#建立輸出變數
-		assign meta = nil 
-		assign val = nil
-		assign out = ''
-
-
-		if key == blank
-		  continue
-		endif
-
-		# 2. 依序找資料 (手動判斷以避免 default 漏掉 false)
-		assign meta = speaker[key]
-		if meta == nil 
-			assign meta = shopify_ns[key]
-		endif
-		if meta == nil
-		  assign meta = amp_ns[key]
-		endif
-		if meta == nil 
-		  assign meta = system_ns[key]
-		endif
-		if meta == nil 
-		  assign meta = serie_ns[key]
-		endif
-
-		# 3. 如果沒填(或 blank) 直接跳過這一行
-		if meta == nil
-			continue
-		endif
-
-		assign val = meta.value 
-
-		 # 4. 根據型態決定輸出內容
-		if type == 'boolean'
-			if val == true 
-				assign out = 'Yes'
-				elsif val == false
-				assign out = 'N/A'
-			endif
-		 elsif meta.type contains 'metaobject'
-		 	# 處理 metaobjects (單個或列表)
-			if meta.type contains 'list'
-				assign labels = val | map:'label'  | map: 'value'
-				assign out = labels | join: divider
-			else
-				assign out = val.label.value | default: val.name.value
-			endif 
-		 elsif val.first != blank
-			assign out = val | join: divider
-		 else
-		    assign out = val
-		endif
-
-
-		# 5. 處理單位與特殊後綴 (只有在 out有值時才跑 case)
-		if out != nil
-		  case key
-			when 'rms_power' or 'peak_power'
-			  assign out = out | append:' Watts'
-			when 'sn'
-			  assign out = out | append: ' dB'
-			when 'vc_size'
-			  assign mat = serie_ns['voice_coil_material'].value
-			  if mat != blank
-				assign out = out | append: ' ' |append: mat
-			  endif		  
-		  endcase
-		endif
-
-	  -%}
-	  {% if out != nil %}
-	  <div class="spec-row">
-		<div class="spec-label">{{ label }}</div>
-		<div class='spec-value'>{{ out }}</div>
-	  </div>
-	  {% endif %}
-
-	  
-	{%- endfor -%}
-
-</div>
-
-{% comment %} <div class='grid-container'>
+<div class='grid-container'>
   {%- if model != blank -%}
     <div class='spec-row'>
       <div class='spec-label'>Model</div>
       <div class='spec-value'>{{ model }}</div>
     </div>
   {%- endif -%}
-
   {%- for field_item in fields_list -%}
     {%- liquid
-      # 1. 解析與變數初始化
+      # 1. 解析欄位與變數初始化
       assign parts = field_item | split: ','
       assign label = parts[0] | strip
-      assign key   = parts[1] | strip
-      assign type  = parts[2] | strip
-      
-      # 重置輸出變數
-      assign meta = nil
-      assign val = nil
+      assign key = parts[1] | strip
+      assign type = parts[2] | strip
+
+      assign divider = ', '
+      if key == 'type'
+        assign divider = ' '
+      endif
+
+      # 建立輸出變數
+      assign meta = null
+      assign val = null
       assign out = ''
 
       if key == blank
         continue
       endif
 
-      # 2. 依序找資料 (手動判斷避免 default 漏掉 false)
+      # 2. 依序找資料 (手動判斷以避免 default 漏掉 false)
       assign meta = speaker[key]
-      if meta == nil
+      if meta == null
         assign meta = shopify_ns[key]
       endif
-      if meta == nil
+      if meta == null
+        assign meta = amp_ns[key]
+      endif
+      if meta == null
         assign meta = system_ns[key]
       endif
-      if meta == nil
+      if meta == null
         assign meta = serie_ns[key]
       endif
 
-      # 3. 如果沒填（或是 blank），直接跳過這一行
-      if meta == nil
+      # 3. 如果沒填(或 blank) 直接跳過這一行
+      if meta == null
         continue
       endif
 
@@ -164,42 +69,39 @@
           assign out = 'N/A'
         endif
       elsif meta.type contains 'metaobject'
-        # 處理 Metaobject (單個或列表)
+        # 處理 metaobjects (單個或列表)
         if meta.type contains 'list'
           assign labels = val | map: 'label' | map: 'value'
-          assign out = labels | join: ', '
+          assign out = labels | join: divider
         else
           assign out = val.label.value | default: val.name.value
         endif
       elsif val.first != blank
-        assign out = val | join: ', '
+        assign out = val | join: divider
       else
         assign out = val
       endif
 
-      # 5. 處理單位與特殊後綴 (只有在 out 有值時才跑 case)
-      if out != blank
+      # 5. 處理單位與特殊後綴 (只有在 out有值時才跑 case)
+      if out != null
         case key
-          when 'rms_power' or 'peak_power' or 'power_output'
+          when 'rms_power', 'peak_power'
             assign out = out | append: ' Watts'
           when 'sn'
             assign out = out | append: ' dB'
-          when 'impedance'
-            assign out = out | append: ' Ohm'
           when 'vc_size'
-            assign mat = serie_ns['voice_coil_material'].value
+            assign mat = serie_ns.voice_coil_material.value
             if mat != blank
               assign out = out | append: ' ' | append: mat
             endif
         endcase
       endif
     -%}
-
-    {%- if out != blank -%}
+    {% if out != null %}
       <div class='spec-row'>
         <div class='spec-label'>{{ label }}</div>
         <div class='spec-value'>{{ out }}</div>
       </div>
-    {%- endif -%}
+    {% endif %}
   {%- endfor -%}
-</div> {% endcomment %}
+</div>
