@@ -248,6 +248,7 @@
             "serie_list_VFQYbR": {
               "type": "serie-list",
               "name": "Serie List",
+              "disabled": true,
               "settings": {
                 "inherit_color_scheme": false,
                 "color_scheme": "scheme-7"
