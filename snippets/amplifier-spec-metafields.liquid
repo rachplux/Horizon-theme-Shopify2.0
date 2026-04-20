@@ -1,32 +1,31 @@
 {% liquid
-  assign amp = product.metafields.amplifier 
-  assign shopify_ns = product.metafields.shopify 
-  assign system_ns = product.metafields.system 
+  assign amp = product.metafields.amplifier
+  assign shopify_ns = product.metafields.shopify
+  assign system_ns = product.metafields.system
   assign power_ns = amp.power.value
-  assign fields_list = 'Model,model_number,text|Best Uses,best-uses,array|Amplifier Class,amplifier-class,array|Channels,amplifier-configuration,array|RMS 1 Ohm,rms_1_ohm,text|RMS 2 Ohm,rms_2_ohm,text|RMS 4 Ohm,rms_4_ohm,text|RMS Bridge 4 Ohm,rms_bridge_4_ohm,text|Max Power,max_power,text|Frequency Response,fs,text|T.H.D,t_h_d,text|S/N Ratio,s_n,text|Channel Seperation,channel_seperation,text|All Pass Filter,all_pass_range,text|High Power Filter,high_pass_filter,text|Low Pass Filter,low_pass_filter,text|Subsonic Filter,subsonic_filter,text|Bass Boost,bass_boost,text|Input,input,text|Input Sensitivity,input_sensitivity,text|Output,output,text|High Level Input,high_level_input,boolean|Phase,phase,text|Remote Control,remote_control,boolean|Connectivity technology,connectivity-technology,text|Device Interface,device-interface,text|IP Rating,ingress-protection-ip-rating,text|Dimension,dimension,text' | split: '|'
-
+  assign fields_list = 'Model,model_number,text|Best Uses,best-uses,array|Amplifier Class,amplifier-class,array|Channels,amplifier-configuration,array|RMS 1 Ohm,rms_1_ohm,text|RMS 2 Ohm,rms_2_ohm,text|RMS 4 Ohm,rms_4_ohm,text|RMS Bridge 4 Ohm,rms_bridge_4_ohm,text|Max Power,max_power,text|Frequency Response,fs,text|T.H.D,t_h_d,text|S/N Ratio,s_n,text|Channel Seperation,channel_seperation,text|All Pass Filter,all_pass_range,text|High Power Filter,high_pass_filter,text|Low Pass Filter,low_pass_filter,text|Subsonic Filter,subsonic_filter,text|Bass Boost,bass_boost,text|Input,input,text|Input Sensitivity,input_sensitivity,text|Device Output,output,text|High Level Input,high_level_input,boolean|Phase,phase,text|Remote Control,remote_control,boolean|Connectivity technology,connectivity-technology,text|Device Interface,device-interface,text|IP Rating,ingress-protection-ip-rating,text|Dimension,dimension,text' | split: '|'
 %}
 
 <div class="grid-container">
 
-	{% for field_item in fields_list %}
-		{% liquid
-			assign parts = field_item | split: ','
-			assign label = parts[0] | strip
-			assign key = parts[1] | strip
+  {% for field_item in fields_list %}
+    {% liquid
+      assign parts = field_item | split: ','
+      assign label = parts[0] | strip
+      assign key = parts[1] | strip
 
-			assign target = amp[key] | default:power_ns[key] | default:shopify_ns[key] | default: system_ns[key]
+      assign target = amp[key] | default: power_ns[key] | default: shopify_ns[key] | default: system_ns[key]
 
-			if target.value == blank
-			continue
-			endif
+      if target.value == blank
+        continue
+      endif
 
-			assign active_value = target.value
-			assign meta_type = target.type
-			assign rendered_value = ''
+      assign active_value = target.value
+      assign meta_type = target.type
+      assign rendered_value = ''
 
-			# 處理 MetaobjectListDrop conflict
-			      if meta_type contains 'list.metaobject'
+      # 處理 MetaobjectListDrop conflict
+      if meta_type contains 'list.metaobject'
         # 處理 Metaobject 列表
         assign items_array = '' | split: ''
         for obj in active_value
@@ -35,7 +34,6 @@
           assign items_array = items_array | concat: val_as_arr
         endfor
         assign rendered_value = items_array | join: ', '
-
       elsif meta_type == 'metaobject_reference'
         # 處理單一 Metaobject
         assign rendered_value = active_value.label.value | default: active_value.name.value | default: active_value.display_name
@@ -47,23 +45,21 @@
         # 處理單一數值或字串
         assign rendered_value = active_value
       endif
-		capture rendered_output
+      capture rendered_output
         echo rendered_value | append: unit
-      endcapture	
+      endcapture
+    %}
 
-		%}
+    <div class='spec-row'>
+      <div class='spec-label'>{{ label }}</div>
+      <div class='spec-value'>
+        {% if meta_type == 'boolean' and rendered_output == 'true' %}
+          Yes
+        {% else %}
+          {{ rendered_output }}
+        {% endif %}
+      </div>
+    </div>
+  {% endfor %}
 
-	<div class='spec-row'>
-			<div class='spec-label'>{{ label }}</div>
-			<div class='spec-value'>
-				{% if meta_type == 'boolean' and rendered_output == 'true' %}
-					Yes
-					{% else %}
-					{{ rendered_output }}	
-				{% endif %}
-				</div>
-		</div> 
-	{% endfor %}
-	
 </div>
-
