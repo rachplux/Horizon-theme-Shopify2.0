@@ -304,9 +304,9 @@
                   "type": "_accordion-row",
                   "name": "Amp Spec",
                   "settings": {
-                    "heading": "Amplifier Specs",
+                    "heading": "Product Specification",
                     "open_by_default": true,
-                    "icon": "none",
+                    "icon": "box",
                     "width": 20
                   },
                   "blocks": {
