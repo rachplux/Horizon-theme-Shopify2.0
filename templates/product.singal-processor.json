@@ -306,7 +306,7 @@
                   "settings": {
                     "heading": "Product Specification",
                     "open_by_default": true,
-                    "icon": "box",
+                    "icon": "star",
                     "width": 20
                   },
                   "blocks": {
