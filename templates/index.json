@@ -395,13 +395,13 @@
               "type": "jumbo-text",
               "name": "t:names.jumbo_text",
               "settings": {
-                "text": "Bring the Concert \nto the Sea",
+                "text": "Bring the Concert to the Sea",
                 "font": "heading",
                 "alignment": "center",
                 "line_height": "1",
                 "letter_spacing": "normal",
                 "case": "none",
-                "text_effect": "reveal",
+                "text_effect": "blur",
                 "animation_repeat": false
               },
               "blocks": {}
