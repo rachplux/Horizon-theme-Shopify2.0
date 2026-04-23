@@ -639,7 +639,7 @@
               "name": "t:names.collection_card_image",
               "static": true,
               "settings": {
-                "image_ratio": "portrait",
+                "image_ratio": "square",
                 "toggle_overlay": true,
                 "overlay_color": "#ff78201c",
                 "overlay_style": "solid",
