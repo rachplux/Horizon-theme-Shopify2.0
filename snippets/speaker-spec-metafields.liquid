@@ -6,7 +6,7 @@
   assign amp_ns = product.metafields.amplifier
   assign model = product.metafields.system.model_number.value
 
-  assign fields_raw = 'Best Uses,best-uses,array|Speaker Type,type,text|Speaker Design,speaker-design,text|Speaker Features,speaker-features,text|Channels,amplifier-configuration,array|Speaker Size,size,text|Speaker Design,speaker-design,text|Sold Unit,sold_unit,text|Speakers,soundbar_speakers,text|Tweeters,soundbar_tweeters,text|Voice Coil,vc_size,text|Power Output,power_output,text|RMS Power,rms_power,integer|Peak Power,peak_power,integer|Tweeter Diaphragm,tweeter_diaphragm,text|Tweeter Design,tweeter_design,text|Midrange Design,midrange_design,text|Frequency Response,fs,text|Sensitivity @ 1M/1W,sn,integer|Impedance,impedance,text|LED lighting,integrated-led-lighting,text|IP Rating,ingress-protection-ip-rating,text|Auxiliary_input,auxiliary_input,text|Device Interface,device-interface,text|Connectivity Tech,connectivity-technology,text|Wire Length,wire_length,text|Mounting Depth,mounting_depth,text|Mounting Type,mounting_type,text|With Grills,grills,boolean|Package Contains,contains,text|Magnet Weight (oz.),magnet_weight,text|Dimension,dimension,text'
+  assign fields_raw = 'Best Uses,best-uses,array|Speaker Type,type,text|Speaker Design,speaker-design,text|Speaker Features,speaker-features,text|Channels,amplifier-configuration,array|Speaker Size,size,text|Sold Unit,sold_unit,text|Speakers,soundbar_speakers,text|Tweeters,soundbar_tweeters,text|Voice Coil,vc_size,text|Power Output,power_output,text|RMS Power,rms_power,integer|Peak Power,peak_power,integer|Tweeter Diaphragm,tweeter_diaphragm,text|Tweeter Design,tweeter_design,text|Midrange Design,midrange_design,text|Frequency Response,fs,text|Sensitivity @ 1M/1W,sn,integer|Impedance,impedance,text|LED lighting,integrated-led-lighting,text|IP Rating,ingress-protection-ip-rating,text|Auxiliary_input,auxiliary_input,text|Device Interface,device-interface,text|Connectivity Tech,connectivity-technology,text|Wire Length,wire_length,text|With Grills,grills,boolean|Tweeter Mounting,mounting_type,text|Magnet Weight (oz.),magnet_weight,text|Mounting Depth,mounting_depth,text|Package Contains,contains,text|Dimension,dimension,text'
   assign fields_list = fields_raw | split: '|'
 %}
 
@@ -19,7 +19,7 @@
   {%- endif -%}
   {%- for field_item in fields_list -%}
     {%- liquid
-      # 1. 解析欄位與變數初始化
+      # 1.解析欄位與變數初始化
       assign parts = field_item | split: ','
       assign label = parts[0] | strip
       assign key = parts[1] | strip
@@ -39,7 +39,7 @@
         continue
       endif
 
-      # 2. 依序找資料 (手動判斷以避免 default 漏掉 false)
+      # 2.依序找資料 (手動判斷以避免 default 漏掉 false)
       assign meta = speaker[key]
       if meta == null
         assign meta = shopify_ns[key]
@@ -54,14 +54,14 @@
         assign meta = serie_ns[key]
       endif
 
-      # 3. 如果沒填(或 blank) 直接跳過這一行
+      # 3.如果沒填(或 blank) 直接跳過這一行
       if meta == null
         continue
       endif
 
       assign val = meta.value
 
-      # 4. 根據型態決定輸出內容
+      # 4.根據型態決定輸出內容
       if type == 'boolean'
         if val == true
           assign out = 'Yes'
@@ -82,13 +82,20 @@
         assign out = val
       endif
 
-      # 5. 處理單位與特殊後綴 (只有在 out有值時才跑 case)
+
       if out != null
+        # 5.處理單位與特殊前綴/後綴 (只有在 out有值時才跑 case)
         case key
           when 'rms_power', 'peak_power'
             assign out = out | append: ' Watts'
           when 'sn'
             assign out = out | append: ' dB'
+          when 'magnet_weight'
+            assign out = out | append: ' oz.'
+          when 'mounting_depth'
+            if product.category contains 'Marine Tower Speakers'
+              assign label = 'Mounting Clamps'
+            endif
           when 'vc_size'
             assign mat = serie_ns.voice_coil_material.value
             if mat != blank

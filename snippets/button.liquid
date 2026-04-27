@@ -9,6 +9,21 @@
 {%- enddoc -%}
 
 {% assign block_settings = block.settings %}
+{% assign show_button_icon = false %}
+{% assign use_link_text_color = false %}
+{% assign link_type_preset = '' %}
+
+{% if block_settings.show_icon == true and block_settings.icon != 'none' %}
+  {% assign show_button_icon = true %}
+{% endif %}
+
+{% if block_settings.style_class == 'link' and block_settings.use_custom_link_text_color == true %}
+  {% assign use_link_text_color = true %}
+{% endif %}
+
+{% if block_settings.style_class == 'link' and block_settings.link_type_preset != blank %}
+  {% assign link_type_preset = block_settings.link_type_preset %}
+{% endif %}
 
 <a
   {% if link == blank %}
@@ -21,25 +36,76 @@
     size-style
     {{ block_settings.style_class }}
     {{ block_settings.style_class }}--{{ block.id }}
+    {{ link_type_preset }}
+    {% if use_link_text_color %}link--custom-color{% endif %}
   "
-  style="{% render 'size-style', settings: block_settings %}"
+  style="{% render 'size-style', settings: block_settings %}{% if use_link_text_color %} --button-link-text-color: {{ block_settings.link_text_color }}; --color: {{ block_settings.link_text_color }};{% endif %}"
   {%- if block_settings.open_in_new_tab -%}
     target="_blank"
     rel="noopener noreferrer"
   {%- endif -%}
   {{ block.shopify_attributes }}
 >
-  {{ block_settings.label }}
+  <span class="{% if show_button_icon %}button__content button__content--with-icon{% else %}button__content{% endif %}">
+    {{ block_settings.label }}
+
+    {% if show_button_icon %}
+      {% render 'icon-or-image',
+        icon: block_settings.icon,
+        image_upload: blank,
+        width: 20,
+        class_name: 'button__icon'
+      %}
+    {% endif %}
+  </span>
 </a>
 
 {% stylesheet %}
   .link {
     text-decoration: none;
     text-decoration-color: currentcolor;
+    text-align: left;
 
     &:hover {
       color: var(--color-primary-hover);
       text-decoration-color: transparent;
     }
   }
+
+  .link.link--custom-color {
+    color: var(--button-link-text-color);
+  }
+
+  .button.size-style:not(.button-secondary, .button-unstyled) {
+    --button-color: var(--color-primary-button-text);
+    --button-background-color: var(--color-primary-button-background);
+    --button-border-color: var(--color-primary-button-border);
+  }
+
+  .button.size-style:not(.button-secondary, .button-unstyled):hover {
+    --button-color: var(--color-primary-button-hover-text);
+    --button-background-color: var(--color-primary-button-hover-background);
+    --button-border-color: var(--color-primary-button-hover-border);
+  }
+
+  .button__content {
+    display: block;
+  }
+
+  .button__content--with-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5em;
+  }
+
+  .link .button__content--with-icon {
+    justify-content: flex-start;
+  }
+
+  .button__icon {
+    display: block;
+    flex-shrink: 0;
+  }
+
 {% endstylesheet %}
