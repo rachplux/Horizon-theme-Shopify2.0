@@ -16,7 +16,7 @@
 
 {%- capture variables -%}
   {%- if preset != 'rte' and settings.color != "" -%}
-    --color: {{ settings.color }};
+    --color: {{ settings.color }}; 
   {%- endif -%}
   {%- if preset == 'custom' -%}
     {% liquid
