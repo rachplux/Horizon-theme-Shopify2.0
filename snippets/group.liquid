@@ -19,7 +19,7 @@
     border-style
     spacing-style
     size-style
-    {% if settings.inherit_color_scheme == false %} color-{{ settings.color_scheme }}{% endif %}
+    {% if settings.inherit_color_scheme == false %} color-{{ settings.color_scheme }} background-transparent {% endif %}
     {{ class }}
   "
   style="
@@ -86,5 +86,9 @@
   /* Needs the .group-block__link ~ to be specific enough to take effect. */
   .group-block__link ~ .group-block-content--design-mode {
     pointer-events: auto;
+  }
+  /* When inherit_color_scheme = false then background color is tranparent */
+  .group-block .background-trasparent {
+	background-color: transparent;
   }
 {% endstylesheet %}
