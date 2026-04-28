@@ -2243,15 +2243,41 @@
             "padding-inline-end": 0
           },
           "blocks": {
+            "text_QkBK3e": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<p>Completed Solutions. Built to Perform</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h5",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground-heading)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
             "text_dUaXze": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>New arrivals</h2>",
+                "text": "<p>Featured System</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -2263,7 +2289,7 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 0,
+                "padding-block-end": 15,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -2272,6 +2298,7 @@
             "text_RAzyjQ": {
               "type": "text",
               "name": "t:names.text",
+              "disabled": true,
               "settings": {
                 "text": "<h3>Featured System</h3>",
                 "width": "fit-content",
@@ -2298,6 +2325,7 @@
             "text_HdbxLt": {
               "type": "text",
               "name": "t:names.text",
+              "disabled": true,
               "settings": {
                 "text": "<h3>Completed Solutions. Built to Perform</h3>",
                 "width": "fit-content",
@@ -2323,6 +2351,7 @@
             }
           },
           "block_order": [
+            "text_QkBK3e",
             "text_dUaXze",
             "text_RAzyjQ",
             "text_HdbxLt"
