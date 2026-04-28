@@ -48,7 +48,7 @@
             "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 15,
+            "padding-inline-start": 20,
             "padding-inline-end": 20
           },
           "blocks": {
@@ -157,8 +157,8 @@
                     "link_text_color": "#000000",
                     "show_icon": true,
                     "icon": "arrow",
-                    "width": "custom",
-                    "custom_width": 28,
+                    "width": "fit-content",
+                    "custom_width": 38,
                     "width_mobile": "fit-content",
                     "custom_width_mobile": 100
                   },
@@ -177,7 +177,7 @@
                     "link_text_color": "#000000",
                     "show_icon": true,
                     "icon": "arrow",
-                    "width": "custom",
+                    "width": "fit-content",
                     "custom_width": 24,
                     "width_mobile": "fit-content",
                     "custom_width_mobile": 100
