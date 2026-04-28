@@ -3995,13 +3995,13 @@
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 6,
-                "width": "custom",
+                "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
                 "custom_width_mobile": 100,
                 "height": "fit",
                 "custom_height": 100,
-                "inherit_color_scheme": true,
+                "inherit_color_scheme": false,
                 "color_scheme": "scheme-8",
                 "background_media": "none",
                 "video_position": "cover",
@@ -4074,38 +4074,11 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
-                },
-                "text_GAzw3k": {
-                  "type": "text",
-                  "name": "t:names.text",
-                  "settings": {
-                    "text": "<p>Engineered for the elements, refined for the ear. Our waterproof, rustproof audio systems deliver professional-grade acoustics that thrive in environments where others fail.  </p>",
-                    "width": "fit-content",
-                    "max_width": "none",
-                    "alignment": "left",
-                    "type_preset": "custom",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1.125rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
                 }
               },
               "block_order": [
                 "text_wUfTzG",
-                "text_eBe6M8",
-                "text_GAzw3k"
+                "text_eBe6M8"
               ]
             }
           },
@@ -4117,20 +4090,47 @@
           "type": "spacer",
           "name": "t:names.spacer",
           "settings": {
-            "size": "percent",
+            "size": "pixel",
             "percent_size": 100,
-            "pixel_size": 120,
+            "pixel_size": 372,
             "custom_mobile_size": false,
             "size_mobile": "percent",
             "percent_size_mobile": 100,
             "pixel_size_mobile": 120
           },
           "blocks": {}
+        },
+        "text_jd43Aa": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Engineered for the elements, refined for the ear. Our waterproof, rustproof audio systems deliver professional-grade acoustics that thrive in environments where others fail.  </p>",
+            "width": "fit-content",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "custom",
+            "font": "var(--font-body--family)",
+            "font_size": "1.125rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "group_LJ4Azq",
-        "spacer_yrTzfy"
+        "spacer_yrTzfy",
+        "text_jd43Aa"
       ],
       "name": "Hero: Marine SeaQua",
       "settings": {
