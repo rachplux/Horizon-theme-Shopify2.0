@@ -978,7 +978,7 @@
                 "gradient_direction": "to top",
                 "border": "solid",
                 "border_width": 1,
-                "border_opacity": 50,
+                "border_opacity": 100,
                 "border_radius": 0
               },
               "blocks": {}
