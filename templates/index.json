@@ -2360,7 +2360,7 @@
                   "type": "text",
                   "name": "t:names.text",
                   "settings": {
-                    "text": "<p>{{ closest.collection.metafields.serie.short_description | metafield_tag }}<br/></p><p></p>",
+                    "text": "<p>{{ closest.collection.metafields.serie.short_description | metafield_tag }}</p>",
                     "width": "fit-content",
                     "max_width": "narrow",
                     "alignment": "left",
