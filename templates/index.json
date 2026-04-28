@@ -783,7 +783,7 @@
             "vertical_alignment": "flex-start",
             "collection_card_gap": 13,
             "inherit_color_scheme": false,
-            "color_scheme": "scheme-5",
+            "color_scheme": "scheme-8",
             "border": "none",
             "border_width": 1,
             "border_opacity": 100,
@@ -901,31 +901,70 @@
               },
               "blocks": {}
             },
-            "text_JLTYGC": {
-              "type": "text",
-              "name": "t:names.text",
+            "group_Dw3hed": {
+              "type": "group",
+              "name": "Button box",
               "settings": {
-                "text": "<p>EXPLORE {{ closest.collection.title }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "content_direction": "column",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "flex-start",
+                "vertical_alignment": "center",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 20,
-                "padding-inline-start": 28,
+                "padding-inline-start": 30,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "button_PnAHN7": {
+                  "type": "button",
+                  "name": "t:names.button",
+                  "settings": {
+                    "label": "Explore {{ closest.collection.title }}",
+                    "link": "{{ closest.collection.url }}",
+                    "open_in_new_tab": false,
+                    "style_class": "link",
+                    "link_type_preset": "h5",
+                    "use_custom_link_text_color": false,
+                    "link_text_color": "#000000",
+                    "show_icon": true,
+                    "icon": "arrow",
+                    "width": "fit-content",
+                    "custom_width": 100,
+                    "width_mobile": "fit-content",
+                    "custom_width_mobile": 100
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "button_PnAHN7"
+              ]
             },
             "collection-card-image": {
               "type": "_collection-card-image",
@@ -948,7 +987,7 @@
           "block_order": [
             "group_njA8fw",
             "spacer_FQV3Yf",
-            "text_JLTYGC"
+            "group_Dw3hed"
           ]
         }
       },
@@ -2294,67 +2333,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "text_RAzyjQ": {
-              "type": "text",
-              "name": "t:names.text",
-              "disabled": true,
-              "settings": {
-                "text": "<h3>Featured System</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h5",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground-heading)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_HdbxLt": {
-              "type": "text",
-              "name": "t:names.text",
-              "disabled": true,
-              "settings": {
-                "text": "<h3>Completed Solutions. Built to Perform</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 15,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "text_QkBK3e",
-            "text_dUaXze",
-            "text_RAzyjQ",
-            "text_HdbxLt"
+            "text_dUaXze"
           ]
         },
         "static-collection-card": {
