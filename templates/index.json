@@ -82,7 +82,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h6>High-performance audio systems for vehicles marine, <br/>powersports ans professional applications. <br/>Engineered for real-worlds performance.<br/>Backed by a tream that's built to supprot your business.</h6>",
+                "text": "<p>High-performance audio systems for vehicles marine, <br/>powersports and professional applications. <br/>Engineered for real-worlds performance.</p>",
                 "width": "100%",
                 "max_width": "none",
                 "alignment": "left",
