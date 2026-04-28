@@ -24,8 +24,8 @@
             "horizontal_alignment_flex_direction_column": "center",
             "vertical_alignment_flex_direction_column": "space-between",
             "gap": 0,
-            "width": "custom",
-            "custom_width": 76,
+            "width": "fill",
+            "custom_width": 90,
             "width_mobile": "fit-content",
             "custom_width_mobile": 60,
             "height": "fit",
@@ -48,8 +48,8 @@
             "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-start": 20,
+            "padding-inline-end": 20
           },
           "blocks": {
             "text_EXhULi": {
