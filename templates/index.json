@@ -3256,6 +3256,9 @@
         "spacer_4B4JUJ",
         "group_7wnpjD"
       ],
+      "custom_css": [
+        ".hero__container {border-top: 1px solid var(--color-border);}"
+      ],
       "name": "Hero: Powersports",
       "settings": {
         "media_type_1": "image",
@@ -3907,6 +3910,7 @@
         "group_R4kT7A",
         "group_pX3n8z"
       ],
+      "custom_css": [],
       "name": "t:names.icons_with_text",
       "settings": {
         "content_direction": "row",
