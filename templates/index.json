@@ -3398,17 +3398,18 @@
     "section_NPxMye": {
       "type": "section",
       "blocks": {
-        "group_wCqWQT": {
+        "group_FCMgtK": {
           "type": "group",
+          "name": "Group 1",
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
             "vertical_alignment": "center",
             "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
+            "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
+            "gap": 4,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -3432,122 +3433,65 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 10,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
           "blocks": {
-            "icon_jG4YfB": {
-              "type": "icon",
-              "disabled": true,
+            "text_C39MPU": {
+              "type": "text",
               "settings": {
-                "icon": "eye",
-                "width": 32,
-                "link": "",
-                "open_in_new_tab": false
+                "text": "<h3>Built to Last</h3>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h4",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 10,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
               },
               "blocks": {}
             },
-            "group_gzkmmf": {
-              "type": "group",
-              "name": "Group 1",
+            "text_Rq3Gdy": {
+              "type": "text",
               "settings": {
-                "content_direction": "column",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "flex-start",
-                "vertical_alignment": "center",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 4,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
+                "text": "<p>Engineered for harsh <br/>enviroments and real-worlds use</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {
-                "text_C39MPU": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<h3>Built to Last</h3>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "h4",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
-                "text_Rq3Gdy": {
-                  "type": "text",
-                  "settings": {
-                    "text": "<p>Engineered for harsh <br/>enviroments and real-worlds use</p>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "center",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                }
-              },
-              "block_order": [
-                "text_C39MPU",
-                "text_Rq3Gdy"
-              ]
+              "blocks": {}
             }
           },
           "block_order": [
-            "icon_jG4YfB",
-            "group_gzkmmf"
+            "text_C39MPU",
+            "text_Rq3Gdy"
           ]
         },
         "group_fa7yka": {
@@ -3585,7 +3529,7 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 10,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -3737,7 +3681,7 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 10,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -3889,7 +3833,7 @@
             "open_in_new_tab": false,
             "placeholder": "",
             "padding-block-start": 0,
-            "padding-block-end": 0,
+            "padding-block-end": 10,
             "padding-inline-start": 0,
             "padding-inline-end": 0
           },
@@ -4008,7 +3952,7 @@
         }
       },
       "block_order": [
-        "group_wCqWQT",
+        "group_FCMgtK",
         "group_fa7yka",
         "group_R4kT7A",
         "group_pX3n8z"
