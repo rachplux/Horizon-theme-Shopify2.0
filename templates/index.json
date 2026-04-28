@@ -1228,7 +1228,7 @@
         "spacer_GWUxnJ"
       ],
       "custom_css": [
-        ".hero__container {border-bottom: gray solid 1px;}"
+        ".hero__container {border-bottom: 1px solid var(--color-border);}"
       ],
       "name": "Become a Cadence Parnter",
       "settings": {
