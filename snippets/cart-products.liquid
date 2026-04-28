@@ -138,7 +138,7 @@
                     {% liquid
                       assign ratio = 1
                       assign border_opacity = settings.cart_thumbnail_border_opacity | divided_by: 100.0
-                      assign border_override = '--border-width: [cart_thumbnail_border_width]px; --border-style: [cart_thumbnail_border_style]; --border-color: rgb(var(--color-border-rgb) / [cart_thumbnail_border_opacity]); --border-radius: [cart_thumbnail_border_radius]px;' | replace: '[cart_thumbnail_border_width]', settings.cart_thumbnail_border_width | replace: '[cart_thumbnail_border_style]', settings.cart_thumbnail_border | replace: '[cart_thumbnail_border_opacity]', border_opacity | replace: '[cart_thumbnail_border_radius]', settings.cart_thumbnail_border_radius
+                      assign border_override = '--border-width: [cart_thumbnail_border_width]px; --border-style: [cart_thumbnail_border_style]; --border-color: rgb(var(--color-border-rgb) / [cart_thumbnail_border_opacity]); --border-color: color-mix(in srgb, var(--color-border) [cart_thumbnail_border_opacity_percent]%, transparent); --border-radius: [cart_thumbnail_border_radius]px;' | replace: '[cart_thumbnail_border_width]', settings.cart_thumbnail_border_width | replace: '[cart_thumbnail_border_style]', settings.cart_thumbnail_border | replace: '[cart_thumbnail_border_opacity]', border_opacity | replace: '[cart_thumbnail_border_opacity_percent]', settings.cart_thumbnail_border_opacity | replace: '[cart_thumbnail_border_radius]', settings.cart_thumbnail_border_radius
 
                       if settings.cart_thumbnail_border_radius > 0
                         assign border_override = border_override | append: ' overflow: hidden;'

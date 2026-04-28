@@ -469,7 +469,9 @@
     --style-border-width-inputs: {{ settings.input_border_width }}px;
     --style-border-radius-popover: {{ settings.popover_border_radius }}px;
     --style-border-popover: {{ settings.popover_border_width }}px {{ settings.popover_border }} rgb(var(--color-border-rgb) / {{ settings.popover_border_opacity }}%);
+    --style-border-popover: {{ settings.popover_border_width }}px {{ settings.popover_border }} color-mix(in srgb, var(--color-border) {{ settings.popover_border_opacity }}%, transparent);
     --style-border-drawer: {{ settings.drawer_border_width }}px {{ settings.drawer_border }} rgb(var(--color-border-rgb) / {{ settings.drawer_border_opacity }}%);
+    --style-border-drawer: {{ settings.drawer_border_width }}px {{ settings.drawer_border }} color-mix(in srgb, var(--color-border) {{ settings.drawer_border_opacity }}%, transparent);
     --style-border-swatch-opacity: {{ settings.variant_swatch_border_opacity }}%;
     --style-border-swatch-width: {{ settings.variant_swatch_border_width }}px;
     --style-border-swatch-style: {{ settings.variant_swatch_border_style }};
@@ -600,6 +602,7 @@
 
     /* Borders */
     --border-color: rgb(var(--color-border-rgb) / var(--opacity-50));
+    --border-color: color-mix(in srgb, var(--color-border) 50%, transparent);
     --border-width-sm: 1px;
     --border-width-md: 2px;
     --border-width-lg: 5px;

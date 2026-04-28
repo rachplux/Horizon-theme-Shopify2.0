@@ -3,5 +3,6 @@
 {%- endcomment -%}
 
 --border-width: {{ settings.border_width }}px; --border-style: {{ settings.border }}; --border-color:
-rgb(var(--color-border-rgb) / {{ settings.border_opacity | divided_by: 100.0 }}); --border-radius:
+rgb(var(--color-border-rgb) / {{ settings.border_opacity | divided_by: 100.0 }}); --border-color:
+color-mix(in srgb, var(--color-border) {{ settings.border_opacity }}%, transparent); --border-radius:
 {{ settings.border_radius }}px; {% if settings.border_radius > 0 %} overflow: hidden; {% endif %}
