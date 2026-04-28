@@ -4001,8 +4001,8 @@
                 "custom_width_mobile": 100,
                 "height": "fit",
                 "custom_height": 100,
-                "inherit_color_scheme": true,
-                "color_scheme": "",
+                "inherit_color_scheme": false,
+                "color_scheme": "scheme-7",
                 "background_media": "none",
                 "video_position": "cover",
                 "background_image_position": "cover",
@@ -4074,48 +4074,63 @@
                     "padding-inline-end": 0
                   },
                   "blocks": {}
+                },
+                "text_GAzw3k": {
+                  "type": "text",
+                  "name": "t:names.text",
+                  "settings": {
+                    "text": "<p>Engineered for the elements, refined for the ear. Our waterproof, rustproof audio systems deliver professional-grade acoustics that thrive in environments where others fail.  </p>",
+                    "width": "fit-content",
+                    "max_width": "none",
+                    "alignment": "left",
+                    "type_preset": "custom",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1.125rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
                 }
               },
               "block_order": [
                 "text_wUfTzG",
-                "text_eBe6M8"
+                "text_eBe6M8",
+                "text_GAzw3k"
               ]
-            },
-            "text_AP7jPX": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>Engineered for the elements, refined for the ear. Our waterproof, rustproof audio systems deliver professional-grade acoustics that thrive in environments where others fail.  <br/><a href=\"/collections/marine-audio\" title=\"Marine & Powersports\"><strong>Go to  Marine & Powersports Now  →</strong></a></p>",
-                "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "group_Qm63tx",
-            "text_AP7jPX"
+            "group_Qm63tx"
           ]
+        },
+        "spacer_yrTzfy": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "settings": {
+            "size": "percent",
+            "percent_size": 100,
+            "pixel_size": 120,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 100,
+            "pixel_size_mobile": 120
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "group_LJ4Azq"
+        "group_LJ4Azq",
+        "spacer_yrTzfy"
       ],
       "name": "Hero: Marine SeaQua",
       "settings": {
@@ -4128,7 +4143,7 @@
         "media_type_2_mobile": "image",
         "link": "",
         "open_in_new_tab": false,
-        "content_direction": "column",
+        "content_direction": "row",
         "vertical_on_mobile": true,
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",

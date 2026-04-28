@@ -323,7 +323,7 @@
       },
       "scheme-7": {
         "settings": {
-          "background": "#ffffff",
+          "background": "#ffffff00",
           "foreground_heading": "#1d1f20",
           "foreground": "#1d1f20",
           "primary": "#f26929",
