@@ -23,7 +23,16 @@
     {{ class }}
   "
   style="
-    {% render 'border-override', settings: settings %}
+    --border-width: 0px;
+    --border-style: {{ settings.border | default: 'none' }};
+    --border-color: rgb(var(--color-border-rgb) / {{ settings.border_opacity | default: 100 | divided_by: 100.0 }});
+    --border-color: color-mix(in srgb, var(--color-border) {{ settings.border_opacity | default: 100 }}%, transparent);
+    --border-radius: {{ settings.border_radius | default: 0 }}px;
+    {% if settings.border_radius > 0 %} overflow: hidden; {% endif %}
+    --border-block-start-width: {{ settings.border_width_top | default: settings.border_width | default: 0 }}px;
+    --border-block-end-width: {{ settings.border_width_bottom | default: settings.border_width | default: 0 }}px;
+    --border-inline-start-width: {{ settings.border_width_left | default: settings.border_width | default: 0 }}px;
+    --border-inline-end-width: {{ settings.border_width_right | default: settings.border_width | default: 0 }}px;
     {% render 'spacing-style', settings: settings %}
     {% render 'size-style', settings: settings %}
     {{ style }}
@@ -75,6 +84,13 @@
     inset: 0;
   }
 
+  .group-block.border-style {
+    border-block-start-width: var(--border-block-start-width, var(--border-width));
+    border-block-end-width: var(--border-block-end-width, var(--border-width));
+    border-inline-start-width: var(--border-inline-start-width, var(--border-width));
+    border-inline-end-width: var(--border-inline-end-width, var(--border-width));
+  }
+
   .group-block__link ~ :is(.group-block-content, .group-block__media-wrapper) {
     pointer-events: none;
 
@@ -87,8 +103,8 @@
   .group-block__link ~ .group-block-content--design-mode {
     pointer-events: auto;
   }
-  /* When inherit_color_scheme = false then background color is tranparent */
-  .group-block .background-transparent {
-	background-color: transparent;
+  /* When inherit_color_scheme = false then background color is transparent */
+  .group-block.background-transparent {
+    background-color: transparent;
   }
 {% endstylesheet %}
