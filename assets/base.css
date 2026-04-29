@@ -4968,3 +4968,16 @@ product-recommendations:has([data-has-recommendations='false']) {
     translate: 0px var(--atc-destination, 0px);
   }
 }
+
+/* Custom Style - Section border  */
+
+
+.shopify-section:not(.header-section):not(.footer-section):has(.hero__container.section) {
+	border-block-end: 1px solid rgb(var(--color-border-rgb) / 0.6);
+}
+.shopify-section:not(.ui-test-collection-list):has(.section) {
+	border-block-end: 1px solid rgb(var(--color-border-rgb) / 0.6);
+}
+.shopify-section.shopify-section-group-footer-group.section-wrapper {
+	border-block-end: none;
+}
