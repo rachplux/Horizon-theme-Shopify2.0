@@ -4982,5 +4982,5 @@ main {
   border-block-end: 1px solid #5c5c5c;
 }
 .shopify-section.shopify-section-group-footer-group {
-  border-block-end:none;
+  border-block-end:none; !important
 }
