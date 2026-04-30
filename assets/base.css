@@ -4970,7 +4970,7 @@ product-recommendations:has([data-has-recommendations='false']) {
 }
 
 /* Custom Style - Section border  */
-.shopify-section:not(.shopify-section-group-header-group):has(.hero__container) {
+.shopify-section:not(.shopify-section-group-header-group):not(.shopify-section-group-footer-group):has(.hero__container) {
 	border-block-end: 1px solid #5c5c5c;
 }
 main {
@@ -4981,6 +4981,6 @@ main {
 	border-block-start: 1px solid #5c5c5c;
   border-block-end: 1px solid #5c5c5c;
 }
-.shopify-section.shopify-section-group-footer-group {
-  border-block-end:none; !important
+.shopify-section-template--21794249867501__hero_impwnt {
+  border-block-end:none; 
 }
