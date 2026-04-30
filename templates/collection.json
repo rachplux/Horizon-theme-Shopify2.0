@@ -272,31 +272,43 @@
               },
               "blocks": {}
             },
-            "text_iKXaFf": {
-              "type": "text",
-              "name": "t:names.text",
+            "buy_buttons_bcHpD7": {
+              "type": "buy-buttons",
+              "name": "t:names.product_buy_buttons",
               "settings": {
-                "text": "<p>View Detail</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-primary)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "stacking": false,
+                "show_pickup_availability": true,
+                "gift_card_form": true,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "quantity": {
+                  "type": "quantity",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                },
+                "add-to-cart": {
+                  "type": "add-to-cart",
+                  "disabled": true,
+                  "static": true,
+                  "settings": {
+                    "style_class": "button-secondary"
+                  },
+                  "blocks": {}
+                },
+                "accelerated-checkout": {
+                  "type": "accelerated-checkout",
+                  "static": true,
+                  "settings": {},
+                  "blocks": {}
+                }
+              },
+              "block_order": []
             }
           },
           "block_order": [
@@ -305,7 +317,7 @@
             "text_Qf9Yn4",
             "product_title_4nY4eT",
             "swatches_cy9wqt",
-            "text_iKXaFf"
+            "buy_buttons_bcHpD7"
           ]
         }
       },
