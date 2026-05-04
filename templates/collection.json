@@ -140,8 +140,8 @@
           "static": true,
           "settings": {
             "product_card_gap": 4,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
+            "inherit_color_scheme": false,
+            "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
             "border": "solid",
             "border_width": 1,
             "border_opacity": 100,
