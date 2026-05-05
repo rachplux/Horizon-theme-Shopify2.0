@@ -2589,7 +2589,7 @@
         "icons_shape": "circle",
         "section_width": "page-width",
         "gap": 12,
-        "color_scheme": "scheme-8",
+        "color_scheme": "scheme-3",
         "padding-block-start": 48,
         "padding-block-end": 0
       }
@@ -2637,7 +2637,7 @@
         "section_width": "page-width",
         "section_height": "custom",
         "section_height_custom": 5,
-        "color_scheme": "scheme-8",
+        "color_scheme": "scheme-3",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
