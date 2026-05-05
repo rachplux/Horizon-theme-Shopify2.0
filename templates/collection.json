@@ -171,7 +171,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>{{ closest.product.metafields.speaker.serie.value.label.value }}</p>",
+                "text": "<p>{{ closest.product.metafields.speaker.serie.value.label.value }}<br/>{{ closest.product.metafields.amplifier.serie.value.label.value }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
