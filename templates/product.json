@@ -224,6 +224,7 @@
             "text_aEtTtq": {
               "type": "text",
               "name": "Product description",
+              "disabled": true,
               "settings": {
                 "text": "{{ closest.product.description }}",
                 "width": "100%",
@@ -250,142 +251,12 @@
             "serie_list_VFQYbR": {
               "type": "serie-list",
               "name": "Serie List",
+              "disabled": true,
               "settings": {
                 "inherit_color_scheme": false,
                 "color_scheme": "scheme-7"
               },
               "blocks": {}
-            },
-            "accordion_br7En3": {
-              "type": "accordion",
-              "name": "t:names.accordion",
-              "disabled": true,
-              "settings": {
-                "icon": "caret",
-                "dividers": true,
-                "type_preset": "h6",
-                "inherit_color_scheme": true,
-                "color_scheme": "",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {
-                "accordion_row_8hKerp": {
-                  "type": "_accordion-row",
-                  "name": "Product Spec",
-                  "settings": {
-                    "heading": "Product Spec",
-                    "open_by_default": false,
-                    "icon": "box",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "specification_wmBbQG": {
-                      "type": "specification",
-                      "name": "Specification",
-                      "settings": {
-                        "caption": "",
-                        "select_table": "speaker_spec_metafields",
-                        "add_richtext": ""
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "specification_wmBbQG"
-                  ]
-                },
-                "accordion_row_xDEgrC": {
-                  "type": "_accordion-row",
-                  "name": "Speaker Spec",
-                  "disabled": true,
-                  "settings": {
-                    "heading": "Speaker Sepcification",
-                    "open_by_default": true,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "specification_TA7KQX": {
-                      "type": "specification",
-                      "name": "Speaker Specs",
-                      "settings": {
-                        "caption": "",
-                        "select_table": "speaker_spec_metafields",
-                        "add_richtext": ""
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "specification_TA7KQX"
-                  ]
-                },
-                "accordion_row_dMc8bc": {
-                  "type": "_accordion-row",
-                  "name": "Subwoofer Spec",
-                  "disabled": true,
-                  "settings": {
-                    "heading": "Subwoofer Tech Data",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "specification_3zCyrm": {
-                      "type": "specification",
-                      "name": "Subwoofer Tech Data",
-                      "settings": {
-                        "caption": "",
-                        "select_table": "subwoofer_tech_data",
-                        "add_richtext": ""
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "specification_3zCyrm"
-                  ]
-                },
-                "accordion_row_7mPwDY": {
-                  "type": "_accordion-row",
-                  "name": "Amp Spec",
-                  "disabled": true,
-                  "settings": {
-                    "heading": "Amplifier Specs",
-                    "open_by_default": false,
-                    "icon": "none",
-                    "width": 20
-                  },
-                  "blocks": {
-                    "specification_Tib7gc": {
-                      "type": "specification",
-                      "name": "Amplifier Spec",
-                      "settings": {
-                        "caption": "",
-                        "select_table": "amplifier_spec_metafields",
-                        "add_richtext": ""
-                      },
-                      "blocks": {}
-                    }
-                  },
-                  "block_order": [
-                    "specification_Tib7gc"
-                  ]
-                }
-              },
-              "block_order": [
-                "accordion_row_8hKerp",
-                "accordion_row_xDEgrC",
-                "accordion_row_dMc8bc",
-                "accordion_row_7mPwDY"
-              ]
             }
           },
           "block_order": [
@@ -394,8 +265,7 @@
             "variant_picker_R3rGDr",
             "custom_liquid_GzqeaX",
             "text_aEtTtq",
-            "serie_list_VFQYbR",
-            "accordion_br7En3"
+            "serie_list_VFQYbR"
           ]
         }
       },
@@ -437,7 +307,7 @@
             "background_media": "none",
             "video_position": "cover",
             "background_image_position": "cover",
-            "border": "solid",
+            "border": "none",
             "border_width": 1,
             "border_width_top": 0,
             "border_width_bottom": 0,
@@ -515,6 +385,18 @@
             "text_tFiFT9",
             "text_7kh6iN"
           ]
+        },
+        "divider_tVh9zD": {
+          "type": "_divider",
+          "name": "t:names.divider",
+          "settings": {
+            "thickness": 1,
+            "corner_radius": "square",
+            "width_percent": 100,
+            "padding-block-start": 0,
+            "padding-block-end": 0
+          },
+          "blocks": {}
         },
         "group_LXUKJ4": {
           "type": "group",
@@ -604,6 +486,7 @@
       },
       "block_order": [
         "group_7D7e8G",
+        "divider_tVh9zD",
         "group_LXUKJ4"
       ],
       "custom_css": [],
