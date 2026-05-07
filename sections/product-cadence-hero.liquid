@@ -1,0 +1,573 @@
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign speaker = product.metafields.speaker
+  assign serie = speaker.serie.value | default: product.metafields.amplifier.serie.value
+  assign serie_label = serie.label.value | default: section.settings.fallback_series_label
+  assign model = product.metafields.system.model_number.value | default: current_variant.sku
+  assign sku = current_variant.sku
+  assign audio_type_meta = product.metafields.system.audio_type | default: product.metafields.system.product_type
+  assign category = product.type
+  assign speaker_type_meta = speaker.type
+  assign speaker_size_meta = speaker.size
+  assign sold_unit_meta = speaker.sold_unit
+
+  assign audio_type = ''
+  if audio_type_meta != blank
+    if audio_type_meta.type contains 'list'
+      assign audio_type = audio_type_meta.value | join: ', '
+    else
+      assign audio_type = audio_type_meta.value
+    endif
+  endif
+  if audio_type != blank
+    assign category = audio_type
+  endif
+
+  assign speaker_type = ''
+  if speaker_type_meta != blank
+    if speaker_type_meta.value.first != blank
+      assign speaker_type = speaker_type_meta.value | join: ' '
+    else
+      assign speaker_type = speaker_type_meta.value
+    endif
+  endif
+
+  assign speaker_size = ''
+  if speaker_size_meta != blank
+    if speaker_size_meta.value.first != blank
+      assign speaker_size = speaker_size_meta.value | join: ', '
+    else
+      assign speaker_size = speaker_size_meta.value
+    endif
+  endif
+
+  assign sold_unit = ''
+  if sold_unit_meta != blank
+    assign sold_unit = sold_unit_meta.value
+  endif
+
+  assign product_summary = product.description | strip_html | strip
+  if product_summary == blank
+    assign product_summary = section.settings.fallback_description
+  endif
+%}
+
+<section id="cadence-hero-{{ section.id }}" class="cadence-product-hero">
+  <div class="cadence-product-hero__inner">
+    <nav class="cadence-product-hero__breadcrumbs" aria-label="Breadcrumb">
+      <a href="{{ routes.root_url }}">Home</a>
+      <span>/</span>
+      <a href="{{ routes.collections_url }}">Products</a>
+      {% if category != blank %}
+        <span>/</span>
+        <span>{{ category }}</span>
+      {% endif %}
+      {% if model != blank %}
+        <span>/</span>
+        <span>{{ model }}</span>
+      {% endif %}
+    </nav>
+
+    <div class="cadence-product-hero__layout">
+      <div class="cadence-product-hero__gallery" aria-label="{{ product.title | escape }}">
+        {% if product.media.size > 0 %}
+          {% for media in product.media limit: 8 %}
+            <input
+              class="cadence-product-hero__input"
+              type="radio"
+              name="cadence-media-{{ section.id }}"
+              id="cadence-media-{{ section.id }}-{{ forloop.index }}"
+              {% if forloop.first %}checked{% endif %}
+            >
+          {% endfor %}
+
+          <div class="cadence-product-hero__stage">
+            {% for media in product.media limit: 8 %}
+              {% liquid
+                assign media_loading = 'lazy'
+                if forloop.first
+                  assign media_loading = 'eager'
+                endif
+              %}
+              <div class="cadence-product-hero__panel cadence-product-hero__panel--{{ forloop.index }}">
+                {% if media.preview_image != blank %}
+                  {{
+                    media.preview_image
+                    | image_url: width: 1400
+                    | image_tag:
+                      widths: '480, 720, 960, 1200, 1400',
+                      sizes: '(min-width: 990px) 52vw, 100vw',
+                      loading: media_loading,
+                      class: 'cadence-product-hero__image'
+                  }}
+                {% endif %}
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="cadence-product-hero__thumbs" aria-label="Product media thumbnails">
+            {% for media in product.media limit: 8 %}
+              <label
+                class="cadence-product-hero__thumb"
+                for="cadence-media-{{ section.id }}-{{ forloop.index }}"
+              >
+                {% if media.preview_image != blank %}
+                  {{
+                    media.preview_image
+                    | image_url: width: 180
+                    | image_tag: loading: 'lazy', class: 'cadence-product-hero__thumb-image'
+                  }}
+                {% endif %}
+              </label>
+            {% endfor %}
+          </div>
+        {% else %}
+          <div class="cadence-product-hero__stage cadence-product-hero__stage--placeholder">
+            {{ 'product-apparel-1' | placeholder_svg_tag: 'cadence-product-hero__placeholder' }}
+          </div>
+        {% endif %}
+      </div>
+
+      <div class="cadence-product-hero__info">
+        {% if serie_label != blank %}
+          <p class="cadence-product-hero__eyebrow">{{ serie_label }}</p>
+        {% endif %}
+
+        <h1 class="cadence-product-hero__title">{{ product.title }}</h1>
+
+        {% if model != blank %}
+          <p class="cadence-product-hero__model">{{ model }}</p>
+        {% endif %}
+
+        {% if product_summary != blank %}
+          <div class="cadence-product-hero__summary">{{ product_summary }}</div>
+        {% endif %}
+
+        <dl class="cadence-product-hero__facts">
+          {% if serie_label != blank %}
+            <div>
+              <dt>Series</dt>
+              <dd>{{ serie_label }}</dd>
+            </div>
+          {% endif %}
+          {% if category != blank %}
+            <div>
+              <dt>Category</dt>
+              <dd>{{ category }}</dd>
+            </div>
+          {% endif %}
+          {% if model != blank %}
+            <div>
+              <dt>Model</dt>
+              <dd>{{ model }}</dd>
+            </div>
+          {% endif %}
+          {% if speaker_type != blank %}
+            <div>
+              <dt>Speaker Type</dt>
+              <dd>{{ speaker_type }}</dd>
+            </div>
+          {% endif %}
+          {% if speaker_size != blank %}
+            <div>
+              <dt>Fitment</dt>
+              <dd>{{ speaker_size }}</dd>
+            </div>
+          {% endif %}
+          {% if sold_unit != blank %}
+            <div>
+              <dt>Sold Unit</dt>
+              <dd>{{ sold_unit }}</dd>
+            </div>
+          {% endif %}
+          {% if sku != blank %}
+            <div>
+              <dt>SKU</dt>
+              <dd>{{ sku }}</dd>
+            </div>
+          {% endif %}
+        </dl>
+
+        <div class="cadence-product-hero__actions">
+          {% if section.settings.spec_sheet_link != blank %}
+            <a class="cadence-button cadence-button--accent" href="{{ section.settings.spec_sheet_link }}">
+              {{ section.settings.spec_sheet_label }}
+            </a>
+          {% elsif section.settings.spec_sheet_label != blank %}
+            <span class="cadence-button cadence-button--accent cadence-button--disabled">
+              {{ section.settings.spec_sheet_label }}
+            </span>
+          {% endif %}
+          {% if section.settings.catalog_link != blank %}
+            <a class="cadence-button" href="{{ section.settings.catalog_link }}">
+              {{ section.settings.catalog_label }}
+            </a>
+          {% elsif section.settings.catalog_label != blank %}
+            <span class="cadence-button cadence-button--disabled">
+              {{ section.settings.catalog_label }}
+            </span>
+          {% endif %}
+          {% if section.settings.contact_link != blank %}
+            <a class="cadence-button" href="{{ section.settings.contact_link }}">
+              {{ section.settings.contact_label }}
+            </a>
+          {% elsif section.settings.contact_label != blank %}
+            <span class="cadence-button cadence-button--disabled">
+              {{ section.settings.contact_label }}
+            </span>
+          {% endif %}
+          {% if section.settings.partner_link != blank %}
+            <a class="cadence-button cadence-button--accent" href="{{ section.settings.partner_link }}">
+              {{ section.settings.partner_label }}
+            </a>
+          {% elsif section.settings.partner_label != blank %}
+            <span class="cadence-button cadence-button--accent cadence-button--disabled">
+              {{ section.settings.partner_label }}
+            </span>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% style %}
+  {% for media in product.media limit: 8 %}
+    #cadence-media-{{ section.id }}-{{ forloop.index }}:checked ~ .cadence-product-hero__stage .cadence-product-hero__panel--{{ forloop.index }} {
+      opacity: 1;
+      pointer-events: auto;
+      position: relative;
+    }
+
+    #cadence-media-{{ section.id }}-{{ forloop.index }}:checked ~ .cadence-product-hero__thumbs label[for="cadence-media-{{ section.id }}-{{ forloop.index }}"] {
+      border-color: #ff6a00;
+      opacity: 1;
+    }
+  {% endfor %}
+{% endstyle %}
+
+{% stylesheet %}
+  .cadence-product-hero {
+    background: #030303;
+    color: #f5f5f5;
+    border-bottom: 1px solid rgb(255 255 255 / 14%);
+  }
+
+  .cadence-product-hero__inner {
+    width: min(1240px, calc(100% - 48px));
+    margin: 0 auto;
+    padding: 18px 0 18px;
+  }
+
+  .cadence-product-hero__breadcrumbs {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 18px;
+    color: rgb(255 255 255 / 62%);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+  }
+
+  .cadence-product-hero__breadcrumbs a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .cadence-product-hero__breadcrumbs a:hover {
+    color: #ff6a00;
+  }
+
+  .cadence-product-hero__layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.38fr) minmax(360px, 0.95fr);
+    gap: clamp(28px, 4vw, 46px);
+    align-items: start;
+  }
+
+  .cadence-product-hero__gallery {
+    display: grid;
+    grid-template-columns: 76px minmax(0, 1fr);
+    gap: 22px;
+    align-items: start;
+  }
+
+  .cadence-product-hero__input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .cadence-product-hero__stage {
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    min-height: clamp(330px, 45vw, 560px);
+    border: 1px solid rgb(255 255 255 / 28%);
+    background: radial-gradient(circle at 50% 34%, rgb(255 255 255 / 9%), transparent 44%), #030303;
+    overflow: hidden;
+  }
+
+  .cadence-product-hero__panel {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.18s ease;
+  }
+
+  .cadence-product-hero__image,
+  .cadence-product-hero__placeholder {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cadence-product-hero__thumbs {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .cadence-product-hero__thumb {
+    display: block;
+    aspect-ratio: 1;
+    border: 1px solid rgb(255 255 255 / 30%);
+    opacity: 0.78;
+    cursor: pointer;
+    overflow: hidden;
+    background: #070707;
+  }
+
+  .cadence-product-hero__thumb-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .cadence-product-hero__info {
+    padding-top: 8px;
+  }
+
+  .cadence-product-hero__eyebrow {
+    margin: 0 0 8px;
+    color: #ff6a00;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  .cadence-product-hero__title {
+    margin: 0;
+    max-width: 12ch;
+    color: #fff;
+    font-size: clamp(2.45rem, 4.8vw, 4.7rem);
+    line-height: 0.94;
+    letter-spacing: 0;
+    text-transform: uppercase;
+  }
+
+  .cadence-product-hero__model {
+    margin: 10px 0 0;
+    color: rgb(255 255 255 / 72%);
+    font-size: 0.9rem;
+  }
+
+  .cadence-product-hero__summary {
+    margin-top: 18px;
+    color: rgb(255 255 255 / 82%);
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .cadence-product-hero__facts {
+    margin: 18px 0 0;
+    display: grid;
+  }
+
+  .cadence-product-hero__facts div {
+    display: grid;
+    grid-template-columns: minmax(110px, 0.85fr) minmax(0, 1.2fr);
+    gap: 18px;
+    padding: 6px 0;
+    border-bottom: 1px solid rgb(255 255 255 / 16%);
+  }
+
+  .cadence-product-hero__facts dt {
+    color: rgb(255 255 255 / 58%);
+    text-transform: uppercase;
+  }
+
+  .cadence-product-hero__facts dd {
+    margin: 0;
+    color: #fff;
+    text-transform: uppercase;
+  }
+
+  .cadence-product-hero__actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 12px;
+    margin-top: 22px;
+  }
+
+  .cadence-button {
+    display: inline-flex;
+    min-height: 42px;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 14px;
+    border: 1px solid rgb(255 255 255 / 86%);
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .cadence-button--accent {
+    border-color: #ff6a00;
+    color: #ff6a00;
+  }
+
+  .cadence-button--disabled {
+    opacity: 0.58;
+    cursor: default;
+  }
+
+  .cadence-button:hover {
+    background: #fff;
+    color: #030303;
+  }
+
+  .cadence-button--disabled:hover {
+    background: transparent;
+    color: #fff;
+  }
+
+  .cadence-button--accent.cadence-button--disabled:hover {
+    color: #ff6a00;
+  }
+
+  .cadence-button--accent:hover {
+    background: #ff6a00;
+    color: #030303;
+  }
+
+  @media screen and (max-width: 989px) {
+    .cadence-product-hero__layout {
+      grid-template-columns: 1fr;
+    }
+
+    .cadence-product-hero__title {
+      max-width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .cadence-product-hero__inner {
+      width: min(100% - 28px, 1240px);
+    }
+
+    .cadence-product-hero__gallery {
+      grid-template-columns: 1fr;
+    }
+
+    .cadence-product-hero__stage {
+      grid-column: 1;
+      min-height: 320px;
+    }
+
+    .cadence-product-hero__thumbs {
+      grid-column: 1;
+      grid-row: 2;
+      flex-direction: row;
+      overflow-x: auto;
+      padding-bottom: 4px;
+    }
+
+    .cadence-product-hero__thumb {
+      width: 68px;
+      flex: 0 0 68px;
+    }
+
+    .cadence-product-hero__actions {
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Cadence Product Hero",
+  "settings": [
+    {
+      "type": "text",
+      "id": "fallback_series_label",
+      "label": "Fallback series label",
+      "default": "IQ Serie"
+    },
+    {
+      "type": "textarea",
+      "id": "fallback_description",
+      "label": "Fallback description"
+    },
+    {
+      "type": "text",
+      "id": "spec_sheet_label",
+      "label": "Spec sheet label",
+      "default": "Download spec sheet"
+    },
+    {
+      "type": "url",
+      "id": "spec_sheet_link",
+      "label": "Spec sheet link"
+    },
+    {
+      "type": "text",
+      "id": "catalog_label",
+      "label": "Catalog label",
+      "default": "Download catalog"
+    },
+    {
+      "type": "url",
+      "id": "catalog_link",
+      "label": "Catalog link"
+    },
+    {
+      "type": "text",
+      "id": "contact_label",
+      "label": "Contact label",
+      "default": "Contact sales"
+    },
+    {
+      "type": "url",
+      "id": "contact_link",
+      "label": "Contact link"
+    },
+    {
+      "type": "text",
+      "id": "partner_label",
+      "label": "Partner label",
+      "default": "Become a partner"
+    },
+    {
+      "type": "url",
+      "id": "partner_link",
+      "label": "Partner link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cadence Product Hero"
+    }
+  ]
+}
+{% endschema %}

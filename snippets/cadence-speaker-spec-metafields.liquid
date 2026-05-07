@@ -1,0 +1,96 @@
+{% liquid
+  assign speaker = product.metafields.speaker
+  assign shopify_ns = product.metafields.shopify
+  assign system_ns = product.metafields.system
+  assign serie_ns = product.metafields.speaker.serie.value
+  assign amp_ns = product.metafields.amplifier
+  assign model = product.metafields.system.model_number.value
+
+  assign fields_raw = 'Speaker Type,type,text|Speaker Size,size,text|Sold Unit,sold_unit,text|Voice Coil,vc_size,text|RMS Power,rms_power,integer|Peak Power,peak_power,integer|Tweeter Design,tweeter_design,text|Midrange Design,midrange_design,text|Frequency Response,fs,text|Sensitivity @ 1M/1W,sn,integer|Impedance,impedance,text|With Grills,grills,boolean|Magnet Weight,magnet_weight,text|Mounting Depth,mounting_depth,text|Dimension,dimension,text|Best Uses,best-uses,array|Speaker Design,speaker-design,text|Speaker Features,speaker-features,text|Tweeter Diaphragm,tweeter_diaphragm,text|LED Lighting,integrated-led-lighting,text|IP Rating,ingress-protection-ip-rating,text|Package Contains,contains,text'
+  assign fields_list = fields_raw | split: '|'
+%}
+
+<div class="cadence-spec-table">
+  {%- if model != blank -%}
+    <div class="cadence-spec-table__row">
+      <div class="cadence-spec-table__label">Model</div>
+      <div class="cadence-spec-table__value">{{ model }}</div>
+    </div>
+  {%- endif -%}
+
+  {%- for field_item in fields_list -%}
+    {%- liquid
+      assign parts = field_item | split: ','
+      assign label = parts[0] | strip
+      assign key = parts[1] | strip
+      assign type = parts[2] | strip
+      assign divider = ', '
+
+      if key == 'type'
+        assign divider = ' '
+      endif
+
+      assign meta = speaker[key]
+      if meta == null
+        assign meta = shopify_ns[key]
+      endif
+      if meta == null
+        assign meta = amp_ns[key]
+      endif
+      if meta == null
+        assign meta = system_ns[key]
+      endif
+      if meta == null
+        assign meta = serie_ns[key]
+      endif
+      if meta == null
+        continue
+      endif
+
+      assign val = meta.value
+      assign out = ''
+
+      if type == 'boolean'
+        if val == true
+          assign out = 'Yes'
+        elsif val == false
+          assign out = 'N/A'
+        endif
+      elsif meta.type contains 'metaobject'
+        if meta.type contains 'list'
+          assign labels = val | map: 'label' | map: 'value'
+          assign out = labels | join: divider
+        else
+          assign out = val.label.value | default: val.name.value
+        endif
+      elsif val.first != blank
+        assign out = val | join: divider
+      else
+        assign out = val
+      endif
+
+      if out != blank
+        case key
+          when 'rms_power', 'peak_power'
+            assign out = out | append: ' Watts'
+          when 'sn'
+            assign out = out | append: ' dB'
+          when 'magnet_weight'
+            assign out = out | append: ' oz.'
+          when 'vc_size'
+            assign mat = serie_ns.voice_coil_material.value
+            if mat != blank
+              assign out = out | append: ' ' | append: mat
+            endif
+        endcase
+      endif
+    -%}
+
+    {%- if out != blank -%}
+      <div class="cadence-spec-table__row">
+        <div class="cadence-spec-table__label">{{ label }}</div>
+        <div class="cadence-spec-table__value">{{ out }}</div>
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

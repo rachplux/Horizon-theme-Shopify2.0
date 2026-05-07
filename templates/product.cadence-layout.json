@@ -1,0 +1,59 @@
+{
+  "sections": {
+    "cadence_hero": {
+      "type": "product-cadence-hero",
+      "settings": {
+        "fallback_series_label": "IQ Serie",
+        "fallback_description": "",
+        "spec_sheet_label": "Download spec sheet",
+        "spec_sheet_link": "",
+        "catalog_label": "Download catalog",
+        "catalog_link": "",
+        "contact_label": "Contact sales",
+        "contact_link": "/pages/contact",
+        "partner_label": "Become a partner",
+        "partner_link": "/pages/becoming-distributors"
+      }
+    },
+    "cadence_about": {
+      "type": "product-cadence-about",
+      "settings": {
+        "model_heading": "About this model",
+        "series_heading": "About the series"
+      }
+    },
+    "cadence_specs": {
+      "type": "product-cadence-specs",
+      "settings": {
+        "heading": "Specifications"
+      }
+    },
+    "cadence_series": {
+      "type": "product-cadence-series-products",
+      "settings": {
+        "heading": "More from the",
+        "filter_same_series": true,
+        "max_products": 3,
+        "card_link_label": "View model"
+      }
+    },
+    "cadence_cta": {
+      "type": "product-cadence-cta",
+      "settings": {
+        "heading": "Build more. Together.",
+        "text": "Join the Cadence dealer network and get the products, support, and partnership you need to grow.",
+        "primary_label": "Become a partner",
+        "primary_link": "/pages/becoming-distributors",
+        "secondary_label": "Contact sales",
+        "secondary_link": "/pages/contact"
+      }
+    }
+  },
+  "order": [
+    "cadence_hero",
+    "cadence_about",
+    "cadence_specs",
+    "cadence_series",
+    "cadence_cta"
+  ]
+}

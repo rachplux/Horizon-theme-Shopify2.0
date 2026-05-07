@@ -9,16 +9,3 @@ CaptureOnContentForBlock:
   enabled: false
 UniqueStaticBlockId:
   enabled: false
-
-# These are context-dependent snippets or documentation-name conflicts in the
-# base Horizon theme. Keep them quiet so checks focus on actionable theme edits.
-UndefinedObject:
-  enabled: false
-ValidDocParamNames:
-  enabled: false
-UnusedDocParam:
-  enabled: false
-UnusedAssign:
-  enabled: false
-RemoteAsset:
-  enabled: false

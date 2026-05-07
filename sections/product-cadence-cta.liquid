@@ -1,0 +1,170 @@
+<section class="cadence-product-cta">
+  {% if section.settings.background_image != blank %}
+    {{
+      section.settings.background_image
+      | image_url: width: 2400
+      | image_tag:
+        widths: '900, 1400, 1800, 2400',
+        sizes: '100vw',
+        loading: 'lazy',
+        class: 'cadence-product-cta__background'
+    }}
+  {% endif %}
+
+  <div class="cadence-product-cta__inner">
+    <h2>{{ section.settings.heading }}</h2>
+    <p>{{ section.settings.text }}</p>
+    <div class="cadence-product-cta__actions">
+      {% if section.settings.primary_link != blank %}
+        <a class="cadence-button cadence-button--accent" href="{{ section.settings.primary_link }}">
+          {{ section.settings.primary_label }}
+        </a>
+      {% endif %}
+      {% if section.settings.secondary_link != blank %}
+        <a class="cadence-button" href="{{ section.settings.secondary_link }}">
+          {{ section.settings.secondary_label }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% stylesheet %}
+  .cadence-product-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+      linear-gradient(90deg, #150b05, rgb(3 3 3 / 82%) 44%, #311103),
+      #030303;
+    color: #f5f5f5;
+  }
+
+  .cadence-product-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background:
+      linear-gradient(90deg, rgb(255 106 0 / 20%), transparent 35%, rgb(255 106 0 / 26%)),
+      repeating-linear-gradient(135deg, rgb(255 255 255 / 7%) 0 1px, transparent 1px 12px);
+    opacity: 0.5;
+  }
+
+  .cadence-product-cta__background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.45;
+  }
+
+  .cadence-product-cta__inner {
+    width: min(1120px, calc(100% - 48px));
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(260px, 1fr) auto;
+    gap: 28px;
+    align-items: center;
+    min-height: 104px;
+    padding: 18px 0;
+  }
+
+  .cadence-product-cta h2 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(2rem, 4vw, 3.4rem);
+    line-height: 0.95;
+    text-transform: uppercase;
+    letter-spacing: 0;
+  }
+
+  .cadence-product-cta p {
+    margin: 0;
+    color: rgb(255 255 255 / 86%);
+    font-size: 0.92rem;
+    line-height: 1.45;
+  }
+
+  .cadence-product-cta__actions {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+  }
+
+  @media screen and (max-width: 989px) {
+    .cadence-product-cta__inner {
+      grid-template-columns: 1fr;
+      align-items: start;
+    }
+
+    .cadence-product-cta__actions {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media screen and (max-width: 749px) {
+    .cadence-product-cta__inner {
+      width: min(100% - 28px, 1120px);
+    }
+
+    .cadence-product-cta__actions {
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Cadence Product CTA",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Build more. Together."
+    },
+    {
+      "type": "textarea",
+      "id": "text",
+      "label": "Text",
+      "default": "Join the Cadence dealer network and get the products, support, and partnership you need to grow."
+    },
+    {
+      "type": "text",
+      "id": "primary_label",
+      "label": "Primary label",
+      "default": "Become a partner"
+    },
+    {
+      "type": "url",
+      "id": "primary_link",
+      "label": "Primary link"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary label",
+      "default": "Contact sales"
+    },
+    {
+      "type": "url",
+      "id": "secondary_link",
+      "label": "Secondary link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cadence Product CTA"
+    }
+  ]
+}
+{% endschema %}
