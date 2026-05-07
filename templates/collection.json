@@ -498,10 +498,31 @@
                 "custom_width_mobile": 100
               },
               "blocks": {}
+            },
+            "button_XFqL4t": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "Contact us",
+                "link": "shopify://pages/contact",
+                "open_in_new_tab": false,
+                "style_class": "button-secondary",
+                "link_type_preset": "",
+                "use_custom_link_text_color": false,
+                "link_text_color": "#000000",
+                "show_icon": false,
+                "icon": "arrow",
+                "width": "custom",
+                "custom_width": 40,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
             }
           },
           "block_order": [
-            "button_XbytQj"
+            "button_XbytQj",
+            "button_XFqL4t"
           ]
         }
       },
@@ -534,7 +555,7 @@
         "section_height_custom": 40,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#29292972",
+        "overlay_color": "#29292973",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
