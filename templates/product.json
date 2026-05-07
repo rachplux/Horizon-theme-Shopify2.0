@@ -616,7 +616,7 @@
         "placeholder": "",
         "padding-block-start": 32,
         "padding-block-end": 32,
-        "padding-inline-start": 0,
+        "padding-inline-start": 40,
         "padding-inline-end": 0
       }
     },
