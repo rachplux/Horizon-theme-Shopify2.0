@@ -490,7 +490,7 @@
                 "link_type_preset": "",
                 "use_custom_link_text_color": false,
                 "link_text_color": "#000000",
-                "show_icon": true,
+                "show_icon": false,
                 "icon": "arrow",
                 "width": "fit-content",
                 "custom_width": 24,
