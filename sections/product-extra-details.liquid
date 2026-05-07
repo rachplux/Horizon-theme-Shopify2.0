@@ -15,6 +15,11 @@
   <section
     class="
       product-extra-details
+      product-extra-details--{{ section.settings.content_direction }}
+      {% if section.settings.show_border and section.settings.border_top %}product-extra-details--border-top{% endif %}
+      {% if section.settings.show_border and section.settings.border_bottom %}product-extra-details--border-bottom{% endif %}
+      {% if section.settings.show_border and section.settings.border_left %}product-extra-details--border-left{% endif %}
+      {% if section.settings.show_border and section.settings.border_right %}product-extra-details--border-right{% endif %}
       section
       section--{{ section.settings.section_width }}
       color-{{ section.settings.color_scheme }}
@@ -24,6 +29,7 @@
       {% render 'spacing-style', settings: section.settings %}
       --product-extra-details-columns: {{ section.settings.columns }};
       --product-extra-details-gap: {{ section.settings.gap }}px;
+      --product-extra-details-border-width: {{ section.settings.border_width }}px;
     "
     {{ section.shopify_attributes }}
   >
@@ -41,14 +47,42 @@
 
 {% stylesheet %}
   .product-extra-details {
-    border-block: 1px solid rgb(var(--color-foreground-rgb) / 0.12);
+    border-style: solid;
+    border-color: rgb(var(--color-foreground-rgb) / 0.12);
+    border-block-start-width: 0;
+    border-block-end-width: 0;
+    border-inline-start-width: 0;
+    border-inline-end-width: 0;
+  }
+
+  .product-extra-details--border-top {
+    border-block-start-width: var(--product-extra-details-border-width, 1px);
+  }
+
+  .product-extra-details--border-bottom {
+    border-block-end-width: var(--product-extra-details-border-width, 1px);
+  }
+
+  .product-extra-details--border-left {
+    border-inline-start-width: var(--product-extra-details-border-width, 1px);
+  }
+
+  .product-extra-details--border-right {
+    border-inline-end-width: var(--product-extra-details-border-width, 1px);
   }
 
   .product-extra-details__grid {
     display: grid;
-    grid-template-columns: repeat(var(--product-extra-details-columns, 1), minmax(0, 1fr));
     gap: var(--product-extra-details-gap, 24px);
     align-items: start;
+  }
+
+  .product-extra-details--vertical .product-extra-details__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-extra-details--horizontal .product-extra-details__grid {
+    grid-template-columns: repeat(var(--product-extra-details-columns, 1), minmax(0, 1fr));
   }
 
   .product-extra-details__empty {
@@ -102,13 +136,30 @@
       "default": "page-width"
     },
     {
+      "type": "select",
+      "id": "content_direction",
+      "label": "Direction",
+      "options": [
+        {
+          "value": "vertical",
+          "label": "Vertical"
+        },
+        {
+          "value": "horizontal",
+          "label": "Horizontal"
+        }
+      ],
+      "default": "vertical"
+    },
+    {
       "type": "range",
       "id": "columns",
       "label": "Columns",
       "min": 1,
       "max": 3,
       "step": 1,
-      "default": 1
+      "default": 2,
+      "visible_if": "{{ section.settings.content_direction == 'horizontal' }}"
     },
     {
       "type": "range",
@@ -125,6 +176,55 @@
       "id": "color_scheme",
       "label": "Color scheme",
       "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Border"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_border",
+      "label": "Show border",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "border_top",
+      "label": "Top border",
+      "default": true,
+      "visible_if": "{{ section.settings.show_border }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_bottom",
+      "label": "Bottom border",
+      "default": true,
+      "visible_if": "{{ section.settings.show_border }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_left",
+      "label": "Left border",
+      "default": false,
+      "visible_if": "{{ section.settings.show_border }}"
+    },
+    {
+      "type": "checkbox",
+      "id": "border_right",
+      "label": "Right border",
+      "default": false,
+      "visible_if": "{{ section.settings.show_border }}"
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "label": "Border width",
+      "min": 1,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "default": 1,
+      "visible_if": "{{ section.settings.show_border }}"
     },
     {
       "type": "header",
