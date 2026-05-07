@@ -411,6 +411,19 @@
         "padding-block-end": 0
       }
     },
+    "extra_product_details": {
+      "type": "product-extra-details",
+      "blocks": {},
+      "block_order": [],
+      "settings": {
+        "section_width": "page-width",
+        "columns": 1,
+        "gap": 24,
+        "color_scheme": "scheme-1",
+        "padding-block-start": 32,
+        "padding-block-end": 32
+      }
+    },
     "product_recommendations_qggXJq": {
       "type": "product-recommendations",
       "blocks": {
@@ -556,6 +569,7 @@
   },
   "order": [
     "main",
+    "extra_product_details",
     "product_recommendations_qggXJq"
   ]
 }
