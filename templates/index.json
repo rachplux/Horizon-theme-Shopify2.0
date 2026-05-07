@@ -3129,6 +3129,34 @@
         "padding-block-end": 48
       }
     },
+    "divider_AVXCYQ": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-8",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
+    "divider_87mFVy": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-8",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "product_list_fa6P9H": {
       "type": "product-list",
       "blocks": {
@@ -3410,6 +3438,20 @@
         "color_scheme": "scheme-8",
         "padding-block-start": 30,
         "padding-block-end": 42
+      }
+    },
+    "divider_fx3MKi": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-8",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "section_xx9fYg": {
@@ -3879,6 +3921,20 @@
         "padding-block-start": 40,
         "padding-block-end": 40
       }
+    },
+    "divider_Vwa7JJ": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-8",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
     }
   },
   "order": [
@@ -3889,9 +3945,13 @@
     "carousel_z3iWjj",
     "collection_list_68BdFR",
     "section_HgyjyC",
+    "divider_AVXCYQ",
     "section_NPxMye",
+    "divider_87mFVy",
     "product_list_fa6P9H",
+    "divider_fx3MKi",
     "section_xx9fYg",
-    "hero_impwnt"
+    "hero_impwnt",
+    "divider_Vwa7JJ"
   ]
 }
