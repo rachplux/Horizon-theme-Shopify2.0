@@ -112,14 +112,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "custom_liquid_GhbtDk": {
-                  "type": "custom-liquid",
-                  "name": "t:names.custom_liquid",
-                  "settings": {
-                    "custom_liquid": "{% assign product_collection = product.collections.first %}\n{% if product_collection %}\n  <p>{{ product_collection.title }}</p>\n{% endif %}"
-                  },
-                  "blocks": {}
-                },
                 "collection_title_kcYWLc": {
                   "type": "collection-title",
                   "name": "t:names.collection_title",
@@ -135,13 +127,13 @@
                     "case": "none",
                     "wrap": "pretty",
                     "color": "var(--color-foreground)",
-                    "background": false,
+                    "background": true,
                     "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "corner_radius": 18,
+                    "padding-block-start": 5,
+                    "padding-block-end": 5,
+                    "padding-inline-start": 15,
+                    "padding-inline-end": 15
                   },
                   "blocks": {}
                 },
@@ -216,7 +208,6 @@
                 }
               },
               "block_order": [
-                "custom_liquid_GhbtDk",
                 "collection_title_kcYWLc",
                 "text_xrnftG",
                 "sku_UJcnE3",
@@ -248,14 +239,6 @@
               },
               "blocks": {}
             },
-            "custom_liquid_GzqeaX": {
-              "type": "custom-liquid",
-              "name": "t:names.custom_liquid",
-              "settings": {
-                "custom_liquid": "<style>\n  .tag {\n    padding: 3px 0.8em;\n    border-radius: 8px;\n    font-size: 0.9rem;\n  }\n  .car-audio {\n    background-color: #2b2b2b;\n    color: #f26a28;\n  }\n  .pro-audio {\n    background-color: #2b2b2b;\n    color: #2a8fd3;\n  }\n  .marine-audio {\n    background-color: #16659c;\n    color: #b1cadb;\n  }\n  .powersports {\n    background-color: #04aa6d;\n    color: #6eefbe;\n  }\n  .default {\n    background-color: #333333;\n    color: #999999;\n  }\n</style>\n\n{% assign audio_type = closest.product.metafields.system.product_type.value %}\n\n{% if audio_type != blank %}\n  {% for item in audio_type %}\n    {% if item contains 'Car' %}\n      <span class='tag car-audio'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% elsif item contains 'Pro' %}\n      <span class='tag pro-audio'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% elsif item contains 'Marine' %}\n      <span class='tag marine-audio'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% elsif item contains 'Powersports' %}\n      <span class='tag powersports'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% else %}\n      <span class='tag default'>{{ item }}</span>\n      {%- unless forloop.last %}, {% endunless %}\n    {% endif %}\n  {% endfor %}\n{% endif %}"
-              },
-              "blocks": {}
-            },
             "text_aEtTtq": {
               "type": "text",
               "name": "Product description",
@@ -282,25 +265,13 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "serie_list_VFQYbR": {
-              "type": "serie-list",
-              "name": "Serie List",
-              "disabled": true,
-              "settings": {
-                "inherit_color_scheme": false,
-                "color_scheme": "scheme-7"
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "group_icgrde",
             "divider_VJhene",
             "variant_picker_R3rGDr",
-            "custom_liquid_GzqeaX",
-            "text_aEtTtq",
-            "serie_list_VFQYbR"
+            "text_aEtTtq"
           ]
         }
       },
