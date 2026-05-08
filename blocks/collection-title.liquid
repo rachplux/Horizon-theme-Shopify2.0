@@ -1,11 +1,26 @@
 
+{% liquid
+  assign collection_resource = closest.collection
 
-{% if closest.collection == blank %}
+  if collection_resource == blank and closest.product != blank
+    assign collection_resource = collection
+  endif
+
+  if collection_resource == blank and closest.product != blank
+    assign collection_resource = closest.product.collections.first
+  endif
+
+  if collection_resource == blank and product != blank
+    assign collection_resource = product.collections.first
+  endif
+%}
+
+{% if collection_resource == blank %}
   {% assign text = 'placeholders.collection_title' | t %}
   {% assign collection_title = '<p>' | append: text | append: '</p>' %}
   {% render 'text', fallback_text: collection_title, block: block %}
-{% elsif closest.collection != blank %}
-  {% assign collection_title = '<p>' | append: closest.collection.title | append: '</p>' %}
+{% elsif collection_resource != blank %}
+  {% assign collection_title = '<p>' | append: collection_resource.title | append: '</p>' %}
   {% render 'text', fallback_text: collection_title, block: block %}
 {% endif %}
 
