@@ -546,7 +546,7 @@
           "type": "text",
           "name": "t:names.heading",
           "settings": {
-            "text": "<h3>About This model</h3>",
+            "text": "<h3>Specifications</h3>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -577,29 +577,18 @@
             "add_richtext": ""
           },
           "blocks": {}
-        },
-        "specification_HbCyB8": {
-          "type": "specification",
-          "name": "Specification",
-          "settings": {
-            "caption": "",
-            "select_table": "subwoofer_tech_data",
-            "add_richtext": ""
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "text_VyXmtf",
-        "specification_dhxJkp",
-        "specification_HbCyB8"
+        "specification_dhxJkp"
       ],
       "name": "Product extra details",
       "settings": {
         "section_width": "page-width",
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "space-between",
+        "horizontal_alignment": "flex-start",
         "vertical_alignment": "flex-start",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
