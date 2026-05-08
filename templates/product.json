@@ -112,6 +112,14 @@
                 "padding-inline-end": 0
               },
               "blocks": {
+                "custom_liquid_GhbtDk": {
+                  "type": "custom-liquid",
+                  "name": "t:names.custom_liquid",
+                  "settings": {
+                    "custom_liquid": "{% assign product_collection = product.collections.first %}\n{% if product_collection %}\n  <p>{{ product_collection.title }}</p>\n{% endif %}"
+                  },
+                  "blocks": {}
+                },
                 "collection_title_kcYWLc": {
                   "type": "collection-title",
                   "name": "t:names.collection_title",
@@ -208,6 +216,7 @@
                 }
               },
               "block_order": [
+                "custom_liquid_GhbtDk",
                 "collection_title_kcYWLc",
                 "text_xrnftG",
                 "sku_UJcnE3",
