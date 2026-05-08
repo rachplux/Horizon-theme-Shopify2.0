@@ -577,11 +577,22 @@
             "add_richtext": ""
           },
           "blocks": {}
+        },
+        "specification_HbCyB8": {
+          "type": "specification",
+          "name": "Specification",
+          "settings": {
+            "caption": "",
+            "select_table": "subwoofer_tech_data",
+            "add_richtext": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "text_VyXmtf",
-        "specification_dhxJkp"
+        "specification_dhxJkp",
+        "specification_HbCyB8"
       ],
       "name": "Product extra details",
       "settings": {
