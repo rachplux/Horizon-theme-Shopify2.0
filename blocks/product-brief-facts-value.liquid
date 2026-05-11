@@ -1,0 +1,723 @@
+{% liquid
+  assign product_resource = closest.product | default: product
+  assign source = block.settings.source
+  assign speaker = product_resource.metafields.speaker
+  assign amplifier = product_resource.metafields.amplifier
+  assign amplifier_power = amplifier.power.value
+  assign shopify = product_resource.metafields.shopify
+  assign system = product_resource.metafields.system
+  assign value_text = ''
+
+  case source
+    when 'speaker_power'
+      if speaker.rms_power != blank
+        capture value_text
+          echo speaker.rms_power.value | append: 'W RMS'
+          if speaker.peak_power != blank
+            echo '<br>'
+            echo speaker.peak_power.value | append: 'W Max'
+          endif
+        endcapture
+      endif
+
+    when 'speaker_size'
+      if speaker.size != blank
+        if speaker.size.value.first != blank
+          assign value_text = speaker.size.value | join: ' & '
+        else
+          assign value_text = speaker.size.value
+        endif
+      endif
+
+    when 'speaker_sold_unit'
+      if speaker.sold_unit != blank
+        assign value_text = speaker.sold_unit.value
+      endif
+
+    when 'amplifier_rms_lowest_ohm'
+      assign rms_metafield = amplifier.rms_1_ohm | default: amplifier_power.rms_1_ohm
+      assign rms_ohm = '1 Ohm'
+
+      if rms_metafield == blank or rms_metafield.value == blank
+        assign rms_metafield = amplifier.rms_2_ohm | default: amplifier_power.rms_2_ohm
+        assign rms_ohm = '2 Ohm'
+      endif
+
+      if rms_metafield == blank or rms_metafield.value == blank
+        assign rms_metafield = amplifier.rms_4_ohm | default: amplifier_power.rms_4_ohm
+        assign rms_ohm = '4 Ohm'
+      endif
+
+      if rms_metafield != blank
+        assign value_text = rms_metafield.value | default: rms_metafield
+        assign value_text_downcase = value_text | downcase
+        assign value_includes_ohm = false
+
+        if value_text_downcase contains 'ohm'
+          assign value_includes_ohm = true
+        endif
+
+        if value_text != blank and block.settings.show_amplifier_ohm and value_includes_ohm == false
+          assign value_text = value_text | append: ' @ ' | append: rms_ohm
+        endif
+      endif
+
+    when 'amplifier_class'
+      assign target = amplifier['amplifier-class'] | default: amplifier_power['amplifier-class'] | default: shopify['amplifier-class'] | default: system['amplifier-class']
+
+    when 'amplifier_channels'
+      assign target = amplifier['amplifier-configuration'] | default: amplifier_power['amplifier-configuration'] | default: shopify['amplifier-configuration'] | default: system['amplifier-configuration']
+  endcase
+
+  if target != blank and value_text == blank
+    assign active_value = target.value
+    assign meta_type = target.type
+
+    if meta_type contains 'list.metaobject'
+      assign items_array = '' | split: ''
+      for obj in active_value
+        assign item_value = obj.label.value | default: obj.name.value | default: obj.display_name
+        assign item_as_array = item_value | split: '||'
+        assign items_array = items_array | concat: item_as_array
+      endfor
+      assign value_text = items_array | join: ' & '
+    elsif meta_type == 'metaobject_reference'
+      assign value_text = active_value.label.value | default: active_value.name.value | default: active_value.display_name
+    elsif active_value.first != blank
+      assign value_text = active_value | join: ' & '
+    else
+      assign value_text = active_value
+    endif
+  endif
+
+  assign label_text = block.settings.label
+
+  capture value_markup
+    echo '<span class="product-brief-facts-value__text-inner">'
+    echo value_text
+    echo '</span>'
+  endcapture
+%}
+
+{% if value_text != blank or request.design_mode %}
+  <div
+    class="product-brief-facts-value"
+    style="
+      --brief-facts-value-align: {{ block.settings.content_alignment }};
+      --horizontal-alignment: {{ block.settings.content_alignment }};
+      --text-align: {% if block.settings.content_alignment == 'flex-end' %}right{% elsif block.settings.content_alignment == 'center' %}center{% else %}left{% endif %};
+      --brief-facts-value-text-align: {% if block.settings.content_alignment == 'flex-end' %}right{% elsif block.settings.content_alignment == 'center' %}center{% else %}left{% endif %};
+      --brief-facts-value-gap: {{ block.settings.gap }}px;
+      --brief-facts-label-font-family: {{ block.settings.label_font }};
+      --brief-facts-label-font-size: {{ block.settings.label_font_size }};
+      --brief-facts-label-color: {{ block.settings.label_color }};
+      --brief-facts-label-text-transform: {{ block.settings.label_case }};
+    "
+  >
+    {% if block.settings.show_label %}
+      <div class="product-brief-facts-value__label">
+        {{ label_text }}
+      </div>
+    {% endif %}
+
+    {% render 'text', block: block, fallback_text: value_markup %}
+  </div>
+{% endif %}
+
+{% stylesheet %}
+  .product-brief-facts-value {
+    align-self: var(--brief-facts-value-align-self, auto);
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    align-items: var(--brief-facts-value-align, center);
+    gap: var(--brief-facts-value-gap, 12px);
+    min-width: 0;
+    width: 100%;
+  }
+
+  .product-brief-facts-value__label {
+    color: var(--brief-facts-label-color);
+    font-family: var(--brief-facts-label-font-family);
+    font-size: var(--brief-facts-label-font-size);
+    line-height: normal;
+    margin: 0;
+    text-align: var(--brief-facts-value-text-align, center);
+    text-transform: var(--brief-facts-label-text-transform);
+  }
+
+  .product-brief-facts-value .text-block {
+    align-items: var(--brief-facts-value-align, center);
+    text-align: var(--brief-facts-value-text-align, center);
+  }
+
+  .product-brief-facts-value .text-block > .product-brief-facts-value__text-inner {
+    display: block;
+    inline-size: max-content;
+    max-inline-size: 100%;
+    text-align: var(--brief-facts-value-text-align, center);
+  }
+{% endstylesheet %}
+
+{% schema %}
+{
+  "name": "Product Brief Facts Value",
+  "tag": null,
+  "settings": [
+    {
+      "type": "select",
+      "id": "source",
+      "label": "Source",
+      "options": [
+        {
+          "value": "speaker_power",
+          "label": "Speaker power"
+        },
+        {
+          "value": "speaker_size",
+          "label": "Speaker size"
+        },
+        {
+          "value": "speaker_sold_unit",
+          "label": "Speaker sold unit"
+        },
+        {
+          "value": "amplifier_rms_lowest_ohm",
+          "label": "Amplifier RMS lowest ohm"
+        },
+        {
+          "value": "amplifier_class",
+          "label": "Amplifier class"
+        },
+        {
+          "value": "amplifier_channels",
+          "label": "Amplifier channels"
+        }
+      ],
+      "default": "speaker_power"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_amplifier_ohm",
+      "label": "Show amplifier ohm",
+      "default": true,
+      "visible_if": "{{ block.settings.source == 'amplifier_rms_lowest_ohm' }}"
+    },
+    {
+      "type": "header",
+      "content": "Label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_label",
+      "label": "Show label",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "label",
+      "label": "Label",
+      "default": "POWER",
+      "visible_if": "{{ block.settings.show_label }}"
+    },
+    {
+      "type": "select",
+      "id": "label_font",
+      "label": "Label font",
+      "options": [
+        {
+          "value": "var(--font-body--family)",
+          "label": "t:options.body"
+        },
+        {
+          "value": "var(--font-subheading--family)",
+          "label": "t:options.subheading"
+        },
+        {
+          "value": "var(--font-heading--family)",
+          "label": "t:options.heading"
+        },
+        {
+          "value": "var(--font-accent--family)",
+          "label": "t:options.accent"
+        }
+      ],
+      "default": "var(--font-accent--family)",
+      "visible_if": "{{ block.settings.show_label }}"
+    },
+    {
+      "type": "select",
+      "id": "label_font_size",
+      "label": "Label size",
+      "options": [
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        },
+        {
+          "value": "1.125rem",
+          "label": "18px"
+        },
+        {
+          "value": "1.25rem",
+          "label": "20px"
+        }
+      ],
+      "default": "1rem",
+      "visible_if": "{{ block.settings.show_label }}"
+    },
+    {
+      "type": "select",
+      "id": "label_case",
+      "label": "Label case",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.default"
+        },
+        {
+          "value": "uppercase",
+          "label": "t:options.uppercase"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.show_label }}"
+    },
+    {
+      "type": "select",
+      "id": "label_color",
+      "label": "Label color",
+      "options": [
+        {
+          "value": "var(--color-foreground)",
+          "label": "t:options.text"
+        },
+        {
+          "value": "var(--color-foreground-heading)",
+          "label": "t:options.heading"
+        },
+        {
+          "value": "var(--color-primary)",
+          "label": "t:options.link"
+        }
+      ],
+      "default": "var(--color-foreground-heading)",
+      "visible_if": "{{ block.settings.show_label }}"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "label": "Alignment",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "t:options.left"
+        },
+        {
+          "value": "center",
+          "label": "t:options.center"
+        },
+        {
+          "value": "flex-end",
+          "label": "t:options.right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "label": "t:settings.gap",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 12
+    },
+    {
+      "type": "select",
+      "id": "width",
+      "label": "t:settings.width",
+      "options": [
+        {
+          "value": "fit-content",
+          "label": "t:options.fit"
+        },
+        {
+          "value": "100%",
+          "label": "t:options.fill"
+        }
+      ],
+      "default": "fit-content"
+    },
+    {
+      "type": "select",
+      "id": "max_width",
+      "label": "t:settings.max_width",
+      "options": [
+        {
+          "value": "narrow",
+          "label": "t:options.narrow"
+        },
+        {
+          "value": "normal",
+          "label": "t:options.normal"
+        },
+        {
+          "value": "none",
+          "label": "t:options.none"
+        }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "t:settings.alignment",
+      "default": "left",
+      "visible_if": "{{ block.settings.width == '100%' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.typography"
+    },
+    {
+      "type": "select",
+      "id": "type_preset",
+      "label": "t:settings.preset",
+      "options": [
+        {
+          "value": "rte",
+          "label": "t:options.default"
+        },
+        {
+          "value": "paragraph",
+          "label": "t:options.paragraph"
+        },
+        {
+          "value": "h1",
+          "label": "t:options.h1"
+        },
+        {
+          "value": "h2",
+          "label": "t:options.h2"
+        },
+        {
+          "value": "h3",
+          "label": "t:options.h3"
+        },
+        {
+          "value": "h4",
+          "label": "t:options.h4"
+        },
+        {
+          "value": "h5",
+          "label": "t:options.h5"
+        },
+        {
+          "value": "h6",
+          "label": "t:options.h6"
+        },
+        {
+          "value": "custom",
+          "label": "t:options.custom"
+        }
+      ],
+      "default": "h4",
+      "info": "t:info.edit_presets_in_theme_settings"
+    },
+    {
+      "type": "select",
+      "id": "font",
+      "label": "t:settings.font",
+      "options": [
+        {
+          "value": "var(--font-body--family)",
+          "label": "t:options.body"
+        },
+        {
+          "value": "var(--font-subheading--family)",
+          "label": "t:options.subheading"
+        },
+        {
+          "value": "var(--font-heading--family)",
+          "label": "t:options.heading"
+        },
+        {
+          "value": "var(--font-accent--family)",
+          "label": "t:options.accent"
+        }
+      ],
+      "default": "var(--font-body--family)",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "font_size",
+      "label": "t:settings.size",
+      "options": [
+        {
+          "value": "",
+          "label": "t:options.default"
+        },
+        {
+          "value": "0.625rem",
+          "label": "10px"
+        },
+        {
+          "value": "0.75rem",
+          "label": "12px"
+        },
+        {
+          "value": "0.875rem",
+          "label": "14px"
+        },
+        {
+          "value": "1rem",
+          "label": "16px"
+        },
+        {
+          "value": "1.125rem",
+          "label": "18px"
+        },
+        {
+          "value": "1.25rem",
+          "label": "20px"
+        },
+        {
+          "value": "1.5rem",
+          "label": "24px"
+        },
+        {
+          "value": "2rem",
+          "label": "32px"
+        },
+        {
+          "value": "2.5rem",
+          "label": "40px"
+        },
+        {
+          "value": "3rem",
+          "label": "48px"
+        },
+        {
+          "value": "3.5rem",
+          "label": "56px"
+        },
+        {
+          "value": "4.5rem",
+          "label": "72px"
+        },
+        {
+          "value": "5.5rem",
+          "label": "88px"
+        },
+        {
+          "value": "7.5rem",
+          "label": "120px"
+        },
+        {
+          "value": "9.5rem",
+          "label": "152px"
+        },
+        {
+          "value": "11.5rem",
+          "label": "184px"
+        }
+      ],
+      "default": "1rem",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "line_height",
+      "label": "t:settings.line_height",
+      "options": [
+        {
+          "value": "tight",
+          "label": "t:options.tight"
+        },
+        {
+          "value": "normal",
+          "label": "t:options.normal"
+        },
+        {
+          "value": "loose",
+          "label": "t:options.loose"
+        }
+      ],
+      "default": "normal",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "letter_spacing",
+      "label": "t:settings.letter_spacing",
+      "options": [
+        {
+          "value": "tight",
+          "label": "t:options.tight"
+        },
+        {
+          "value": "normal",
+          "label": "t:options.normal"
+        },
+        {
+          "value": "loose",
+          "label": "t:options.loose"
+        }
+      ],
+      "default": "normal",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "case",
+      "label": "t:settings.case",
+      "options": [
+        {
+          "value": "none",
+          "label": "t:options.default"
+        },
+        {
+          "value": "uppercase",
+          "label": "t:options.uppercase"
+        }
+      ],
+      "default": "none",
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "wrap",
+      "label": "t:settings.wrap",
+      "options": [
+        {
+          "value": "pretty",
+          "label": "t:options.pretty"
+        },
+        {
+          "value": "balance",
+          "label": "t:options.balance"
+        },
+        {
+          "value": "nowrap",
+          "label": "t:options.none"
+        }
+      ],
+      "visible_if": "{{ block.settings.type_preset == 'custom' }}"
+    },
+    {
+      "type": "select",
+      "id": "color",
+      "label": "t:settings.color",
+      "options": [
+        {
+          "value": "var(--color-foreground)",
+          "label": "t:options.text"
+        },
+        {
+          "value": "var(--color-foreground-heading)",
+          "label": "t:options.heading"
+        },
+        {
+          "value": "var(--color-primary)",
+          "label": "t:options.link"
+        }
+      ],
+      "default": "var(--color-foreground)",
+      "visible_if": "{{ block.settings.type_preset != 'rte' }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.appearance"
+    },
+    {
+      "type": "checkbox",
+      "id": "background",
+      "label": "t:settings.background",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "t:settings.background_color",
+      "alpha": true,
+      "default": "#00000026",
+      "visible_if": "{{ block.settings.background }}"
+    },
+    {
+      "type": "range",
+      "id": "corner_radius",
+      "label": "t:settings.corner_radius",
+      "default": 0,
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "visible_if": "{{ block.settings.background }}"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Brief Facts Value",
+      "category": "t:categories.product"
+    }
+  ]
+}
+{% endschema %}

@@ -2,28 +2,33 @@
   .grid-container {
     display: flex;
     flex-direction: column;
-    border-top: 1px solid #eee;
+    border: 1px solid var(--border-color);
     max-width: 100%;
     font-size: 0.92em;
-    background-color: #fafafa;
-    padding: 10px 20px;
+    /*padding: 10px 20px;*/
     border-radius: 1cap;
   }
 
   .spec-row {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    border-bottom: 1px solid #eee;
-    padding: 5px 0;
+    border-bottom: 1px solid var(--border-color);
     align-items: center;
-    color: #535353;
-
     &:last-child {
       border-bottom: none;
     }
   }
+  .spec-row:nth-child(odd) {
+	background-color: rgb(255 255 255 /20%);
+  }
+  .spec-label,.spec-value {
+	color: var(--color-foreground);
+	padding: 5px 1rem;
+  }
   .spec-label {
     font-weight: bold;
+	text-transform:uppercase;
+	border-right: 1px solid var(--border-color);
   }
 {% endstylesheet %}
 
