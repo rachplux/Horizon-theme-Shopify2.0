@@ -1048,6 +1048,7 @@
         "specification_NWnzfD": {
           "type": "specification",
           "name": "Subwoofer Data",
+          "disabled": true,
           "settings": {
             "caption": "",
             "select_table": "subwoofer_tech_data",
@@ -1058,6 +1059,7 @@
         "specification_WtG9Hh": {
           "type": "specification",
           "name": "Amplifier Spec",
+          "disabled": true,
           "settings": {
             "caption": "",
             "select_table": "amplifier_spec_metafields",
