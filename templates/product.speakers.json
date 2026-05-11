@@ -431,7 +431,7 @@
                 "horizontal_alignment": "flex-start",
                 "vertical_alignment": "center",
                 "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
+                "horizontal_alignment_flex_direction_column": "center",
                 "vertical_alignment_flex_direction_column": "center",
                 "gap": 12,
                 "width": "fill",
@@ -1041,7 +1041,12 @@
           "settings": {
             "caption": "",
             "select_table": "speaker_spec_metafields",
-            "add_richtext": ""
+            "add_richtext": "",
+            "vertical_alignment": "top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -1052,7 +1057,12 @@
           "settings": {
             "caption": "",
             "select_table": "subwoofer_tech_data",
-            "add_richtext": ""
+            "add_richtext": "",
+            "vertical_alignment": "top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -1063,7 +1073,12 @@
           "settings": {
             "caption": "",
             "select_table": "amplifier_spec_metafields",
-            "add_richtext": ""
+            "add_richtext": "",
+            "vertical_alignment": "top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         }
@@ -1245,8 +1260,8 @@
         "recommendation_type": "related",
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "max_products": 4,
-        "columns": 4,
+        "max_products": 5,
+        "columns": 5,
         "mobile_columns": "2",
         "columns_gap": 12,
         "rows_gap": 24,
