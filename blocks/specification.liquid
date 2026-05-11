@@ -1,4 +1,29 @@
 {% stylesheet %}
+  .layout-panel-flex--row > .specification-block {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .layout-panel-flex--row > .specification-block:has(.specification-block__inner--align-top) {
+    align-self: flex-start;
+  }
+
+  .layout-panel-flex--row > .specification-block:has(.specification-block__inner--align-center) {
+    align-self: center;
+  }
+
+  .layout-panel-flex--row > .specification-block:has(.specification-block__inner--align-bottom) {
+    align-self: flex-end;
+  }
+
+  .specification-block,
+  .specification-block__inner,
+  .spec-table,
+  .spec-table .grid-container {
+    width: 100%;
+    min-width: 0;
+  }
+
   .grid-container {
     display: flex;
     flex-direction: column;
@@ -11,7 +36,7 @@
 
   .spec-row {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     border-bottom: 1px solid var(--border-color);
     align-items: center;
     &:last-child {
@@ -24,16 +49,24 @@
   .spec-label,.spec-value {
 	color: var(--color-foreground);
 	padding: 5px 1rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .spec-label {
     font-weight: bold;
 	text-transform:uppercase;
-	border-right: 1px solid var(--border-color);
+  }
+  .spec-value {
+	border-left: 1px solid var(--border-color);
   }
 {% endstylesheet %}
 
-<div class='container'>
-  {% if block.settings.caption %}
+<div
+  class='specification-block__inner specification-block__inner--align-{{ block.settings.vertical_alignment }} spacing-style container'
+  style="{% render 'spacing-style', settings: block.settings %}"
+  {{ block.shopify_attributes }}
+>
+  {% if block.settings.caption == true %}
     <p class='caption'>
       {{ block.settings.caption }}
     </p>
@@ -59,15 +92,16 @@
       {% endcase %}
     {% endif %}
   </div>
-</div>
 
-{% if block.settings.add_richtext %}
-  {{ block.settings.add_richtext }}
-{% endif %}
+  {% if block.settings.add_richtext %}
+    {{ block.settings.add_richtext }}
+  {% endif %}
+</div>
 {% schema %}
 {
   "name": "Specification",
   "tag": "block",
+  "class": "specification-block",
   "settings": [
     {
       "type": "text",
@@ -103,6 +137,74 @@
       "id": "add_richtext",
       "label": "Add custom table or text",
       "info": "Content will be rendered as HTML. Supports paragraphs, lists, and other formatted text."
+    },
+    {
+      "type": "header",
+      "content": "t:content.layout"
+    },
+    {
+      "type": "select",
+      "id": "vertical_alignment",
+      "label": "Vertical alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "top"
+    },
+    {
+      "type": "header",
+      "content": "t:content.padding"
+    },
+    {
+      "type": "range",
+      "id": "padding-block-start",
+      "label": "t:settings.top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-block-end",
+      "label": "t:settings.bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-start",
+      "label": "t:settings.left",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding-inline-end",
+      "label": "t:settings.right",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "default": 0
     }
   ],
   "presets": [
