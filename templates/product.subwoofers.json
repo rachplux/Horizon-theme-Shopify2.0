@@ -1035,26 +1035,75 @@
           },
           "blocks": {}
         },
-        "specification_dhxJkp": {
-          "type": "specification",
-          "name": "Speaker Spec",
+        "group_4niiJd": {
+          "type": "group",
+          "name": "t:names.group",
           "settings": {
-            "caption": "",
-            "select_table": "speaker_spec_metafields",
-            "add_richtext": ""
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-start",
+            "vertical_alignment": "flex-start",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_width_top": 1,
+            "border_width_bottom": 1,
+            "border_width_left": 1,
+            "border_width_right": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
-          "blocks": {}
-        },
-        "specification_NWnzfD": {
-          "type": "specification",
-          "name": "Subwoofer Data",
-          "disabled": true,
-          "settings": {
-            "caption": "",
-            "select_table": "subwoofer_tech_data",
-            "add_richtext": ""
+          "blocks": {
+            "specification_B4LLXH": {
+              "type": "specification",
+              "name": "Speaker Spec",
+              "settings": {
+                "caption": "",
+                "select_table": "speaker_spec_metafields",
+                "add_richtext": ""
+              },
+              "blocks": {}
+            },
+            "specification_KKMxmN": {
+              "type": "specification",
+              "name": "Subwoofer Data",
+              "settings": {
+                "caption": "",
+                "select_table": "subwoofer_tech_data",
+                "add_richtext": ""
+              },
+              "blocks": {}
+            }
           },
-          "blocks": {}
+          "block_order": [
+            "specification_B4LLXH",
+            "specification_KKMxmN"
+          ]
         },
         "specification_WtG9Hh": {
           "type": "specification",
@@ -1070,8 +1119,7 @@
       },
       "block_order": [
         "text_VyXmtf",
-        "specification_dhxJkp",
-        "specification_NWnzfD",
+        "group_4niiJd",
         "specification_WtG9Hh"
       ],
       "name": "Product extra details",
