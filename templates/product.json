@@ -1037,10 +1037,30 @@
         },
         "specification_dhxJkp": {
           "type": "specification",
-          "name": "Specification",
+          "name": "Speaker Spec",
           "settings": {
             "caption": "",
             "select_table": "speaker_spec_metafields",
+            "add_richtext": ""
+          },
+          "blocks": {}
+        },
+        "specification_NWnzfD": {
+          "type": "specification",
+          "name": "Subwoofer Data",
+          "settings": {
+            "caption": "",
+            "select_table": "subwoofer_tech_data",
+            "add_richtext": ""
+          },
+          "blocks": {}
+        },
+        "specification_WtG9Hh": {
+          "type": "specification",
+          "name": "Amplifier Spec",
+          "settings": {
+            "caption": "",
+            "select_table": "amplifier_spec_metafields",
             "add_richtext": ""
           },
           "blocks": {}
@@ -1048,7 +1068,9 @@
       },
       "block_order": [
         "text_VyXmtf",
-        "specification_dhxJkp"
+        "specification_dhxJkp",
+        "specification_NWnzfD",
+        "specification_WtG9Hh"
       ],
       "name": "Product extra details",
       "settings": {
@@ -1068,7 +1090,7 @@
         "height": "fit",
         "custom_height": 100,
         "inherit_color_scheme": false,
-        "color_scheme": "scheme-2",
+        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
