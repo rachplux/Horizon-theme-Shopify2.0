@@ -1154,7 +1154,7 @@
         "custom_width_mobile": 100,
         "height": "fit",
         "custom_height": 100,
-        "inherit_color_scheme": false,
+        "inherit_color_scheme": true,
         "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
         "background_media": "none",
         "video_position": "cover",
@@ -1178,6 +1178,20 @@
         "padding-block-end": 32,
         "padding-inline-start": 40,
         "padding-inline-end": 0
+      }
+    },
+    "divider_E6zytR": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 0,
+        "padding-block-end": 0
       }
     },
     "product_recommendations_qggXJq": {
@@ -1338,6 +1352,7 @@
     "product_extra_details_JBGN78",
     "divider_LyVtBE",
     "product_extra_details_LrqKNC",
+    "divider_E6zytR",
     "product_recommendations_qggXJq"
   ]
 }
