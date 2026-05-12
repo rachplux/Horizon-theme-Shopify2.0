@@ -242,6 +242,7 @@
             "group_N4nPkr": {
               "type": "product-brief-facts",
               "name": "Speaker Brief Facts",
+              "disabled": true,
               "settings": {
                 "content_direction": "row",
                 "vertical_on_mobile": true,
@@ -421,6 +422,32 @@
                 "divider_cWr3qC",
                 "group_miGVk4"
               ]
+            },
+            "product_description_BrkbXh": {
+              "type": "product-description",
+              "name": "t:names.product_description",
+              "settings": {
+                "text": "<p>{{ closest.product.metafields.system.brief_summary | metafield_tag }}</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
             },
             "group_nqxBtA": {
               "type": "group",
@@ -681,6 +708,7 @@
             "variant_picker_R3rGDr",
             "divider_VJhene",
             "group_N4nPkr",
+            "product_description_BrkbXh",
             "group_nqxBtA",
             "product_brief_facts_Cr9XDE"
           ]
@@ -785,15 +813,15 @@
               },
               "blocks": {}
             },
-            "text_7kh6iN": {
-              "type": "text",
-              "name": "t:names.text",
+            "product_description_iWEVb6": {
+              "type": "product-description",
+              "name": "t:names.product_description",
               "settings": {
-                "text": "{{ closest.product.description }}",
+                "text": "<p>{{ closest.product.description }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "paragraph",
+                "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -814,7 +842,7 @@
           },
           "block_order": [
             "text_tFiFT9",
-            "text_7kh6iN"
+            "product_description_iWEVb6"
           ]
         },
         "divider_tVh9zD": {
@@ -1041,7 +1069,12 @@
           "settings": {
             "caption": "",
             "select_table": "speaker_spec_metafields",
-            "add_richtext": ""
+            "add_richtext": "",
+            "vertical_alignment": "top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -1052,7 +1085,12 @@
           "settings": {
             "caption": "",
             "select_table": "subwoofer_tech_data",
-            "add_richtext": ""
+            "add_richtext": "",
+            "vertical_alignment": "top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         },
@@ -1063,7 +1101,12 @@
           "settings": {
             "caption": "",
             "select_table": "amplifier_spec_metafields",
-            "add_richtext": ""
+            "add_richtext": "",
+            "vertical_alignment": "top",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
           },
           "blocks": {}
         }
