@@ -1120,7 +1120,7 @@
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h3>About {{ closest.product.metafields.speaker.serie.value.label.value }}</h3>",
+                "text": "<h3>About {{ closest.product.metafields.speaker.serie.value.label.value }}{{ closest.product.metafields.amplifier.serie.value.label.value }}</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
