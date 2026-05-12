@@ -844,15 +844,15 @@
               },
               "blocks": {}
             },
-            "text_7kh6iN": {
-              "type": "text",
-              "name": "t:names.text",
+            "product_description_8GX8tW": {
+              "type": "product-description",
+              "name": "t:names.product_description",
               "settings": {
-                "text": "{{ closest.product.description }}",
+                "text": "<p>{{ closest.product.description }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "paragraph",
+                "type_preset": "rte",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -873,7 +873,7 @@
           },
           "block_order": [
             "text_tFiFT9",
-            "text_7kh6iN"
+            "product_description_8GX8tW"
           ]
         },
         "divider_tVh9zD": {
