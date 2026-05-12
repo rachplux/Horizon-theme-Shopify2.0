@@ -163,6 +163,19 @@
                   },
                   "blocks": {}
                 },
+                "variant_picker_YWEpet": {
+                  "type": "variant-picker",
+                  "settings": {
+                    "variant_style": "buttons",
+                    "show_swatches": false,
+                    "alignment": "left",
+                    "padding-block-start": 10,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "sku_UJcnE3": {
                   "type": "sku",
                   "name": "t:names.product_sku",
@@ -210,16 +223,30 @@
               "block_order": [
                 "collection_title_kcYWLc",
                 "text_xrnftG",
+                "variant_picker_YWEpet",
                 "sku_UJcnE3",
                 "price_tVjtKg"
               ]
             },
-            "variant_picker_R3rGDr": {
-              "type": "variant-picker",
+            "product_description_GGDepa": {
+              "type": "product-description",
+              "name": "t:names.product_description",
               "settings": {
-                "variant_style": "buttons",
-                "show_swatches": false,
+                "text": "<p>{{ closest.product.metafields.system.brief_summary | metafield_tag }}</p>",
+                "width": "fit-content",
+                "max_width": "normal",
                 "alignment": "left",
+                "type_preset": "rte",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
@@ -678,7 +705,7 @@
           },
           "block_order": [
             "group_icgrde",
-            "variant_picker_R3rGDr",
+            "product_description_GGDepa",
             "divider_VJhene",
             "group_N4nPkr",
             "group_nqxBtA",
