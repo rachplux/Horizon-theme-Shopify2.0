@@ -237,32 +237,6 @@
               },
               "blocks": {}
             },
-            "product_title_4nY4eT": {
-              "type": "product-title",
-              "name": "t:names.product_title",
-              "disabled": true,
-              "settings": {
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "custom",
-                "font": "var(--font-accent--family)",
-                "font_size": "1.125rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "uppercase",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "product_title_ytWhLk": {
               "type": "product-title",
               "name": "t:names.product_title",
@@ -307,7 +281,6 @@
             "product_card_group_4qJQVX",
             "card-gallery",
             "text_Qf9Yn4",
-            "product_title_4nY4eT",
             "product_title_ytWhLk",
             "swatches_cy9wqt"
           ]
