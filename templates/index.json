@@ -985,7 +985,7 @@
                     "link": "{{ closest.collection.url }}",
                     "open_in_new_tab": false,
                     "style_class": "link",
-                    "link_type_preset": "h6",
+                    "link_type_preset": "h5",
                     "use_custom_link_text_color": false,
                     "link_text_color": "#000000",
                     "show_icon": true,
