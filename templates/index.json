@@ -160,7 +160,7 @@
                     "link": "shopify://collections/marine-audio",
                     "open_in_new_tab": false,
                     "style_class": "button",
-                    "link_type_preset": "",
+                    "link_type_preset": "h6",
                     "use_custom_link_text_color": false,
                     "link_text_color": "#000000",
                     "show_icon": true,
