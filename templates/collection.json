@@ -414,7 +414,7 @@
           "settings": {
             "placement": "on_image",
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "flex-start",
+            "vertical_alignment": "flex-end",
             "collection_card_gap": 8,
             "inherit_color_scheme": true,
             "color_scheme": "",
@@ -431,7 +431,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "h5",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -442,10 +442,30 @@
                 "background": false,
                 "background_color": "#ffffff",
                 "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 8,
-                "padding-inline-end": 8
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "button_qV6MfD": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "VIEW PRODUCTS",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": true,
+                "style_class": "link",
+                "link_type_preset": "paragraph",
+                "use_custom_link_text_color": true,
+                "link_text_color": "#e75c02",
+                "show_icon": true,
+                "icon": "arrow",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             },
@@ -468,7 +488,8 @@
             }
           },
           "block_order": [
-            "collection_title_MBGmNk"
+            "collection_title_MBGmNk",
+            "button_qV6MfD"
           ]
         }
       },
