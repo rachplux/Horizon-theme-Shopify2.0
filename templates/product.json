@@ -171,6 +171,19 @@
                   },
                   "blocks": {}
                 },
+                "variant_picker_aHKPkd": {
+                  "type": "variant-picker",
+                  "settings": {
+                    "variant_style": "buttons",
+                    "show_swatches": false,
+                    "alignment": "left",
+                    "padding-block-start": 10,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
                 "sku_ym3yqb": {
                   "type": "sku",
                   "name": "t:names.product_sku",
@@ -233,6 +246,7 @@
               "block_order": [
                 "collection_title_kcYWLc",
                 "product_title_kzc73m",
+                "variant_picker_aHKPkd",
                 "sku_ym3yqb",
                 "product_description_dfBNt3",
                 "divider_pt7RM4"
@@ -511,19 +525,6 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "variant_picker_PEBcTn": {
-                  "type": "variant-picker",
-                  "settings": {
-                    "variant_style": "buttons",
-                    "show_swatches": false,
-                    "alignment": "left",
-                    "padding-block-start": 10,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
-                  },
-                  "blocks": {}
-                },
                 "button_iRqWVC": {
                   "type": "button",
                   "name": "t:names.button",
@@ -546,7 +547,6 @@
                 }
               },
               "block_order": [
-                "variant_picker_PEBcTn",
                 "button_iRqWVC"
               ]
             },
