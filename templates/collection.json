@@ -251,7 +251,7 @@
                 "letter_spacing": "loose",
                 "case": "uppercase",
                 "wrap": "pretty",
-                "color": "var(--color-foreground)",
+                "color": "var(--color-foreground-heading)",
                 "split_title": true,
                 "subtitle_type_preset": "paragraph",
                 "subtitle_font": "var(--font-body--family)",
