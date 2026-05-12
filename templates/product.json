@@ -343,7 +343,7 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "group_eaK7fB": {
+                "product_brief_facts_value_BqXxeq": {
                   "type": "product-brief-facts-value",
                   "name": "POWER",
                   "settings": {
@@ -360,7 +360,7 @@
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
-                    "type_preset": "h5",
+                    "type_preset": "h4",
                     "font": "var(--font-subheading--family)",
                     "font_size": "1.5rem",
                     "line_height": "normal",
@@ -474,7 +474,7 @@
                 }
               },
               "block_order": [
-                "group_eaK7fB",
+                "product_brief_facts_value_BqXxeq",
                 "divider_4i3ped",
                 "group_CUQThp",
                 "divider_cWr3qC",
@@ -940,7 +940,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h3",
+                "type_preset": "h4",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -1065,7 +1065,7 @@
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
-            "type_preset": "h3",
+            "type_preset": "h4",
             "font": "var(--font-body--family)",
             "font_size": "1rem",
             "line_height": "normal",
