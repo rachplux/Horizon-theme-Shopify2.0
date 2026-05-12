@@ -244,7 +244,7 @@
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "custom",
+                "type_preset": "h5",
                 "font": "var(--font-accent--family)",
                 "font_size": "1.25rem",
                 "line_height": "normal",
