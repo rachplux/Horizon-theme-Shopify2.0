@@ -244,11 +244,12 @@
             "product_title_ytWhLk": {
               "type": "product-title",
               "name": "t:names.product_title",
+              "disabled": true,
               "settings": {
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h5",
+                "type_preset": "rte",
                 "font": "var(--font-accent--family)",
                 "font_size": "1.25rem",
                 "line_height": "normal",
@@ -302,7 +303,7 @@
         "layout_type": "grid",
         "product_card_size": "medium",
         "mobile_product_card_size": "large",
-        "enable_infinite_scroll": true,
+        "enable_infinite_scroll": false,
         "products_per_page": 24,
         "product_grid_width": "centered",
         "full_width_on_mobile": false,
