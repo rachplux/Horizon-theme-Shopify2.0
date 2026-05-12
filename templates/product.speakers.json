@@ -162,7 +162,20 @@
                   },
                   "blocks": {}
                 },
-                "sku_UJcnE3": {
+                "variant_picker_bVGgAJ": {
+                  "type": "variant-picker",
+                  "settings": {
+                    "variant_style": "buttons",
+                    "show_swatches": false,
+                    "alignment": "left",
+                    "padding-block-start": 10,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "sku_nAqR9h": {
                   "type": "sku",
                   "name": "t:names.product_sku",
                   "settings": {
@@ -209,22 +222,10 @@
               "block_order": [
                 "collection_title_kcYWLc",
                 "product_title_8FDze4",
-                "sku_UJcnE3",
+                "variant_picker_bVGgAJ",
+                "sku_nAqR9h",
                 "price_tVjtKg"
               ]
-            },
-            "variant_picker_R3rGDr": {
-              "type": "variant-picker",
-              "settings": {
-                "variant_style": "buttons",
-                "show_swatches": false,
-                "alignment": "left",
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             },
             "divider_VJhene": {
               "type": "_divider",
@@ -677,7 +678,6 @@
           },
           "block_order": [
             "group_icgrde",
-            "variant_picker_R3rGDr",
             "divider_VJhene",
             "group_N4nPkr",
             "group_nqxBtA",
