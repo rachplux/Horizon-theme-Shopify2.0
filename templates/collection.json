@@ -244,12 +244,11 @@
             "product_title_ytWhLk": {
               "type": "product-title",
               "name": "t:names.product_title",
-              "disabled": true,
               "settings": {
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "h5",
                 "font": "var(--font-accent--family)",
                 "font_size": "1.25rem",
                 "line_height": "normal",
