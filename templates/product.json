@@ -155,7 +155,7 @@
                     "split_title": true,
                     "subtitle_type_preset": "custom",
                     "subtitle_font": "var(--font-accent--family)",
-                    "subtitle_font_size": "2rem",
+                    "subtitle_font_size": "1.5rem",
                     "subtitle_line_height": "normal",
                     "subtitle_letter_spacing": "normal",
                     "subtitle_case": "none",
@@ -206,7 +206,7 @@
                 },
                 "product_description_dfBNt3": {
                   "type": "product-description",
-                  "name": "t:names.product_description",
+                  "name": "Brief Summary",
                   "settings": {
                     "text": "<p>{{ closest.product.metafields.system.brief_summary | metafield_tag }}</p>",
                     "width": "fit-content",
