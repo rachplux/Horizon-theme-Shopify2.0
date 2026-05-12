@@ -758,6 +758,7 @@
     },
     "divider_7rCFL9": {
       "type": "divider",
+      "disabled": true,
       "name": "t:names.divider_section",
       "settings": {
         "color_scheme": "scheme-2",
@@ -982,22 +983,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {}
-            },
-            "serie_list_P7LqKU": {
-              "type": "serie-list",
-              "name": "Serie List",
-              "disabled": true,
-              "settings": {
-                "inherit_color_scheme": true,
-                "color_scheme": ""
-              },
-              "blocks": {}
             }
           },
           "block_order": [
             "text_4xWxgB",
-            "text_LNTJBa",
-            "serie_list_P7LqKU"
+            "text_LNTJBa"
           ]
         }
       },
