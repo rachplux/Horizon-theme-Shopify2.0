@@ -252,6 +252,7 @@
                 "case": "uppercase",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
+                "split_title": true,
                 "background": false,
                 "background_color": "#00000026",
                 "corner_radius": 0,
