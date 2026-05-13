@@ -545,7 +545,6 @@
       "block_order": [
         "group_EGzkdC"
       ],
-      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
@@ -790,6 +789,7 @@
       "block_order": [
         "group_aGEtNa"
       ],
+      "disabled": true,
       "name": "t:names.collections_grid",
       "settings": {
         "collection_list": [
