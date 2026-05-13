@@ -569,7 +569,7 @@
         "section_height_custom": 40,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#292929c6",
+        "overlay_color": "#292929c7",
         "overlay_style": "gradient",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
@@ -739,7 +739,7 @@
               "settings": {
                 "image_ratio": "landscape",
                 "toggle_overlay": false,
-                "overlay_color": "#191919e1",
+                "overlay_color": "#191919e0",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
                 "border": "none",
@@ -767,7 +767,8 @@
           "amplifier",
           "singal-processors",
           "controller",
-          "soundbars"
+          "soundbars",
+          "tweeters"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
