@@ -1263,7 +1263,22 @@
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 0,
-            "padding-inline-end": 0
+            "padding-inline-end": 20
+          },
+          "blocks": {}
+        },
+        "spacer_wKm4nJ": {
+          "type": "spacer",
+          "name": "t:names.spacer",
+          "disabled": true,
+          "settings": {
+            "size": "percent",
+            "percent_size": 19,
+            "pixel_size": 120,
+            "custom_mobile_size": false,
+            "size_mobile": "percent",
+            "percent_size_mobile": 100,
+            "pixel_size_mobile": 120
           },
           "blocks": {}
         },
@@ -1317,6 +1332,7 @@
       },
       "block_order": [
         "text_VyXmtf",
+        "spacer_wKm4nJ",
         "specification_dhxJkp",
         "specification_NWnzfD",
         "specification_WtG9Hh"
@@ -1326,7 +1342,7 @@
         "section_width": "page-width",
         "content_direction": "row",
         "vertical_on_mobile": true,
-        "horizontal_alignment": "flex-start",
+        "horizontal_alignment": "space-between",
         "vertical_alignment": "flex-start",
         "align_baseline": false,
         "horizontal_alignment_flex_direction_column": "flex-start",
@@ -1361,7 +1377,7 @@
         "padding-block-start": 32,
         "padding-block-end": 32,
         "padding-inline-start": 40,
-        "padding-inline-end": 0
+        "padding-inline-end": 40
       }
     },
     "divider_E6zytR": {
