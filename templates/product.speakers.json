@@ -156,7 +156,7 @@
                     "subtitle_type_preset": "custom",
                     "subtitle_font": "var(--font-body--family)",
                     "subtitle_font_size": "1.25rem",
-                    "subtitle_line_height": "tight",
+                    "subtitle_line_height": "normal",
                     "subtitle_letter_spacing": "loose",
                     "subtitle_case": "none",
                     "subtitle_wrap": "pretty",
