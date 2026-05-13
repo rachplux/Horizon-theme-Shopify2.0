@@ -796,9 +796,9 @@
           "car-audio",
           "pro-audio",
           "marine-audio",
-          "qr-serie",
-          "q-serie",
-          "flash-serie-enclosures"
+          "xpro-serie",
+          "pxm-serie-copy",
+          "pxm-serie"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
