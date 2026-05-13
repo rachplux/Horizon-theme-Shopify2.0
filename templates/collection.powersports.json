@@ -92,7 +92,7 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#61544b2e",
+        "overlay_color": "#7e815d2e",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
         "padding-block-start": 48,
