@@ -1328,26 +1328,9 @@
         "specification_NWnzfD": {
           "type": "specification",
           "name": "Subwoofer Data",
-          "disabled": true,
           "settings": {
             "caption": "",
             "select_table": "subwoofer_tech_data",
-            "add_richtext": "",
-            "vertical_alignment": "top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "specification_WtG9Hh": {
-          "type": "specification",
-          "name": "Amplifier Spec",
-          "disabled": true,
-          "settings": {
-            "caption": "",
-            "select_table": "amplifier_spec_metafields",
             "add_richtext": "",
             "vertical_alignment": "top",
             "padding-block-start": 0,
@@ -1362,10 +1345,9 @@
         "text_VyXmtf",
         "spacer_wKm4nJ",
         "specification_dhxJkp",
-        "specification_NWnzfD",
-        "specification_WtG9Hh"
+        "specification_NWnzfD"
       ],
-      "name": "Product extra details",
+      "name": "Product Specification",
       "settings": {
         "section_width": "page-width",
         "content_direction": "row",
