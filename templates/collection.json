@@ -257,7 +257,7 @@
                 "wrap": "pretty",
                 "color": "var(--color-foreground-heading)",
                 "split_title": true,
-                "subtitle_type_preset": "h6",
+                "subtitle_type_preset": "custom",
                 "subtitle_font": "var(--font-body--family)",
                 "subtitle_font_size": "1rem",
                 "subtitle_line_height": "normal",
