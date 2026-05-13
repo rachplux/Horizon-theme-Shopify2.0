@@ -210,7 +210,7 @@
                   "settings": {
                     "text": "<p>{{ closest.product.metafields.system.brief_summary | metafield_tag }}</p>",
                     "width": "fit-content",
-                    "max_width": "normal",
+                    "max_width": "none",
                     "alignment": "left",
                     "type_preset": "paragraph",
                     "font": "var(--font-body--family)",
@@ -1034,7 +1034,7 @@
               "settings": {
                 "text": "{{ closest.product.description }}",
                 "width": "fit-content",
-                "max_width": "normal",
+                "max_width": "none",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
