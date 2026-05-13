@@ -680,7 +680,7 @@
             "vertical_alignment": "flex-end",
             "collection_card_gap": 8,
             "inherit_color_scheme": true,
-            "color_scheme": "scheme-2",
+            "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
             "border": "solid",
             "border_width": 1,
             "border_opacity": 100,
@@ -737,7 +737,7 @@
               "name": "t:names.collection_card_image",
               "static": true,
               "settings": {
-                "image_ratio": "square",
+                "image_ratio": "landscape",
                 "toggle_overlay": false,
                 "overlay_color": "#191919e1",
                 "overlay_style": "solid",
