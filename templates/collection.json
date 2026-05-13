@@ -413,7 +413,7 @@
           "static": true,
           "settings": {
             "placement": "below_image",
-            "horizontal_alignment": "flex-start",
+            "horizontal_alignment": "center",
             "vertical_alignment": "flex-end",
             "collection_card_gap": 8,
             "inherit_color_scheme": true,
@@ -430,7 +430,7 @@
               "settings": {
                 "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "left",
+                "alignment": "center",
                 "type_preset": "custom",
                 "font": "var(--font-subheading--family)",
                 "font_size": "1.125rem",
