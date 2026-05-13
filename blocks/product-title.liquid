@@ -9,8 +9,8 @@
   
   {% if block.settings.split_title == true %}
 	{% assign titles = closest.product.title | split:':'  %}
-	{% assign product_title = titles[0] %}
-	{% assign subtitle = titles[1] %}
+	{% assign product_title = titles[0] | strip %}
+	{% assign subtitle = titles[1] | strip %}
 	{% liquid
 	  assign subtitle_type = 'body'
 	  if block.settings.subtitle_font_size != blank
@@ -27,7 +27,7 @@
 			ref="productTitleLink"
 			href="{{ closest.product.selected_or_first_available_variant.url }}"
 		>
-			{% render 'text', fallback_text: product_title, block: block | strip %}
+			{% render 'text', fallback_text: product_title, block: block %}
 		</a>	
 		<div
 			class="text-block text-block--{{ block.id }} {{ block.settings.subtitle_type_preset }}{% if block.settings.subtitle_type_preset == 'custom' %} custom-typography{% if block.settings.subtitle_font_size != blank %} custom-font-size{% endif %}{% if block.settings.subtitle_color != blank %} custom-color{% endif %}{% endif %}"
