@@ -795,10 +795,13 @@
         "collection_list": [
           "car-audio",
           "pro-audio",
-          "marine-audio",
-          "qr-serie",
-          "q-serie",
-          "flash-serie-enclosures"
+          "seaqua-sqwl",
+          "seaqua-sqs",
+          "sla-sealander-amplifiers",
+          "sqa-seaqua-amplifier",
+          "marine-audio-seaqua",
+          "powersports-sealander",
+          "seaqua-sqw-subwoofer"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
