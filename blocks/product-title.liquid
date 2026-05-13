@@ -31,26 +31,28 @@
 		</a>	
 		<div
 			class="text-block text-block--{{ block.id }} {{ block.settings.subtitle_type_preset }}{% if block.settings.subtitle_type_preset == 'custom' %} custom-typography{% if block.settings.subtitle_font_size != blank %} custom-font-size{% endif %}{% if block.settings.subtitle_color != blank %} custom-color{% endif %}{% endif %}"
-			{% if block.settings.subtitle_type_preset == 'custom' %}
 			style="
-			  --font-family: {{ block.settings.subtitle_font }};
-			  {% if block.settings.subtitle_font_size != blank %}--font-size: {{ block.settings.subtitle_font_size }};{% endif %}
-			  --font-weight: {{ block.settings.subtitle_font | replace: 'family', 'weight' }};
-			  --text-transform: {{ block.settings.subtitle_case }};
-			  --text-wrap: {{ block.settings.subtitle_wrap | default: 'pretty' }};
-			  {% if block.settings.subtitle_font_size == blank %}
-			    --line-height--display: var(--line-height--display-{{ block.settings.subtitle_line_height }});
-			    --line-height--heading: var(--line-height--heading-{{ block.settings.subtitle_line_height }});
-			    --line-height--body: var(--line-height--body-{{ block.settings.subtitle_line_height }});
-			  {% else %}
-			    --line-height: var(--line-height--{{ subtitle_type }}-{{ block.settings.subtitle_line_height }});
+			  width: 100%;
+			  text-align: {{ block.settings.alignment }};
+			  {% if block.settings.subtitle_type_preset == 'custom' %}
+			    --font-family: {{ block.settings.subtitle_font }};
+			    {% if block.settings.subtitle_font_size != blank %}--font-size: {{ block.settings.subtitle_font_size }};{% endif %}
+			    --font-weight: {{ block.settings.subtitle_font | replace: 'family', 'weight' }};
+			    --text-transform: {{ block.settings.subtitle_case }};
+			    --text-wrap: {{ block.settings.subtitle_wrap | default: 'pretty' }};
+			    {% if block.settings.subtitle_font_size == blank %}
+			      --line-height--display: var(--line-height--display-{{ block.settings.subtitle_line_height }});
+			      --line-height--heading: var(--line-height--heading-{{ block.settings.subtitle_line_height }});
+			      --line-height--body: var(--line-height--body-{{ block.settings.subtitle_line_height }});
+			    {% else %}
+			      --line-height: var(--line-height--{{ subtitle_type }}-{{ block.settings.subtitle_line_height }});
+			    {% endif %}
+			    --letter-spacing: var(--letter-spacing--{{ subtitle_type }}-{{ block.settings.subtitle_letter_spacing }});
+			    --color: {{ block.settings.subtitle_color }};
 			  {% endif %}
-			  --letter-spacing: var(--letter-spacing--{{ subtitle_type }}-{{ block.settings.subtitle_letter_spacing }});
-			  --color: {{ block.settings.subtitle_color }};
-			"
-			{% endif %}
+		"
 		>
-			<p class="product-title__subtitle">
+			<p class="product-title__subtitle" style="text-align: {{ block.settings.alignment }};">
 				{{ subtitle | strip }}
 			</p>
 		</div>

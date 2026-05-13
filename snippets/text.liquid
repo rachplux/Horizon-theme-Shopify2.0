@@ -61,6 +61,7 @@
     {% if text_width == "100%" %}
       --text-align: {{ block_settings.alignment }};
     {% endif %}
+    text-align: var(--text-align, var(--text-align-default));
     {% if block_settings.background %}
       --text-background-color: {{ block_settings.background_color | default: 'rgb(255 255 255 / 1.0)' }};
       --text-corner-radius: {{ block_settings.corner_radius }}px;
