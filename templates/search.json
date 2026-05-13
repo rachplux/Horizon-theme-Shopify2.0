@@ -51,7 +51,7 @@
         "alignment": "flex-start",
         "color_scheme": "scheme-1",
         "padding-block-start": 40,
-        "padding-block-end": 0
+        "padding-block-end": 30
       }
     },
     "main": {
@@ -86,7 +86,7 @@
           "settings": {
             "product_card_gap": 4,
             "inherit_color_scheme": true,
-            "color_scheme": "",
+            "color_scheme": "scheme-2",
             "border": "solid",
             "border_width": 1,
             "border_opacity": 100,
