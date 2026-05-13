@@ -476,7 +476,7 @@
               "settings": {
                 "image_ratio": "landscape",
                 "toggle_overlay": true,
-                "overlay_color": "#191919d1",
+                "overlay_color": "#191919e1",
                 "overlay_style": "gradient",
                 "gradient_direction": "to top",
                 "border": "solid",
