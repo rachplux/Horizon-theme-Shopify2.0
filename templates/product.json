@@ -1270,10 +1270,9 @@
         "spacer_wKm4nJ": {
           "type": "spacer",
           "name": "t:names.spacer",
-          "disabled": true,
           "settings": {
             "size": "percent",
-            "percent_size": 19,
+            "percent_size": 15,
             "pixel_size": 120,
             "custom_mobile_size": false,
             "size_mobile": "percent",
