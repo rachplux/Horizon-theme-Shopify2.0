@@ -257,7 +257,7 @@
                 "wrap": "pretty",
                 "color": "var(--color-foreground-heading)",
                 "split_title": true,
-                "titles_gap": 5,
+                "titles_gap": 3,
                 "title_divider": ":",
                 "subtitle_type_preset": "paragraph",
                 "subtitle_font": "var(--font-body--family)",
