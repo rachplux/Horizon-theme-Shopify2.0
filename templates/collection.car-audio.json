@@ -214,7 +214,7 @@
                   "type": "text",
                   "name": "Serie",
                   "settings": {
-                    "text": "<p><strong>{{ closest.product.metafields.speaker.serie.value.label.value }}</strong><strong><br/></strong><strong>{{ closest.product.metafields.amplifier.serie.value.label.value }}</strong></p>",
+                    "text": "<p><strong>{{ closest.product.metafields.speaker.serie.value.label.value }}</strong><strong>{{ closest.product.metafields.amplifier.serie.value.label.value }}</strong></p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
