@@ -254,32 +254,6 @@
                 "divider_pt7RM4"
               ]
             },
-            "product_description_hhEmdb": {
-              "type": "product-description",
-              "name": "t:names.product_description",
-              "settings": {
-                "text": "<p>{{ closest.product.metafields.system.brief_summary | metafield_tag }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
             "product_brief_facts_48fb8q": {
               "type": "product-brief-facts",
               "name": "Amplifier Brief Facts",
@@ -719,7 +693,6 @@
           },
           "block_order": [
             "group_icgrde",
-            "product_description_hhEmdb",
             "product_brief_facts_48fb8q",
             "group_yTxaMe",
             "product_brief_facts_Cr9XDE"
