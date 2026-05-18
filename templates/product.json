@@ -1502,7 +1502,7 @@
                 "case": "uppercase",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "split_title": false,
+                "split_title": true,
                 "titles_gap": 0,
                 "title_divider": ":",
                 "subtitle_type_preset": "paragraph",
