@@ -161,7 +161,7 @@
               "name": "Product Tags",
               "settings": {
                 "choose_tag_source": "metafields",
-                "metafield_input": ""
+                "metafield_input": "system.audio_type"
               },
               "blocks": {}
             },
