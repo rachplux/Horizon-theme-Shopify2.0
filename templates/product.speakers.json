@@ -1129,6 +1129,15 @@
               },
               "blocks": {}
             },
+            "product_tags_YmAcT3": {
+              "type": "product-tags",
+              "name": "Product Tags",
+              "settings": {
+                "choose_tag_source": "metafields",
+                "metafield_input": "system.audio_type"
+              },
+              "blocks": {}
+            },
             "product_description_TLdiHQ": {
               "type": "product-description",
               "name": "t:names.product_description",
@@ -1185,6 +1194,7 @@
           },
           "block_order": [
             "text_4xWxgB",
+            "product_tags_YmAcT3",
             "product_description_TLdiHQ",
             "text_LNTJBa"
           ]
