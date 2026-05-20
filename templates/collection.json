@@ -156,6 +156,15 @@
             "padding-inline-end": 15
           },
           "blocks": {
+            "product_tags_Cg4nUD": {
+              "type": "product-tags",
+              "name": "Product Tags",
+              "settings": {
+                "choose_tag_source": "metafields",
+                "metafield_input": ""
+              },
+              "blocks": {}
+            },
             "card-gallery": {
               "type": "_product-card-gallery",
               "settings": {
@@ -293,6 +302,7 @@
             }
           },
           "block_order": [
+            "product_tags_Cg4nUD",
             "card-gallery",
             "product_card_group_4qJQVX",
             "product_title_ytWhLk",
