@@ -116,6 +116,9 @@
                   "type": "product-tags",
                   "name": "Product Tags",
                   "settings": {
+                    "tag_size": 14,
+                    "case": "none",
+                    "alignment": "flex-start",
                     "choose_tag_source": "metafields",
                     "metafield_input": "system.audio_type"
                   },
@@ -1110,7 +1113,7 @@
                 "content_direction": "row",
                 "vertical_on_mobile": true,
                 "horizontal_alignment": "space-between",
-                "vertical_alignment": "center",
+                "vertical_alignment": "flex-start",
                 "align_baseline": false,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
@@ -1152,7 +1155,7 @@
                   "name": "t:names.heading",
                   "settings": {
                     "text": "<h3>About {{ closest.product.metafields.speaker.serie.value.label.value }}{{ closest.product.metafields.amplifier.serie.value.label.value }}</h3>",
-                    "width": "fit-content",
+                    "width": "100%",
                     "max_width": "normal",
                     "alignment": "left",
                     "type_preset": "h3",
@@ -1177,6 +1180,9 @@
                   "type": "product-tags",
                   "name": "Product Tags",
                   "settings": {
+                    "tag_size": 14,
+                    "case": "none",
+                    "alignment": "flex-start",
                     "choose_tag_source": "metafields",
                     "metafield_input": "system.audio_type"
                   },
@@ -1192,7 +1198,7 @@
               "type": "product-description",
               "name": "t:names.product_description",
               "settings": {
-                "text": "<p> {{ closest.product.metafields.speaker.serie.value.subtitle.value }}</p>{{ closest.product.metafields.speaker.serie.value.features | metafield_tag }}",
+                "text": "<p> {{ closest.product.metafields.speaker.serie.value.subtitle.value }}</p><p>{{ closest.product.metafields.speaker.serie.value.features | metafield_tag }}</p>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
