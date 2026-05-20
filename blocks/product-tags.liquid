@@ -1,0 +1,103 @@
+{% assign product = closest.product %}
+{% assign meta = product.metafields %}
+{% assign source = block.settings.choose_tag_source | default: 'product_tags' %}
+{% assign fields = block.settings.metafield_input | split:'|' %}
+
+<div class="product-tag-box">
+	{% if source == "product_tags" %}
+		{% for tag in product.tags %}
+			<div class="tag-item">{{ tag | strip }}</div>
+		{% endfor %}
+	{% endif %}
+
+	{% if source == 'metafields' %}
+		{% for field in fields %}
+			{% assign field = field | strip %}
+			{% assign parts = field | split:'.' %}
+			{% assign namespace = parts[0] | strip %}
+			{% assign key = parts[1]  | strip%}
+			{% assign metafield = meta[namespace][key] %}
+			{% assign value = metafield.value %}
+
+			{% if value != blank %}
+				{% if value.first != blank %}
+					{% for item in value %}
+						<div class="tag-item">{{ item | strip }}</div>
+					{% endfor %}
+				{% else %}
+					<div class="tag-item">{{ value | strip }}</div>
+				{% endif %}
+			{% endif %}
+		{% endfor %}
+	{% endif %}
+</div>
+
+
+
+
+{% comment %} {% if audio_type != blank %}
+	<div class="product-tag-box">
+		{% for val in audio_type %}
+			<div class="tag-item">{{ val }}</div>
+		{% endfor %}
+	</div>
+{% endif %} {% endcomment %}
+
+{% stylesheet %}
+	.product-tag-box {
+		display: inline-flex;
+		flex-direction: row; 
+		align-items: flex-start;
+
+	}
+	.tag-item {
+		color: rgb(var(--color-foreground-rgb) / 0.7);
+		border: 1px solid rgb(var(--color-foreground-rgb) / 0.5);
+		padding: 5px 8px;
+		margin-right: 10px;
+	}
+	
+{% endstylesheet %}
+{% schema %}
+{
+	"name": "Product Tags",
+	"tag": null,
+	"settings": [
+		{
+			"type": "header",
+			"content": "t:content.content_layout"
+		},
+		{
+			"type": "select",
+			"id": "choose_tag_source",
+			"label": "Choose Tag Source",
+			"options": [
+				{
+					"value":"product_tags",
+					"label": "Product Tags"
+				},
+				{
+					"value": "metafields",
+					"label": "Metafields Value"
+				}
+			],
+			"default": "product_tags"
+		},
+		{
+			"type": "textarea",
+			"id": "metafield_input",
+			
+			"label": "Custom Metafield Input use {namespace}.{key}",
+			"placeholder": "system.audio_type | speaker.size",
+			"info": "Fill in metafields in format: {namespace}.{key} while divide with '|'. Check [Product Metafileds](https://admin.shopify.com/store/cadence-sound-demo/settings/custom_data/product/metafields) for namespaces & keys.",
+			"visible_if": "{{ block.settings.choose_tag_source == 'metafields' }}"
+		}
+		],
+	"presets": [
+		{
+			"name":"Product Tags",
+			"category": "t:categories.product"
+		}
+	]
+}
+{% endschema %}
