@@ -1198,7 +1198,7 @@
               "type": "product-description",
               "name": "t:names.product_description",
               "settings": {
-                "text": "{{ closest.product.metafields.speaker.serie.value.audio_type | metafield_tag }}<p>{{ closest.product.metafields.speaker.serie.value.subtitle.value }}</p><p>{{ closest.product.metafields.amplifier.serie.value.audio_type.value }} {{ closest.product.metafields.amplifier.serie.value.subtitle.value }}</p>{{ closest.product.metafields.speaker.serie.value.features | metafield_tag }}{{ closest.product.metafields.amplifier.serie.value.features | metafield_tag }}",
+                "text": "<p>{{ closest.product.metafields.speaker.serie.value.subtitle.value }}{{ closest.product.metafields.amplifier.serie.value.subtitle.value }}</p>{{ closest.product.metafields.speaker.serie.value.features | metafield_tag }}{{ closest.product.metafields.amplifier.serie.value.features | metafield_tag }}",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
