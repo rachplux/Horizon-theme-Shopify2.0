@@ -739,6 +739,8 @@
     }
   },
   "platform_customizations": {
-    "custom_css": []
+    "custom_css": [
+      ".price,.compare-at-price {display: none;}"
+    ]
   }
 }
