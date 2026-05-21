@@ -79,6 +79,9 @@
           "blocks": {}
         }
       },
+      "custom_css": [
+        "span.price {}"
+      ],
       "settings": {
         "logo_position": "center",
         "menu_position": "left",

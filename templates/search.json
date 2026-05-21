@@ -47,6 +47,9 @@
           "blocks": {}
         }
       },
+      "custom_css": [
+        "span.price {}"
+      ],
       "settings": {
         "alignment": "flex-start",
         "color_scheme": "scheme-1",
@@ -129,6 +132,8 @@
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "split_title": true,
+                "titles_gap": 0,
+                "title_divider": ":",
                 "subtitle_type_preset": "h6",
                 "subtitle_font": "var(--font-body--family)",
                 "subtitle_font_size": "1rem",
