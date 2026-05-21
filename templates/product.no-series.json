@@ -112,28 +112,15 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "collection_title_kcYWLc": {
-                  "type": "collection-title",
-                  "name": "t:names.collection_title",
+                "product_tags_V4T3TP": {
+                  "type": "product-tags",
+                  "name": "Product Tags",
                   "settings": {
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
+                    "tag_size": 14,
                     "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": true,
-                    "background_color": "#00000026",
-                    "corner_radius": 18,
-                    "padding-block-start": 5,
-                    "padding-block-end": 5,
-                    "padding-inline-start": 15,
-                    "padding-inline-end": 15
+                    "alignment": "flex-start",
+                    "choose_tag_source": "metafields",
+                    "metafield_input": "system.audio_type"
                   },
                   "blocks": {}
                 },
@@ -246,7 +233,7 @@
                 }
               },
               "block_order": [
-                "collection_title_kcYWLc",
+                "product_tags_V4T3TP",
                 "product_title_kzc73m",
                 "variant_picker_aHKPkd",
                 "sku_ym3yqb",
