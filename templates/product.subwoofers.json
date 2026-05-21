@@ -70,7 +70,7 @@
           "blocks": {
             "group_8Lcdk9": {
               "type": "group",
-              "name": "Heading",
+              "name": "Header",
               "settings": {
                 "content_direction": "column",
                 "vertical_on_mobile": true,
