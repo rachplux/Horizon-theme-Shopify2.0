@@ -112,28 +112,15 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "collection_title_kcYWLc": {
-                  "type": "collection-title",
-                  "name": "t:names.collection_title",
+                "product_tags_qR94Ya": {
+                  "type": "product-tags",
+                  "name": "Product Tags",
                   "settings": {
-                    "width": "fit-content",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "rte",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
+                    "tag_size": 14,
                     "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": true,
-                    "background_color": "#00000026",
-                    "corner_radius": 18,
-                    "padding-block-start": 5,
-                    "padding-block-end": 5,
-                    "padding-inline-start": 15,
-                    "padding-inline-end": 15
+                    "alignment": "flex-start",
+                    "choose_tag_source": "metafields",
+                    "metafield_input": "system.audio_type"
                   },
                   "blocks": {}
                 },
@@ -246,7 +233,7 @@
                 }
               },
               "block_order": [
-                "collection_title_kcYWLc",
+                "product_tags_qR94Ya",
                 "product_title_kzc73m",
                 "variant_picker_aHKPkd",
                 "sku_ym3yqb",
@@ -887,31 +874,93 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_4xWxgB": {
-              "type": "text",
-              "name": "t:names.heading",
+            "group_fJyX67": {
+              "type": "group",
+              "name": "Heading",
               "settings": {
-                "text": "<h3>About {{ closest.product.metafields.speaker.serie.value.label.value }}{{ closest.product.metafields.amplifier.serie.value.label.value }}</h3>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "h3",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
+                "content_direction": "row",
+                "vertical_on_mobile": true,
+                "horizontal_alignment": "space-between",
+                "vertical_alignment": "flex-end",
+                "align_baseline": false,
+                "horizontal_alignment_flex_direction_column": "flex-start",
+                "vertical_alignment_flex_direction_column": "center",
+                "gap": 12,
+                "width": "fill",
+                "custom_width": 100,
+                "width_mobile": "fill",
+                "custom_width_mobile": 100,
+                "height": "fit",
+                "custom_height": 100,
+                "inherit_color_scheme": true,
+                "color_scheme": "",
+                "background_media": "none",
+                "video_position": "cover",
+                "background_image_position": "cover",
+                "border": "none",
+                "border_width": 1,
+                "border_width_top": 1,
+                "border_width_bottom": 1,
+                "border_width_left": 1,
+                "border_width_right": 1,
+                "border_opacity": 100,
+                "border_radius": 0,
+                "toggle_overlay": false,
+                "overlay_color": "#00000026",
+                "overlay_style": "solid",
+                "gradient_direction": "to top",
+                "link": "",
+                "open_in_new_tab": false,
+                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
-              "blocks": {}
+              "blocks": {
+                "text_aEFUza": {
+                  "type": "text",
+                  "name": "t:names.heading",
+                  "settings": {
+                    "text": "<h3>About {{ closest.product.metafields.speaker.serie.value.label.value }}{{ closest.product.metafields.amplifier.serie.value.label.value }}</h3>",
+                    "width": "100%",
+                    "max_width": "normal",
+                    "alignment": "left",
+                    "type_preset": "h3",
+                    "font": "var(--font-body--family)",
+                    "font_size": "1rem",
+                    "line_height": "normal",
+                    "letter_spacing": "normal",
+                    "case": "none",
+                    "wrap": "pretty",
+                    "color": "var(--color-foreground)",
+                    "background": false,
+                    "background_color": "#00000026",
+                    "corner_radius": 0,
+                    "padding-block-start": 0,
+                    "padding-block-end": 0,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
+                  },
+                  "blocks": {}
+                },
+                "product_tags_g3Wkm4": {
+                  "type": "product-tags",
+                  "name": "Product Tags",
+                  "settings": {
+                    "tag_size": 14,
+                    "case": "none",
+                    "alignment": "flex-start",
+                    "choose_tag_source": "metafields",
+                    "metafield_input": "system.audio_type"
+                  },
+                  "blocks": {}
+                }
+              },
+              "block_order": [
+                "text_aEFUza",
+                "product_tags_g3Wkm4"
+              ]
             },
             "product_description_TLdiHQ": {
               "type": "product-description",
@@ -968,7 +1017,7 @@
             }
           },
           "block_order": [
-            "text_4xWxgB",
+            "group_fJyX67",
             "product_description_TLdiHQ",
             "text_LNTJBa"
           ]
