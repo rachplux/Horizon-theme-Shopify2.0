@@ -42,7 +42,7 @@
           "type": "text",
           "name": "Description",
           "settings": {
-            "text": "{{ closest.collection.description }}",
+            "text": "<p>{{ closest.collection.metafields.serie.short_description | metafield_tag }}</p>",
             "width": "fit-content",
             "max_width": "normal",
             "alignment": "left",
@@ -113,6 +113,50 @@
         "padding-block-end": 0
       }
     },
+    "section_bjAMpf": {
+      "type": "section",
+      "blocks": {
+        "custom_liquid_QM4f9J": {
+          "type": "custom-liquid",
+          "name": "t:names.custom_liquid",
+          "settings": {
+            "custom_liquid": "{% assign series = collection.metafields.serie.collection_serie.value %}\n\n{% for serie in series %}\n {{ serie.label }}<br>\n {{ serie.features | metafield_tag }}\n{% endfor %}"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "custom_liquid_QM4f9J"
+      ],
+      "name": "t:names.custom_section",
+      "settings": {
+        "content_direction": "column",
+        "vertical_on_mobile": true,
+        "horizontal_alignment": "flex-start",
+        "vertical_alignment": "center",
+        "align_baseline": false,
+        "horizontal_alignment_flex_direction_column": "flex-start",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page-width",
+        "section_height": "small",
+        "section_height_custom": 50,
+        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "border": "none",
+        "border_width": 1,
+        "border_opacity": 100,
+        "border_radius": 0,
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "padding-block-start": 0,
+        "padding-block-end": 0
+      }
+    },
     "main": {
       "type": "main-collection",
       "blocks": {
@@ -120,7 +164,7 @@
           "type": "filters",
           "static": true,
           "settings": {
-            "enable_filtering": true,
+            "enable_filtering": false,
             "filter_style": "vertical",
             "filter_width": "centered",
             "text_label_case": "default",
@@ -842,6 +886,7 @@
   "order": [
     "section",
     "divider_rP48E8",
+    "section_bjAMpf",
     "main",
     "divider_B6zB8D",
     "collection_list_TdYLag",
