@@ -224,7 +224,7 @@
               "type": "custom-liquid",
               "name": "t:names.custom_liquid",
               "settings": {
-                "custom_liquid": "{% assign series = collection.metafields.serie.collection_serie.value %}\n\n{% for serie in series %}\n {{ serie.features | metafield_tag }}\n{% endfor %}"
+                "custom_liquid": "{% assign series = collection.metafields.serie.collection_serie.value %}\n\n{% for serie in series %}\n<p> <strong>{{ serie.audio_type | metafield_text }} </strong></p>\n {{ serie.features | metafield_tag }}\n{% endfor %}"
               },
               "blocks": {}
             },
