@@ -1019,7 +1019,6 @@
         "group_LXUKJ4": {
           "type": "group",
           "name": "About Series",
-          "disabled": true,
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -1150,6 +1149,7 @@
         "group_XRXMY9": {
           "type": "group",
           "name": "Specification",
+          "disabled": true,
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -1349,6 +1349,7 @@
         "specification_dhxJkp": {
           "type": "specification",
           "name": "Speaker Spec",
+          "disabled": true,
           "settings": {
             "caption": "",
             "select_table": "speaker_spec_metafields",
@@ -1380,7 +1381,6 @@
         "specification_WtG9Hh": {
           "type": "specification",
           "name": "Amplifier Spec",
-          "disabled": true,
           "settings": {
             "caption": "",
             "select_table": "amplifier_spec_metafields",
@@ -1401,7 +1401,6 @@
         "specification_NWnzfD",
         "specification_WtG9Hh"
       ],
-      "disabled": true,
       "name": "Product extra details",
       "settings": {
         "section_width": "page-width",
