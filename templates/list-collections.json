@@ -471,11 +471,37 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Car Audio Collections</h3>",
-                "width": "100%",
+                "text": "<h3>Car Audio</h3>",
+                "width": "fit-content",
                 "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h2",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 16,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_ULqWAw": {
+              "type": "text",
+              "name": "t:names.text",
+              "settings": {
+                "text": "<p>High-performacne audio system designed for clarity, power, and reliability on the road.</p>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -495,7 +521,8 @@
             }
           },
           "block_order": [
-            "text_nDKtVC"
+            "text_nDKtVC",
+            "text_ULqWAw"
           ]
         },
         "static-collection-card": {
