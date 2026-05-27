@@ -245,7 +245,7 @@
         "section_height_custom": 50,
         "color_scheme": "scheme-5",
         "toggle_overlay": true,
-        "overlay_color": "#00000089",
+        "overlay_color": "#0000008a",
         "overlay_style": "gradient",
         "gradient_direction": "to bottom",
         "blurred_reflection": false,
@@ -531,7 +531,7 @@
           "static": true,
           "settings": {
             "placement": "on_image",
-            "horizontal_alignment": "center",
+            "horizontal_alignment": "flex-start",
             "vertical_alignment": "flex-end",
             "collection_card_gap": 8,
             "inherit_color_scheme": false,
@@ -549,20 +549,20 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "rte",
+                "type_preset": "h4",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
                 "letter_spacing": "normal",
                 "case": "none",
                 "wrap": "pretty",
-                "color": "var(--color-foreground)",
+                "color": "var(--color-foreground-heading)",
                 "background": false,
                 "background_color": "#ffffff",
                 "corner_radius": 0,
                 "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 8,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
                 "padding-inline-end": 8
               },
               "blocks": {}
@@ -593,6 +593,26 @@
               },
               "blocks": {}
             },
+            "button_fV37aX": {
+              "type": "button",
+              "name": "t:names.button",
+              "settings": {
+                "label": "VIEW SERIES",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "link_type_preset": "",
+                "use_custom_link_text_color": false,
+                "link_text_color": "#000000",
+                "show_icon": true,
+                "icon": "arrow",
+                "width": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
+              },
+              "blocks": {}
+            },
             "collection-card-image": {
               "type": "_collection-card-image",
               "name": "t:names.collection_card_image",
@@ -613,7 +633,8 @@
           },
           "block_order": [
             "collection_title_gYACyx",
-            "text_nMk6gN"
+            "text_nMk6gN",
+            "button_fV37aX"
           ]
         }
       },
