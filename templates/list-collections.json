@@ -619,9 +619,9 @@
               "static": true,
               "settings": {
                 "image_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#ffffff21",
-                "overlay_style": "solid",
+                "toggle_overlay": true,
+                "overlay_color": "#23232367",
+                "overlay_style": "gradient",
                 "gradient_direction": "to top",
                 "border": "none",
                 "border_width": 1,
