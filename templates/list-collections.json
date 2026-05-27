@@ -259,7 +259,7 @@
           "static": true,
           "settings": {
             "placement": "on_image",
-            "horizontal_alignment": "flex-start",
+            "horizontal_alignment": "center",
             "vertical_alignment": "flex-end",
             "collection_card_gap": 8,
             "inherit_color_scheme": true,
@@ -285,7 +285,7 @@
                 "case": "none",
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
-                "background": true,
+                "background": false,
                 "background_color": "#ffffff",
                 "corner_radius": 0,
                 "padding-block-start": 4,
@@ -302,7 +302,7 @@
               "settings": {
                 "image_ratio": "adapt",
                 "toggle_overlay": false,
-                "overlay_color": "#00000026",
+                "overlay_color": "#ffffff20",
                 "overlay_style": "solid",
                 "gradient_direction": "to top",
                 "border": "none",
@@ -324,7 +324,6 @@
       "name": "t:names.collections_bento",
       "settings": {
         "collection_list": [
-          "flash-serie-enclosures",
           "csb-abl-serie-soundbar",
           "q-serie",
           "qr-serie",
@@ -333,7 +332,8 @@
           "sqa-seaqua-amplifier",
           "sqs-serie",
           "xpro-serie",
-          "pxm-serie-copy"
+          "pxm-serie-copy",
+          "flash-series-enclosures"
         ],
         "layout_type": "bento",
         "carousel_on_mobile": false,
@@ -348,7 +348,7 @@
         "icons_shape": "none",
         "section_width": "page-width",
         "gap": 12,
-        "color_scheme": "",
+        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
         "padding-block-start": 24,
         "padding-block-end": 24
       }
