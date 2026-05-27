@@ -331,7 +331,7 @@
           "beast-master-series-professional-subwoofers",
           "accessories"
         ],
-        "layout_type": "bento",
+        "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 4,
         "mobile_columns": "2",
@@ -502,7 +502,7 @@
           "pxm-serie-copy",
           "pxm-serie"
         ],
-        "layout_type": "bento",
+        "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 4,
         "mobile_columns": "2",
@@ -675,7 +675,7 @@
           "sqa-seaqua-amplifier",
           "sqs-serie"
         ],
-        "layout_type": "bento",
+        "layout_type": "grid",
         "carousel_on_mobile": false,
         "columns": 4,
         "mobile_columns": "2",
