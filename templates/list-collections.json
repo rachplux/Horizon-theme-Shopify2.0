@@ -487,7 +487,7 @@
                 "background_color": "#00000026",
                 "corner_radius": 0,
                 "padding-block-start": 0,
-                "padding-block-end": 16,
+                "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
@@ -499,9 +499,9 @@
               "settings": {
                 "text": "<p>High-performacne audio system designed for clarity, power, and reliability on the road.</p>",
                 "width": "fit-content",
-                "max_width": "normal",
+                "max_width": "none",
                 "alignment": "left",
-                "type_preset": "h3",
+                "type_preset": "h6",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
