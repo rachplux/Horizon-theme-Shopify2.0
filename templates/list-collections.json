@@ -227,10 +227,10 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<h3>Car Audio Collections</h3>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
+                "alignment": "center",
+                "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -349,6 +349,20 @@
         "padding-block-end": 24
       }
     },
+    "divider_iAUKjf": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
+    },
     "collection_list_zeWpQG": {
       "type": "collection-list",
       "blocks": {
@@ -401,10 +415,10 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<h3>Pro Audio Collection</h3>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
+                "alignment": "center",
+                "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -520,6 +534,20 @@
         "padding-block-end": 24
       }
     },
+    "divider_JY84W7": {
+      "type": "divider",
+      "name": "t:names.divider_section",
+      "settings": {
+        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
+        "section_width": "full-width",
+        "thickness": 1,
+        "corner_radius": "square",
+        "width_percent": 100,
+        "alignment_horizontal": "center",
+        "padding-block-start": 16,
+        "padding-block-end": 16
+      }
+    },
     "collection_list_ew4Nti": {
       "type": "collection-list",
       "blocks": {
@@ -572,10 +600,10 @@
               "name": "t:names.text",
               "settings": {
                 "text": "<h3>Marine & Powersports collection</h3>",
-                "width": "fit-content",
+                "width": "100%",
                 "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
+                "alignment": "center",
+                "type_preset": "h2",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -697,7 +725,9 @@
   "order": [
     "collection_list_Wfgh3m",
     "collection_list_pN9TGD",
+    "divider_iAUKjf",
     "collection_list_zeWpQG",
+    "divider_JY84W7",
     "collection_list_ew4Nti"
   ]
 }
