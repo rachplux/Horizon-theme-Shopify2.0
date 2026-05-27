@@ -414,7 +414,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Pro Audio Collection</h3>",
+                "text": "<h3>Pro Audio Collections</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -599,7 +599,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Marine & Powersports collection</h3>",
+                "text": "<h3>Marine & Powersports collections</h3>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
