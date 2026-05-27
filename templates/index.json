@@ -1602,9 +1602,9 @@
       "name": "t:names.collections_carousel",
       "settings": {
         "collection_list": [
-          "flash-serie-enclosures",
           "xpro-serie",
-          "iq-serie"
+          "iq-serie",
+          "flash-series-enclosures"
         ],
         "layout_type": "carousel",
         "carousel_on_mobile": false,
@@ -2320,6 +2320,8 @@
                 "wrap": "pretty",
                 "color": "var(--color-foreground)",
                 "split_title": false,
+                "titles_gap": 0,
+                "title_divider": ":",
                 "subtitle_type_preset": "paragraph",
                 "subtitle_font": "var(--font-body--family)",
                 "subtitle_font_size": "1rem",
