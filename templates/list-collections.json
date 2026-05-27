@@ -328,9 +328,8 @@
           "qr-serie",
           "flash-series-enclosures",
           "iq-serie",
-          "accessories",
-          "beast-full-series",
-          "beast-master-series-professional-subwoofers"
+          "beast-master-series-professional-subwoofers",
+          "accessories"
         ],
         "layout_type": "bento",
         "carousel_on_mobile": false,
