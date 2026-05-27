@@ -1092,7 +1092,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Pro Audio</h3>",
+                "text": "<h3>Marine & Powersports</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -1118,7 +1118,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<p>Professional audio solutions built for sound quality, extreme performance, and demanding application.</p>",
+                "text": "<p>Built to perform in the harshest environments. For water, mud, and everything in between.</p>",
                 "width": "fit-content",
                 "max_width": "none",
                 "alignment": "left",
