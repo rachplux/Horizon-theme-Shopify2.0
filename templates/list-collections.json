@@ -400,7 +400,7 @@
               "type": "text",
               "name": "t:names.text",
               "settings": {
-                "text": "<h3>Shop by collection</h3>",
+                "text": "<h3>Pro Audio Collection</h3>",
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
@@ -498,16 +498,9 @@
       "name": "t:names.collections_bento",
       "settings": {
         "collection_list": [
-          "csb-abl-serie-soundbar",
-          "q-serie",
-          "qr-serie",
-          "sla-sealander-amplifiers",
-          "slwt-serie",
-          "sqa-seaqua-amplifier",
-          "sqs-serie",
           "xpro-serie",
           "pxm-serie-copy",
-          "flash-series-enclosures"
+          "pxm-serie"
         ],
         "layout_type": "bento",
         "carousel_on_mobile": false,
