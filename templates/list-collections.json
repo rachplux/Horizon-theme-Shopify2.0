@@ -226,7 +226,7 @@
         "full_frame_on_mobile": false,
         "slideshow_gap": 18,
         "corner_radius": 20,
-        "slide_height": "medium",
+        "slide_height": "small",
         "content_position": "below-media",
         "color_scheme": "",
         "icons_style": "arrows_large",
@@ -404,207 +404,6 @@
         "padding-block-end": 48
       }
     },
-    "collection_list_pN9TGD": {
-      "type": "collection-list",
-      "blocks": {
-        "group_LLMrHx": {
-          "type": "group",
-          "name": "t:names.header",
-          "settings": {
-            "content_direction": "column",
-            "vertical_on_mobile": true,
-            "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
-            "align_baseline": false,
-            "horizontal_alignment_flex_direction_column": "center",
-            "vertical_alignment_flex_direction_column": "flex-end",
-            "gap": 16,
-            "width": "fill",
-            "custom_width": 100,
-            "width_mobile": "fill",
-            "custom_width_mobile": 100,
-            "height": "fit",
-            "custom_height": 100,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "background_media": "none",
-            "video_position": "cover",
-            "background_image_position": "cover",
-            "border": "none",
-            "border_width": 1,
-            "border_width_top": 1,
-            "border_width_bottom": 1,
-            "border_width_left": 1,
-            "border_width_right": 1,
-            "border_opacity": 100,
-            "border_radius": 0,
-            "toggle_overlay": false,
-            "overlay_color": "#00000026",
-            "overlay_style": "solid",
-            "gradient_direction": "to top",
-            "link": "",
-            "open_in_new_tab": false,
-            "placeholder": "",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {
-            "text_YeHKCt": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<h3>Car Audio Collections</h3>",
-                "width": "100%",
-                "max_width": "normal",
-                "alignment": "center",
-                "type_preset": "h2",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "text_YeHKCt"
-          ]
-        },
-        "static-collection-card": {
-          "type": "_collection-card",
-          "name": "t:names.collection_card",
-          "static": true,
-          "settings": {
-            "placement": "below_image",
-            "horizontal_alignment": "center",
-            "vertical_alignment": "flex-end",
-            "collection_card_gap": 8,
-            "inherit_color_scheme": true,
-            "color_scheme": "",
-            "border": "none",
-            "border_width": 1,
-            "border_opacity": 100,
-            "border_radius": 0
-          },
-          "blocks": {
-            "collection_title_GdmTe9": {
-              "type": "collection-title",
-              "name": "t:names.collection_title",
-              "settings": {
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#ffffff",
-                "corner_radius": 0,
-                "padding-block-start": 4,
-                "padding-block-end": 4,
-                "padding-inline-start": 8,
-                "padding-inline-end": 8
-              },
-              "blocks": {}
-            },
-            "text_MXq6a4": {
-              "type": "text",
-              "name": "t:names.text",
-              "settings": {
-                "text": "<p>{{ closest.collection.metafields.serie.short_description | metafield_tag }}</p>",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "collection-card-image": {
-              "type": "_collection-card-image",
-              "name": "t:names.collection_card_image",
-              "static": true,
-              "settings": {
-                "image_ratio": "adapt",
-                "toggle_overlay": false,
-                "overlay_color": "#ffffff21",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "border": "none",
-                "border_width": 1,
-                "border_opacity": 100,
-                "border_radius": 0
-              },
-              "blocks": {}
-            }
-          },
-          "block_order": [
-            "collection_title_GdmTe9",
-            "text_MXq6a4"
-          ]
-        }
-      },
-      "block_order": [
-        "group_LLMrHx"
-      ],
-      "name": "t:names.collections_bento",
-      "settings": {
-        "collection_list": [
-          "q-serie",
-          "iq-serie",
-          "qr-serie",
-          "flash-series-enclosures",
-          "beast-master-series-professional-subwoofers",
-          "accessories"
-        ],
-        "layout_type": "grid",
-        "carousel_on_mobile": false,
-        "columns": 5,
-        "mobile_columns": "2",
-        "mobile_card_size": "60cqw",
-        "columns_gap": 8,
-        "bento_gap": 8,
-        "rows_gap": 8,
-        "max_collections": 4,
-        "icons_style": "arrow",
-        "icons_shape": "none",
-        "section_width": "page-width",
-        "gap": 12,
-        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
-        "padding-block-start": 24,
-        "padding-block-end": 24
-      }
-    },
     "collection_list_bmQqNM": {
       "type": "collection-list",
       "blocks": {
@@ -692,7 +491,7 @@
             "horizontal_alignment": "center",
             "vertical_alignment": "flex-end",
             "collection_card_gap": 8,
-            "inherit_color_scheme": false,
+            "inherit_color_scheme": true,
             "color_scheme": "",
             "border": "solid",
             "border_width": 1,
@@ -751,7 +550,6 @@
       "block_order": [
         "group_dNmf9U"
       ],
-      "disabled": true,
       "name": "t:names.collections_bento",
       "settings": {
         "collection_list": [
@@ -764,7 +562,7 @@
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
-        "columns": 5,
+        "columns": 4,
         "mobile_columns": "2",
         "mobile_card_size": "60cqw",
         "columns_gap": 8,
@@ -1156,7 +954,6 @@
   "order": [
     "slideshow_pe6yNU",
     "collection_list_Wfgh3m",
-    "collection_list_pN9TGD",
     "collection_list_bmQqNM",
     "divider_iAUKjf",
     "collection_list_zeWpQG",
