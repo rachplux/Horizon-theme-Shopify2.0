@@ -1632,7 +1632,7 @@
           "name": "t:names.button",
           "settings": {
             "label": "VIEW ALL  SOLUTIONS",
-            "link": "shopify://collections/all",
+            "link": "shopify://collections",
             "open_in_new_tab": false,
             "style_class": "button-secondary",
             "link_type_preset": "",
