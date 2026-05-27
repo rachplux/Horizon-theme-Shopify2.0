@@ -1485,10 +1485,11 @@
                 "padding-inline-end": 0
               },
               "blocks": {
-                "collection_title_nhgL4a": {
-                  "type": "collection-title",
-                  "name": "t:names.collection_title",
+                "text_8FwMRm": {
+                  "type": "text",
+                  "name": "t:names.heading",
                   "settings": {
+                    "text": "<p>{{ closest.collection.title }} - {{ closest.collection.metafields.system.subtitle.value }}</p>",
                     "width": "fit-content",
                     "max_width": "normal",
                     "alignment": "left",
@@ -1567,7 +1568,7 @@
                 }
               },
               "block_order": [
-                "collection_title_nhgL4a",
+                "text_8FwMRm",
                 "text_gVr3Xg",
                 "custom_liquid_jTDhqJ",
                 "button_Jw7YjU"
