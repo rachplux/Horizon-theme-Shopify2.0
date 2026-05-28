@@ -498,7 +498,7 @@
               "name": "t:names.button",
               "settings": {
                 "label": "VIEW ALL",
-                "link": "shopify://collections/all",
+                "link": "shopify://collections/car-audio",
                 "open_in_new_tab": false,
                 "style_class": "link",
                 "link_type_preset": "",
