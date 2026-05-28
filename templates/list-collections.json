@@ -427,10 +427,10 @@
           "type": "group",
           "name": "t:names.header",
           "settings": {
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-end",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -493,37 +493,57 @@
               },
               "blocks": {}
             },
-            "text_ULqWAw": {
-              "type": "text",
-              "name": "t:names.text",
+            "button_mtKYta": {
+              "type": "button",
+              "name": "t:names.button",
               "settings": {
-                "text": "<p>High-performacne audio system designed for clarity, power, and reliability on the road.</p>",
+                "label": "VIEW ALL",
+                "link": "shopify://collections/all",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "link_type_preset": "",
+                "use_custom_link_text_color": false,
+                "link_text_color": "#000000",
+                "show_icon": true,
+                "icon": "arrow",
                 "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             }
           },
           "block_order": [
             "text_nDKtVC",
-            "text_ULqWAw"
+            "button_mtKYta"
           ]
+        },
+        "text_qnWpgy": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>High-performacne audio system designed for clarity, power, and reliability on the road.</p>",
+            "width": "fit-content",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "h6",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -671,7 +691,7 @@
               "settings": {
                 "image_ratio": "adapt",
                 "toggle_overlay": true,
-                "overlay_color": "#00000093",
+                "overlay_color": "#00000094",
                 "overlay_style": "gradient",
                 "gradient_direction": "to top",
                 "border": "none",
@@ -688,7 +708,8 @@
         }
       },
       "block_order": [
-        "group_dNmf9U"
+        "group_dNmf9U",
+        "text_qnWpgy"
       ],
       "name": "Collection list: Car Audio",
       "settings": {
@@ -983,7 +1004,7 @@
               "settings": {
                 "image_ratio": "adapt",
                 "toggle_overlay": true,
-                "overlay_color": "#00000093",
+                "overlay_color": "#00000094",
                 "overlay_style": "gradient",
                 "gradient_direction": "to top",
                 "border": "none",
@@ -1292,7 +1313,7 @@
               "settings": {
                 "image_ratio": "adapt",
                 "toggle_overlay": true,
-                "overlay_color": "#00000093",
+                "overlay_color": "#00000094",
                 "overlay_style": "gradient",
                 "gradient_direction": "to top",
                 "border": "none",
