@@ -92,7 +92,7 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#101010a9",
+        "overlay_color": "#101010a8",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "padding-block-start": 60,
@@ -159,7 +159,7 @@
             "card-gallery": {
               "type": "_product-card-gallery",
               "settings": {
-                "image_ratio": "square",
+                "image_ratio": "adapt",
                 "border": "none",
                 "border_width": 1,
                 "border_opacity": 100,
