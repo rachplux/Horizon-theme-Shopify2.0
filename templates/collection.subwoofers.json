@@ -9,10 +9,10 @@
  */
 {
   "sections": {
-    "section": {
+    "section_FhyWtR": {
       "type": "section",
       "blocks": {
-        "text_tqQTNE": {
+        "text_7GX9y7": {
           "type": "text",
           "name": "Title",
           "settings": {
@@ -38,13 +38,13 @@
           },
           "blocks": {}
         },
-        "text_twGGkJ": {
+        "text_y9q7dd": {
           "type": "text",
           "name": "Description",
           "settings": {
-            "text": "{{ closest.collection.description }}",
+            "text": "<p>{{ closest.collection.metafields.serie.short_description | metafield_tag }}</p>",
             "width": "fit-content",
-            "max_width": "normal",
+            "max_width": "none",
             "alignment": "left",
             "type_preset": "rte",
             "font": "var(--font-primary--family)",
@@ -66,8 +66,8 @@
         }
       },
       "block_order": [
-        "text_tqQTNE",
-        "text_twGGkJ"
+        "text_7GX9y7",
+        "text_y9q7dd"
       ],
       "name": "Collection heading",
       "settings": {
@@ -76,11 +76,11 @@
         "horizontal_alignment": "flex-start",
         "vertical_alignment": "center",
         "align_baseline": false,
-        "horizontal_alignment_flex_direction_column": "center",
+        "horizontal_alignment_flex_direction_column": "flex-start",
         "vertical_alignment_flex_direction_column": "center",
         "gap": 12,
         "section_width": "page-width",
-        "section_height": "small",
+        "section_height": "",
         "section_height_custom": 30,
         "color_scheme": "scheme-8",
         "background_media": "image",
@@ -92,11 +92,11 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#20212b47",
-        "overlay_style": "solid",
-        "gradient_direction": "to bottom",
-        "padding-block-start": 48,
-        "padding-block-end": 48
+        "overlay_color": "#101010a8",
+        "overlay_style": "gradient",
+        "gradient_direction": "to top",
+        "padding-block-start": 60,
+        "padding-block-end": 60
       }
     },
     "divider_rP48E8": {
@@ -312,7 +312,7 @@
         "columns_gap_vertical": 15,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
+        "color_scheme": "scheme-4",
         "padding-block-start": 0,
         "padding-block-end": 50
       }
@@ -1085,7 +1085,7 @@
     }
   },
   "order": [
-    "section",
+    "section_FhyWtR",
     "divider_rP48E8",
     "main",
     "divider_B6zB8D",
