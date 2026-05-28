@@ -760,10 +760,10 @@
           "type": "group",
           "name": "t:names.header",
           "settings": {
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-end",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
@@ -826,37 +826,57 @@
               },
               "blocks": {}
             },
-            "text_Ee4Vpj": {
-              "type": "text",
-              "name": "t:names.text",
+            "button_Nfa6Jw": {
+              "type": "button",
+              "name": "t:names.button",
               "settings": {
-                "text": "<p>Professional audio solutions built for sound quality, extreme performance, and demanding application.</p>",
+                "label": "VIEW ALL",
+                "link": "shopify://collections/pro-audio",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "link_type_preset": "",
+                "use_custom_link_text_color": false,
+                "link_text_color": "#000000",
+                "show_icon": true,
+                "icon": "arrow",
                 "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             }
           },
           "block_order": [
             "text_PBgtA8",
-            "text_Ee4Vpj"
+            "button_Nfa6Jw"
           ]
+        },
+        "text_UBLrrd": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Professional audio solutions built for sound quality, extreme performance, and demanding application.</p>",
+            "width": "fit-content",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "h6",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -1021,7 +1041,8 @@
         }
       },
       "block_order": [
-        "group_FrbRfw"
+        "group_FrbRfw",
+        "text_UBLrrd"
       ],
       "name": "Collection list: Pro Audio",
       "settings": {
