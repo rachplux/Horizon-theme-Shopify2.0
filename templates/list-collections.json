@@ -434,7 +434,7 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
+            "gap": 10,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -767,7 +767,7 @@
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
+            "gap": 10,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -1090,14 +1090,14 @@
           "type": "group",
           "name": "t:names.header",
           "settings": {
-            "content_direction": "column",
+            "content_direction": "row",
             "vertical_on_mobile": true,
             "horizontal_alignment": "flex-start",
-            "vertical_alignment": "center",
+            "vertical_alignment": "flex-end",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
             "vertical_alignment_flex_direction_column": "center",
-            "gap": 16,
+            "gap": 10,
             "width": "fill",
             "custom_width": 100,
             "width_mobile": "fill",
@@ -1156,37 +1156,57 @@
               },
               "blocks": {}
             },
-            "text_eWLYtE": {
-              "type": "text",
-              "name": "t:names.text",
+            "button_am4y8y": {
+              "type": "button",
+              "name": "t:names.button",
               "settings": {
-                "text": "<p>Built to perform in the harshest environments. For water, mud, and everything in between.</p>",
+                "label": "VIEW ALL",
+                "link": "shopify://collections/marine-audio",
+                "open_in_new_tab": false,
+                "style_class": "link",
+                "link_type_preset": "",
+                "use_custom_link_text_color": false,
+                "link_text_color": "#000000",
+                "show_icon": true,
+                "icon": "arrow",
                 "width": "fit-content",
-                "max_width": "none",
-                "alignment": "left",
-                "type_preset": "h6",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 16,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
+                "custom_width": 100,
+                "width_mobile": "fit-content",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             }
           },
           "block_order": [
             "text_FRyWfm",
-            "text_eWLYtE"
+            "button_am4y8y"
           ]
+        },
+        "text_4gR8qm": {
+          "type": "text",
+          "name": "t:names.text",
+          "settings": {
+            "text": "<p>Built to perform in the harshest environments. For water, mud, and everything in between.</p>",
+            "width": "fit-content",
+            "max_width": "none",
+            "alignment": "left",
+            "type_preset": "h6",
+            "font": "var(--font-body--family)",
+            "font_size": "1rem",
+            "line_height": "normal",
+            "letter_spacing": "normal",
+            "case": "none",
+            "wrap": "pretty",
+            "color": "var(--color-foreground)",
+            "background": false,
+            "background_color": "#00000026",
+            "corner_radius": 0,
+            "padding-block-start": 0,
+            "padding-block-end": 16,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {}
         },
         "static-collection-card": {
           "type": "_collection-card",
@@ -1351,7 +1371,8 @@
         }
       },
       "block_order": [
-        "group_ti6CtY"
+        "group_ti6CtY",
+        "text_4gR8qm"
       ],
       "name": "Collection list: Marine & Powersports",
       "settings": {
