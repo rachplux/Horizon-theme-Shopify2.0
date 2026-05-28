@@ -44,7 +44,7 @@
           "settings": {
             "text": "<p>{{ closest.collection.metafields.serie.short_description | metafield_tag }}</p>",
             "width": "fit-content",
-            "max_width": "normal",
+            "max_width": "none",
             "alignment": "left",
             "type_preset": "rte",
             "font": "var(--font-primary--family)",
@@ -92,9 +92,9 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#20212b47",
+        "overlay_color": "#101010a9",
         "overlay_style": "solid",
-        "gradient_direction": "to bottom",
+        "gradient_direction": "to top",
         "padding-block-start": 48,
         "padding-block-end": 48
       }
