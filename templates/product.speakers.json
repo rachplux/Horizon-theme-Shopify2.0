@@ -232,7 +232,7 @@
                 "thickness": 1,
                 "corner_radius": "square",
                 "width_percent": 100,
-                "padding-block-start": 10,
+                "padding-block-start": 0,
                 "padding-block-end": 0
               },
               "blocks": {}
@@ -283,7 +283,7 @@
               },
               "blocks": {}
             },
-            "group_N4nPkr": {
+            "product_brief_facts_8QXRhX": {
               "type": "product-brief-facts",
               "name": "Speaker Brief Facts",
               "settings": {
@@ -295,7 +295,7 @@
                 "align_facts_titles": true,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 0,
+                "gap": 10,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -323,12 +323,12 @@
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
-                "padding-block-end": 10,
+                "padding-block-end": 15,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "product_brief_facts_value_BqXxeq": {
+                "product_brief_facts_value_MGCVNr": {
                   "type": "product-brief-facts-value",
                   "name": "POWER",
                   "settings": {
@@ -356,14 +356,14 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
-                    "padding-inline-start": 10,
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "divider_4i3ped": {
+                "divider_ctAgwP": {
                   "type": "_divider",
                   "name": "t:names.divider",
                   "settings": {
@@ -375,17 +375,17 @@
                   },
                   "blocks": {}
                 },
-                "group_CUQThp": {
+                "product_brief_facts_value_bTQdGy": {
                   "type": "product-brief-facts-value",
-                  "name": "SIZE",
+                  "name": "Size",
                   "settings": {
                     "source": "speaker_size",
                     "show_amplifier_ohm": true,
                     "show_label": true,
-                    "label": "SIZE",
+                    "label": "Size",
                     "label_font": "var(--font-subheading--family)",
                     "label_font_size": "1rem",
-                    "label_case": "none",
+                    "label_case": "uppercase",
                     "label_color": "var(--color-foreground-heading)",
                     "content_alignment": "center",
                     "gap": 12,
@@ -403,14 +403,14 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
-                    "padding-inline-start": 10,
-                    "padding-inline-end": 10
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "divider_cWr3qC": {
+                "divider_fH8XTL": {
                   "type": "_divider",
                   "name": "t:names.divider",
                   "settings": {
@@ -422,17 +422,17 @@
                   },
                   "blocks": {}
                 },
-                "group_miGVk4": {
+                "product_brief_facts_value_4c3nK9": {
                   "type": "product-brief-facts-value",
                   "name": "SOLD UNIT",
                   "settings": {
                     "source": "speaker_sold_unit",
                     "show_amplifier_ohm": true,
                     "show_label": true,
-                    "label": "SOLD UNIT",
+                    "label": "Sold Unit",
                     "label_font": "var(--font-subheading--family)",
                     "label_font_size": "1rem",
-                    "label_case": "none",
+                    "label_case": "uppercase",
                     "label_color": "var(--color-foreground-heading)",
                     "content_alignment": "center",
                     "gap": 12,
@@ -450,20 +450,20 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
-                    "padding-inline-start": 10,
-                    "padding-inline-end": 10
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
+                    "padding-inline-start": 0,
+                    "padding-inline-end": 0
                   },
                   "blocks": {}
                 }
               },
               "block_order": [
-                "product_brief_facts_value_BqXxeq",
-                "divider_4i3ped",
-                "group_CUQThp",
-                "divider_cWr3qC",
-                "group_miGVk4"
+                "product_brief_facts_value_MGCVNr",
+                "divider_ctAgwP",
+                "product_brief_facts_value_bTQdGy",
+                "divider_fH8XTL",
+                "product_brief_facts_value_4c3nK9"
               ]
             },
             "product_brief_facts_48fb8q": {
@@ -911,7 +911,7 @@
             "product_description_dypDjF",
             "divider_r7VKz9",
             "group_tgFJPA",
-            "group_N4nPkr",
+            "product_brief_facts_8QXRhX",
             "product_brief_facts_48fb8q",
             "group_yTxaMe",
             "product_brief_facts_Cr9XDE"
