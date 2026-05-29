@@ -1399,6 +1399,7 @@
         "spacer_wKm4nJ": {
           "type": "spacer",
           "name": "t:names.spacer",
+          "disabled": true,
           "settings": {
             "size": "percent",
             "percent_size": 15,
@@ -1415,7 +1416,7 @@
           "name": "Speaker Spec",
           "settings": {
             "caption": "",
-            "select_table": "speaker_spec_metafields",
+            "select_table": "speaker_spec",
             "add_richtext": "",
             "vertical_alignment": "top",
             "padding-block-start": 0,
