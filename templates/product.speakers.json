@@ -1338,7 +1338,7 @@
           "name": "Speaker Spec",
           "settings": {
             "caption": "",
-            "select_table": "speaker_spec_metafields",
+            "select_table": "speaker_spec",
             "add_richtext": "",
             "vertical_alignment": "top",
             "padding-block-start": 0,
