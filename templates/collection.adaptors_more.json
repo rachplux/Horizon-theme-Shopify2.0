@@ -9,10 +9,10 @@
  */
 {
   "sections": {
-    "section_GTLpG8": {
+    "section_pJThky": {
       "type": "section",
       "blocks": {
-        "text_9LRwRF": {
+        "text_9aQTjR": {
           "type": "text",
           "name": "Title",
           "settings": {
@@ -38,7 +38,7 @@
           },
           "blocks": {}
         },
-        "text_XHXAP7": {
+        "text_4r4DT3": {
           "type": "text",
           "name": "Description",
           "settings": {
@@ -66,8 +66,8 @@
         }
       },
       "block_order": [
-        "text_9LRwRF",
-        "text_XHXAP7"
+        "text_9aQTjR",
+        "text_4r4DT3"
       ],
       "name": "Collection heading",
       "settings": {
@@ -85,7 +85,7 @@
         "color_scheme": "scheme-8",
         "background_media": "image",
         "video_position": "cover",
-        "background_image": "shopify://shop_images/carAudioBG.webp",
+        "background_image": "shopify://shop_images/controller-bg.webp",
         "background_image_position": "cover",
         "border": "none",
         "border_width": 1,
@@ -840,7 +840,7 @@
     }
   },
   "order": [
-    "section_GTLpG8",
+    "section_pJThky",
     "divider_rP48E8",
     "main",
     "divider_B6zB8D",
