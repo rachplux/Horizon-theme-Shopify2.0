@@ -287,7 +287,7 @@
               },
               "blocks": {}
             },
-            "product_brief_facts_48fb8q": {
+            "product_brief_facts_PUxEDR": {
               "type": "product-brief-facts",
               "name": "Amplifier Brief Facts",
               "settings": {
@@ -327,12 +327,12 @@
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
-                "padding-block-end": 10,
+                "padding-block-end": 15,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "product_brief_facts_value_aJU4Ln": {
+                "product_brief_facts_value_TfBwzr": {
                   "type": "product-brief-facts-value",
                   "name": "RMS POWER",
                   "settings": {
@@ -360,14 +360,14 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "divider_rQAezL": {
+                "divider_zWGAaE": {
                   "type": "_divider",
                   "name": "t:names.divider",
                   "settings": {
@@ -379,7 +379,7 @@
                   },
                   "blocks": {}
                 },
-                "product_brief_facts_value_DJmVYY": {
+                "product_brief_facts_value_9F8U8D": {
                   "type": "product-brief-facts-value",
                   "name": "CLASS",
                   "settings": {
@@ -407,14 +407,14 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "divider_Ynjt7z": {
+                "divider_8t3XVf": {
                   "type": "_divider",
                   "name": "t:names.divider",
                   "settings": {
@@ -426,7 +426,7 @@
                   },
                   "blocks": {}
                 },
-                "product_brief_facts_value_yH6BCB": {
+                "product_brief_facts_value_nUDMxi": {
                   "type": "product-brief-facts-value",
                   "name": "CHANNELS",
                   "settings": {
@@ -454,8 +454,8 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -463,11 +463,11 @@
                 }
               },
               "block_order": [
-                "product_brief_facts_value_aJU4Ln",
-                "divider_rQAezL",
-                "product_brief_facts_value_DJmVYY",
-                "divider_Ynjt7z",
-                "product_brief_facts_value_yH6BCB"
+                "product_brief_facts_value_TfBwzr",
+                "divider_zWGAaE",
+                "product_brief_facts_value_9F8U8D",
+                "divider_8t3XVf",
+                "product_brief_facts_value_nUDMxi"
               ]
             },
             "group_yTxaMe": {
@@ -727,7 +727,7 @@
           "block_order": [
             "group_icgrde",
             "group_tgFJPA",
-            "product_brief_facts_48fb8q",
+            "product_brief_facts_PUxEDR",
             "group_yTxaMe",
             "product_brief_facts_Cr9XDE"
           ]
