@@ -283,10 +283,9 @@
               },
               "blocks": {}
             },
-            "group_N4nPkr": {
+            "product_brief_facts_89mKjR": {
               "type": "product-brief-facts",
               "name": "Speaker Brief Facts",
-              "disabled": true,
               "settings": {
                 "content_direction": "row",
                 "vertical_on_mobile": true,
@@ -296,7 +295,7 @@
                 "align_facts_titles": true,
                 "horizontal_alignment_flex_direction_column": "flex-start",
                 "vertical_alignment_flex_direction_column": "center",
-                "gap": 0,
+                "gap": 10,
                 "width": "fill",
                 "custom_width": 100,
                 "width_mobile": "fill",
@@ -324,12 +323,12 @@
                 "open_in_new_tab": false,
                 "placeholder": "",
                 "padding-block-start": 0,
-                "padding-block-end": 10,
+                "padding-block-end": 15,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "product_brief_facts_value_BqXxeq": {
+                "product_brief_facts_value_XzDXXU": {
                   "type": "product-brief-facts-value",
                   "name": "POWER",
                   "settings": {
@@ -357,14 +356,14 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
+                    "padding-block-start": 7,
+                    "padding-block-end": 15,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "divider_4i3ped": {
+                "divider_nPefJT": {
                   "type": "_divider",
                   "name": "t:names.divider",
                   "settings": {
@@ -376,17 +375,17 @@
                   },
                   "blocks": {}
                 },
-                "group_CUQThp": {
+                "product_brief_facts_value_4Nw3aQ": {
                   "type": "product-brief-facts-value",
-                  "name": "SIZE",
+                  "name": "Size",
                   "settings": {
                     "source": "speaker_size",
                     "show_amplifier_ohm": true,
                     "show_label": true,
-                    "label": "SIZE",
+                    "label": "Size",
                     "label_font": "var(--font-subheading--family)",
                     "label_font_size": "1rem",
-                    "label_case": "none",
+                    "label_case": "uppercase",
                     "label_color": "var(--color-foreground-heading)",
                     "content_alignment": "center",
                     "gap": 12,
@@ -404,14 +403,14 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
                   "blocks": {}
                 },
-                "divider_cWr3qC": {
+                "divider_TBUck7": {
                   "type": "_divider",
                   "name": "t:names.divider",
                   "settings": {
@@ -423,17 +422,17 @@
                   },
                   "blocks": {}
                 },
-                "group_miGVk4": {
+                "product_brief_facts_value_fqRnhc": {
                   "type": "product-brief-facts-value",
                   "name": "SOLD UNIT",
                   "settings": {
                     "source": "speaker_sold_unit",
                     "show_amplifier_ohm": true,
                     "show_label": true,
-                    "label": "SOLD UNIT",
+                    "label": "Sold Unit",
                     "label_font": "var(--font-subheading--family)",
                     "label_font_size": "1rem",
-                    "label_case": "none",
+                    "label_case": "uppercase",
                     "label_color": "var(--color-foreground-heading)",
                     "content_alignment": "center",
                     "gap": 12,
@@ -451,8 +450,8 @@
                     "background": false,
                     "background_color": "#00000026",
                     "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 10,
+                    "padding-block-start": 10,
+                    "padding-block-end": 15,
                     "padding-inline-start": 0,
                     "padding-inline-end": 0
                   },
@@ -460,16 +459,17 @@
                 }
               },
               "block_order": [
-                "product_brief_facts_value_BqXxeq",
-                "divider_4i3ped",
-                "group_CUQThp",
-                "divider_cWr3qC",
-                "group_miGVk4"
+                "product_brief_facts_value_XzDXXU",
+                "divider_nPefJT",
+                "product_brief_facts_value_4Nw3aQ",
+                "divider_TBUck7",
+                "product_brief_facts_value_fqRnhc"
               ]
             },
             "product_brief_facts_48fb8q": {
               "type": "product-brief-facts",
               "name": "Amplifier Brief Facts",
+              "disabled": true,
               "settings": {
                 "content_direction": "row",
                 "vertical_on_mobile": true,
@@ -911,7 +911,7 @@
             "product_description_fyEPjQ",
             "divider_9VUPDM",
             "group_tgFJPA",
-            "group_N4nPkr",
+            "product_brief_facts_89mKjR",
             "product_brief_facts_48fb8q",
             "group_yTxaMe",
             "product_brief_facts_Cr9XDE"
