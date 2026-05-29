@@ -1396,6 +1396,86 @@
           },
           "blocks": {}
         },
+        "group_UBrUgB": {
+          "type": "group",
+          "name": "Specs",
+          "settings": {
+            "content_direction": "row",
+            "vertical_on_mobile": true,
+            "horizontal_alignment": "flex-end",
+            "vertical_alignment": "center",
+            "align_baseline": false,
+            "horizontal_alignment_flex_direction_column": "flex-start",
+            "vertical_alignment_flex_direction_column": "center",
+            "gap": 12,
+            "width": "fill",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100,
+            "height": "fit",
+            "custom_height": 100,
+            "inherit_color_scheme": true,
+            "color_scheme": "",
+            "background_media": "none",
+            "video_position": "cover",
+            "background_image_position": "cover",
+            "border": "none",
+            "border_width": 1,
+            "border_width_top": 1,
+            "border_width_bottom": 1,
+            "border_width_left": 1,
+            "border_width_right": 1,
+            "border_opacity": 100,
+            "border_radius": 0,
+            "toggle_overlay": false,
+            "overlay_color": "#00000026",
+            "overlay_style": "solid",
+            "gradient_direction": "to top",
+            "link": "",
+            "open_in_new_tab": false,
+            "placeholder": "",
+            "padding-block-start": 0,
+            "padding-block-end": 0,
+            "padding-inline-start": 0,
+            "padding-inline-end": 0
+          },
+          "blocks": {
+            "specification_XTPXC9": {
+              "type": "specification",
+              "name": "Speaker Spec",
+              "settings": {
+                "caption": "",
+                "select_table": "speaker_spec",
+                "add_richtext": "",
+                "vertical_alignment": "top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "specification_h3eD6h": {
+              "type": "specification",
+              "name": "Subwoofer Data",
+              "settings": {
+                "caption": "",
+                "select_table": "subwoofer_tech_data",
+                "add_richtext": "",
+                "vertical_alignment": "top",
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            }
+          },
+          "block_order": [
+            "specification_XTPXC9",
+            "specification_h3eD6h"
+          ]
+        },
         "spacer_wKm4nJ": {
           "type": "spacer",
           "name": "t:names.spacer",
@@ -1410,43 +1490,12 @@
             "pixel_size_mobile": 120
           },
           "blocks": {}
-        },
-        "specification_dhxJkp": {
-          "type": "specification",
-          "name": "Speaker Spec",
-          "settings": {
-            "caption": "",
-            "select_table": "speaker_spec",
-            "add_richtext": "",
-            "vertical_alignment": "top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
-        },
-        "specification_NWnzfD": {
-          "type": "specification",
-          "name": "Subwoofer Data",
-          "settings": {
-            "caption": "",
-            "select_table": "subwoofer_tech_data",
-            "add_richtext": "",
-            "vertical_alignment": "top",
-            "padding-block-start": 0,
-            "padding-block-end": 0,
-            "padding-inline-start": 0,
-            "padding-inline-end": 0
-          },
-          "blocks": {}
         }
       },
       "block_order": [
         "text_VyXmtf",
-        "spacer_wKm4nJ",
-        "specification_dhxJkp",
-        "specification_NWnzfD"
+        "group_UBrUgB",
+        "spacer_wKm4nJ"
       ],
       "name": "Product Specification",
       "settings": {
