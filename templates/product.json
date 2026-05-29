@@ -1398,7 +1398,7 @@
           "name": "Amplifier Spec",
           "settings": {
             "caption": "",
-            "select_table": "amplifier_spec_metafields",
+            "select_table": "amplifier_spec",
             "add_richtext": "",
             "vertical_alignment": "top",
             "padding-block-start": 0,
