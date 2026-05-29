@@ -386,7 +386,7 @@
                 "width": "fit-content",
                 "max_width": "normal",
                 "alignment": "left",
-                "type_preset": "h6",
+                "type_preset": "h3",
                 "font": "var(--font-accent--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
