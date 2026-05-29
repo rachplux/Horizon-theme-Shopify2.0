@@ -89,6 +89,8 @@
           {% endcomment %}
         {% when 'amplifier_spec_metafields' %}
           {% render 'amplifier-spec-metafields' %}
+		{% when 'processor_spec_metafields' %}
+          {% render 'processor-spec-metafields' %}
       {% endcase %}
     {% endif %}
   </div>
@@ -128,6 +130,10 @@
         {
           "value": "amplifier_spec_metafields",
           "label": "Amplifier Spec Metafields"
+        },
+        {
+          "value": "processor_spec_metafields",
+          "label": "Processor Spec Metafields"
         }
       ],
       "default": "none"
