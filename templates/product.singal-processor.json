@@ -1349,10 +1349,10 @@
         },
         "specification_WtG9Hh": {
           "type": "specification",
-          "name": "Amplifier Spec",
+          "name": "Processor Spec",
           "settings": {
             "caption": "",
-            "select_table": "amplifier_spec_metafields",
+            "select_table": "processor_spec",
             "add_richtext": "",
             "vertical_alignment": "top",
             "padding-block-start": 0,
