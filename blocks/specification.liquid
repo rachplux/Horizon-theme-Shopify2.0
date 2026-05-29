@@ -75,21 +75,13 @@
     {% if block.settings.select_table %}
       {% case block.settings.select_table %}
         {% when 'none' %}
-          {% comment %}
-            {% when 'speaker_spec' %}
-            {% render 'speaker-spec' %}
-          {% endcomment %}
-        {% when 'speaker_spec_metafields' | default %}
+        {% when 'speaker_spec' | default %}
           {% render 'speaker-spec-metafields' %}
         {% when 'subwoofer_tech_data' %}
           {% render 'subwoofer-tech-data' %}
-          {% comment %}
-            {% when 'amplifier_spec' %}
-            {% render 'amplifier-spec' %}
-          {% endcomment %}
-        {% when 'amplifier_spec_metafields' %}
+        {% when 'amplifier_spec' %}
           {% render 'amplifier-spec-metafields' %}
-		{% when 'processor_spec_metafields' %}
+		{% when 'processor_spec' %}
           {% render 'processor-spec-metafields' %}
       {% endcase %}
     {% endif %}
@@ -120,7 +112,7 @@
           "label": ""
         },
         {
-          "value": "speaker_spec_metafields",
+          "value": "speaker_spec",
           "label": "Speaker Spec Metafields"
         },
         {
@@ -128,11 +120,11 @@
           "label": "Subwoofer Tech Data"
         },
         {
-          "value": "amplifier_spec_metafields",
+          "value": "amplifier_spec",
           "label": "Amplifier Spec Metafields"
         },
         {
-          "value": "processor_spec_metafields",
+          "value": "processor_spec",
           "label": "Processor Spec Metafields"
         }
       ],
