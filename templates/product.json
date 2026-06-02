@@ -1549,8 +1549,8 @@
         "placeholder": "",
         "padding-block-start": 32,
         "padding-block-end": 32,
-        "padding-inline-start": 40,
-        "padding-inline-end": 40
+        "padding-inline-start": 30,
+        "padding-inline-end": 30
       }
     },
     "divider_E6zytR": {
