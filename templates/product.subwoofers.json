@@ -1029,7 +1029,7 @@
                       "name": "Speaker Spec",
                       "settings": {
                         "caption": "",
-                        "select_table": "amplifier_spec",
+                        "select_table": "speaker_spec",
                         "add_richtext": "",
                         "vertical_alignment": "top",
                         "padding-block-start": 0,
@@ -1048,7 +1048,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Technical Data",
-                    "open_by_default": false,
+                    "open_by_default": true,
                     "icon": "none",
                     "width": 20
                   },
