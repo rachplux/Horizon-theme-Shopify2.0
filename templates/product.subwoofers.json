@@ -1019,7 +1019,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Product Details",
-                    "open_by_default": false,
+                    "open_by_default": true,
                     "icon": "none",
                     "width": 20
                   },
@@ -1048,7 +1048,7 @@
                   "type": "_accordion-row",
                   "settings": {
                     "heading": "Technical Data",
-                    "open_by_default": true,
+                    "open_by_default": false,
                     "icon": "none",
                     "width": 20
                   },
