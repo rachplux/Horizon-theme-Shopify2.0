@@ -695,7 +695,7 @@
         "enable_sticky_add_to_cart": true,
         "color_scheme": "scheme-1",
         "padding-block-start": 0,
-        "padding-block-end": 0
+        "padding-block-end": 15
       }
     },
     "divider_7rCFL9": {
@@ -871,7 +871,7 @@
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 30,
-            "padding-inline-end": 0
+            "padding-inline-end": 30
           },
           "blocks": {
             "text_C7kw9y": {
