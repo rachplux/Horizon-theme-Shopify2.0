@@ -1018,7 +1018,7 @@
                 "accordion_row_pKtGaR": {
                   "type": "_accordion-row",
                   "settings": {
-                    "heading": "Details",
+                    "heading": "Product Details",
                     "open_by_default": true,
                     "icon": "none",
                     "width": 20
