@@ -928,7 +928,7 @@
         },
         "group_LXUKJ4": {
           "type": "group",
-          "name": "About Series",
+          "name": "Specification",
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -970,152 +970,119 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "group_qdLHLx": {
-              "type": "group",
-              "name": "Heading",
+            "text_CVUcei": {
+              "type": "text",
+              "name": "t:names.heading",
               "settings": {
-                "content_direction": "row",
-                "vertical_on_mobile": true,
-                "horizontal_alignment": "space-between",
-                "vertical_alignment": "flex-end",
-                "align_baseline": false,
-                "horizontal_alignment_flex_direction_column": "flex-start",
-                "vertical_alignment_flex_direction_column": "center",
-                "gap": 12,
-                "width": "fill",
-                "custom_width": 100,
-                "width_mobile": "fill",
-                "custom_width_mobile": 100,
-                "height": "fit",
-                "custom_height": 100,
+                "text": "<h3>Specifications</h3>",
+                "width": "fit-content",
+                "max_width": "normal",
+                "alignment": "left",
+                "type_preset": "h3",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 20
+              },
+              "blocks": {}
+            },
+            "accordion_UzbG9n": {
+              "type": "accordion",
+              "name": "t:names.accordion",
+              "settings": {
+                "icon": "caret",
+                "dividers": true,
+                "type_preset": "h6",
                 "inherit_color_scheme": true,
                 "color_scheme": "",
-                "background_media": "none",
-                "video_position": "cover",
-                "background_image_position": "cover",
                 "border": "none",
                 "border_width": 1,
-                "border_width_top": 1,
-                "border_width_bottom": 1,
-                "border_width_left": 1,
-                "border_width_right": 1,
                 "border_opacity": 100,
                 "border_radius": 0,
-                "toggle_overlay": false,
-                "overlay_color": "#00000026",
-                "overlay_style": "solid",
-                "gradient_direction": "to top",
-                "link": "",
-                "open_in_new_tab": false,
-                "placeholder": "",
                 "padding-block-start": 0,
                 "padding-block-end": 0,
                 "padding-inline-start": 0,
                 "padding-inline-end": 0
               },
               "blocks": {
-                "text_HP9MPN": {
-                  "type": "text",
-                  "name": "t:names.heading",
+                "accordion_row_pKtGaR": {
+                  "type": "_accordion-row",
                   "settings": {
-                    "text": "<h3>About {{ closest.product.metafields.speaker.serie.value.label.value }}{{ closest.product.metafields.amplifier.serie.value.label.value }}</h3>",
-                    "width": "100%",
-                    "max_width": "normal",
-                    "alignment": "left",
-                    "type_preset": "h3",
-                    "font": "var(--font-body--family)",
-                    "font_size": "1rem",
-                    "line_height": "normal",
-                    "letter_spacing": "normal",
-                    "case": "none",
-                    "wrap": "pretty",
-                    "color": "var(--color-foreground)",
-                    "background": false,
-                    "background_color": "#00000026",
-                    "corner_radius": 0,
-                    "padding-block-start": 0,
-                    "padding-block-end": 0,
-                    "padding-inline-start": 0,
-                    "padding-inline-end": 0
+                    "heading": "Details",
+                    "open_by_default": true,
+                    "icon": "none",
+                    "width": 20
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "specification_pxCYaN": {
+                      "type": "specification",
+                      "name": "Speaker Spec",
+                      "settings": {
+                        "caption": "",
+                        "select_table": "speaker_spec",
+                        "add_richtext": "",
+                        "vertical_alignment": "top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "specification_pxCYaN"
+                  ]
                 },
-                "product_tags_zHgggh": {
-                  "type": "product-tags",
-                  "name": "Product Tags",
+                "accordion_row_pXHatc": {
+                  "type": "_accordion-row",
                   "settings": {
-                    "tag_size": 14,
-                    "case": "none",
-                    "alignment": "flex-start",
-                    "choose_tag_source": "metafields",
-                    "metafield_input": "system.audio_type"
+                    "heading": "Technical Data",
+                    "open_by_default": false,
+                    "icon": "none",
+                    "width": 20
                   },
-                  "blocks": {}
+                  "blocks": {
+                    "specification_7JJqkN": {
+                      "type": "specification",
+                      "name": "Subwoofer Data",
+                      "settings": {
+                        "caption": "",
+                        "select_table": "subwoofer_tech_data",
+                        "add_richtext": "",
+                        "vertical_alignment": "top",
+                        "padding-block-start": 0,
+                        "padding-block-end": 0,
+                        "padding-inline-start": 0,
+                        "padding-inline-end": 0
+                      },
+                      "blocks": {}
+                    }
+                  },
+                  "block_order": [
+                    "specification_7JJqkN"
+                  ]
                 }
               },
               "block_order": [
-                "text_HP9MPN",
-                "product_tags_zHgggh"
+                "accordion_row_pKtGaR",
+                "accordion_row_pXHatc"
               ]
-            },
-            "product_description_TLdiHQ": {
-              "type": "product-description",
-              "name": "t:names.product_description",
-              "settings": {
-                "text": "<p> {{ closest.product.metafields.speaker.serie.value.subtitle.value }}</p>{{ closest.product.metafields.speaker.serie.value.features | metafield_tag }}",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "rte",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
-            },
-            "text_LNTJBa": {
-              "type": "text",
-              "name": "t:names.text",
-              "disabled": true,
-              "settings": {
-                "text": "<p>{{ closest.product.metafields.speaker.serie.value.subtitle.value }}</p>{{ closest.product.metafields.speaker.serie.value.features | metafield_tag }}",
-                "width": "fit-content",
-                "max_width": "normal",
-                "alignment": "left",
-                "type_preset": "paragraph",
-                "font": "var(--font-body--family)",
-                "font_size": "1rem",
-                "line_height": "normal",
-                "letter_spacing": "normal",
-                "case": "none",
-                "wrap": "pretty",
-                "color": "var(--color-foreground)",
-                "background": false,
-                "background_color": "#00000026",
-                "corner_radius": 0,
-                "padding-block-start": 0,
-                "padding-block-end": 0,
-                "padding-inline-start": 0,
-                "padding-inline-end": 0
-              },
-              "blocks": {}
             }
           },
           "block_order": [
-            "group_qdLHLx",
-            "product_description_TLdiHQ",
-            "text_LNTJBa"
+            "text_CVUcei",
+            "accordion_UzbG9n"
           ]
         }
       },
@@ -1312,6 +1279,7 @@
         "group_UBrUgB",
         "spacer_wKm4nJ"
       ],
+      "disabled": true,
       "name": "Product Specification",
       "settings": {
         "section_width": "page-width",
