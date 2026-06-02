@@ -1065,6 +1065,7 @@
         "group_nBjeAD": {
           "type": "group",
           "name": "About Series",
+          "disabled": true,
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -1257,7 +1258,6 @@
         "group_LXUKJ4": {
           "type": "group",
           "name": "Specifications",
-          "disabled": true,
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -1509,6 +1509,7 @@
         "specification_NWnzfD",
         "specification_WtG9Hh"
       ],
+      "disabled": true,
       "name": "Product Specification",
       "settings": {
         "section_width": "page-width",
