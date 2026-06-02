@@ -756,8 +756,8 @@
             "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 40,
-            "padding-inline-end": 0
+            "padding-inline-start": 30,
+            "padding-inline-end": 30
           },
           "blocks": {
             "text_tFiFT9": {
@@ -871,7 +871,7 @@
             "padding-block-start": 0,
             "padding-block-end": 0,
             "padding-inline-start": 30,
-            "padding-inline-end": 0
+            "padding-inline-end": 30
           },
           "blocks": {
             "text_9NiG7w": {
