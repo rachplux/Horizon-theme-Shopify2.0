@@ -39,33 +39,33 @@
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     border-bottom: 1px solid var(--border-color);
     align-items: center;
-    &:last-child {
+     &:last-child {
       border-bottom: none;
     }
   }
   .spec-row:nth-child(even) {
-	  background-color: rgb(255 255 255 /22%);
+    background-color: rgb(255 255 255 / 22%);
   }
-  .spec-label,.spec-value {
-	  color: var(--color-foreground);
-	  padding: 5px 1rem;
-      min-width: 0;
-      overflow-wrap: anywhere;
+  .spec-label,
+  .spec-value {
+    color: var(--color-foreground);
+    padding: 5px 1rem;
+    min-width: 0;
+    overflow-wrap: anywhere;
   }
   .spec-label {
-     font-weight: bold;
-	 text-transform:uppercase;
+    font-weight: bold;
+    text-transform: uppercase;
   }
   .spec-value {
-	 border-left: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
   }
 {% endstylesheet %}
 
 <div
   class='specification-block__inner specification-block__inner--align-{{ block.settings.vertical_alignment }} spacing-style container'
   style="{% render 'spacing-style', settings: block.settings %}"
-  {{ block.shopify_attributes }}
->
+  {{ block.shopify_attributes }}>
   {% if block.settings.caption == true %}
     <p class='caption'>
       {{ block.settings.caption }}
@@ -81,7 +81,7 @@
           {% render 'subwoofer-tech-data' %}
         {% when 'amplifier_spec' %}
           {% render 'amplifier-spec-metafields' %}
-		{% when 'processor_spec' %}
+        {% when 'processor_spec' %}
           {% render 'processor-spec-metafields' %}
       {% endcase %}
     {% endif %}
@@ -92,124 +92,115 @@
   {% endif %}
 </div>
 {% schema %}
-{
-  "name": "Specification",
-  "tag": "block",
-  "class": "specification-block",
-  "settings": [
-    {
-      "type": "text",
-      "id": "caption",
-      "label": "Caption"
-    },
-    {
-      "type": "select",
-      "id": "select_table",
-      "label": "Submit table",
-      "options": [
-        {
-          "value": "none",
-          "label": ""
-        },
-        {
-          "value": "speaker_spec",
-          "label": "Speaker Spec Metafields"
-        },
-        {
-          "value": "subwoofer_tech_data",
-          "label": "Subwoofer Tech Data"
-        },
-        {
-          "value": "amplifier_spec",
-          "label": "Amplifier Spec Metafields"
-        },
-        {
-          "value": "processor_spec",
-          "label": "Processor Spec Metafields"
-        }
-      ],
-      "default": "none"
-    },
-    {
-      "type": "richtext",
-      "id": "add_richtext",
-      "label": "Add custom table or text",
-      "info": "Content will be rendered as HTML. Supports paragraphs, lists, and other formatted text."
-    },
-    {
-      "type": "header",
-      "content": "t:content.layout"
-    },
-    {
-      "type": "select",
-      "id": "vertical_alignment",
-      "label": "Vertical alignment",
-      "options": [
-        {
-          "value": "top",
-          "label": "Top"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "bottom",
-          "label": "Bottom"
-        }
-      ],
-      "default": "top"
-    },
-    {
-      "type": "header",
-      "content": "t:content.padding"
-    },
-    {
-      "type": "range",
-      "id": "padding-block-start",
-      "label": "t:settings.top",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "padding-block-end",
-      "label": "t:settings.bottom",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "padding-inline-start",
-      "label": "t:settings.left",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0
-    },
-    {
-      "type": "range",
-      "id": "padding-inline-end",
-      "label": "t:settings.right",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "unit": "px",
-      "default": 0
-    }
-  ],
-  "presets": [
-    {
-      "name": "Specification",
-      "category": "t:categories.product"
-    }
-  ]
-}
+  {
+    "name": "Specification",
+    "tag": "block",
+    "class": "specification-block",
+    "settings": [
+      {
+        "type": "text",
+        "id": "caption",
+        "label": "Caption"
+      },
+      {
+        "type": "select",
+        "id": "select_table",
+        "label": "Submit table",
+        "options": [
+          {
+            "value": "none",
+            "label": ""
+          },
+          {
+            "value": "speaker_spec",
+            "label": "Speaker Spec Metafields"
+          },
+          {
+            "value": "subwoofer_tech_data",
+            "label": "Subwoofer Tech Data"
+          },
+          {
+            "value": "amplifier_spec",
+            "label": "Amplifier Spec Metafields"
+          }, {
+            "value": "processor_spec",
+            "label": "Processor Spec Metafields"
+          }
+        ],
+        "default": "none"
+      },
+      {
+        "type": "richtext",
+        "id": "add_richtext",
+        "label": "Add custom table or text",
+        "info": "Content will be rendered as HTML. Supports paragraphs, lists, and other formatted text."
+      },
+      {
+        "type": "header",
+        "content": "t:content.layout"
+      }, {
+        "type": "select",
+        "id": "vertical_alignment",
+        "label": "Vertical alignment",
+        "options": [
+          {
+            "value": "top",
+            "label": "Top"
+          }, {
+            "value": "center",
+            "label": "Center"
+          }, {
+            "value": "bottom",
+            "label": "Bottom"
+          }
+        ],
+        "default": "top"
+      }, {
+        "type": "header",
+        "content": "t:content.padding"
+      }, {
+        "type": "range",
+        "id": "padding-block-start",
+        "label": "t:settings.top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "padding-block-end",
+        "label": "t:settings.bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "padding-inline-start",
+        "label": "t:settings.left",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }, {
+        "type": "range",
+        "id": "padding-inline-end",
+        "label": "t:settings.right",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 0
+      }
+    ],
+    "presets": [
+      {
+        "name": "Specification",
+        "category": "t:categories.product"
+      }
+    ]
+  }
 {% endschema %}

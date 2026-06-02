@@ -11,7 +11,7 @@
   {% assign unique_labels = labels | split: '|' | uniq %}
 
     {% comment %} 定義表格欄位 {% endcomment %}
-    {% assign spec_fields = 'label,Model,text,false|sealed_box_volume,Sealed Box Volume,text,false|ported_box_volume,Ported Box Volume,text,false|port_diameter,Port Diameter,text,false|port_length,Port Length,text,false|vas,Vas,text,false|fs,FS,text,false|qts,QTS,text,false|xmax,Xmax,text,false'
+    {% assign spec_fields = 'sealed_box_volume,Sealed Box Volume,text,false|ported_box_volume,Ported Box Volume,text,false|port_diameter,Port Diameter,text,false|port_length,Port Length,text,false|vas,Vas,text,false|fs,FS,text,false|qts,QTS,text,false|xmax,Xmax,text,false'
  | split: '|'
     %}
     {% comment %} 開始寫Grid {% endcomment %}
