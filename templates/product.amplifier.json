@@ -832,7 +832,7 @@
         },
         "group_rDKffN": {
           "type": "group",
-          "name": "specification",
+          "name": "Specifications",
           "settings": {
             "content_direction": "column",
             "vertical_on_mobile": true,
@@ -870,7 +870,7 @@
             "placeholder": "",
             "padding-block-start": 0,
             "padding-block-end": 0,
-            "padding-inline-start": 0,
+            "padding-inline-start": 30,
             "padding-inline-end": 0
           },
           "blocks": {
