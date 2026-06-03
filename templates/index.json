@@ -177,7 +177,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "BECOME A PARTNER",
-                    "link": "shopify://pages/becoming-distributors",
+                    "link": "shopify://pages/contact",
                     "open_in_new_tab": false,
                     "style_class": "button-secondary",
                     "link_type_preset": "",
@@ -1208,8 +1208,8 @@
               "type": "button",
               "name": "Apply Button",
               "settings": {
-                "label": "APPLY NOW",
-                "link": "shopify://pages/becoming-distributors",
+                "label": "CONTACT US",
+                "link": "shopify://pages/contact",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "link_type_preset": "",
