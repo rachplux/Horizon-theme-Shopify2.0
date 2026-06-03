@@ -97,7 +97,7 @@
               "settings": {
                 "text": "<p>High perfomance audio system for car, pro, marine, powersports and SPL competitiors.  We only manufacture products that we proud of. </p>",
                 "width": "fit-content",
-                "max_width": "narrow",
+                "max_width": "normal",
                 "alignment": "left",
                 "type_preset": "rte",
                 "font": "var(--font-body--family)",
