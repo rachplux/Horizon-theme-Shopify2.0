@@ -63,11 +63,21 @@
             "padding-inline-end": 0
           },
           "blocks": {}
+        },
+        "serie_list_ecVXam": {
+          "type": "serie-list",
+          "name": "Serie List",
+          "settings": {
+            "inherit_color_scheme": true,
+            "color_scheme": ""
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "text_tqQTNE",
-        "text_twGGkJ"
+        "text_twGGkJ",
+        "serie_list_ecVXam"
       ],
       "name": "Collection heading",
       "settings": {
