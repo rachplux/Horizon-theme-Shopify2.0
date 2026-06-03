@@ -92,7 +92,7 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#1e2128be",
+        "overlay_color": "#1e2128bf",
         "overlay_style": "solid",
         "gradient_direction": "to bottom",
         "padding-block-start": 48,
@@ -312,7 +312,7 @@
         "columns_gap_vertical": 15,
         "padding-inline-start": 0,
         "padding-inline-end": 0,
-        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
+        "color_scheme": "scheme-4",
         "padding-block-start": 0,
         "padding-block-end": 50
       }
@@ -753,26 +753,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "button_XbytQj": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Apply Now",
-                "link": "shopify://pages/becoming-distributors",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "link_type_preset": "",
-                "use_custom_link_text_color": false,
-                "link_text_color": "#000000",
-                "show_icon": false,
-                "icon": "arrow",
-                "width": "custom",
-                "custom_width": 40,
-                "width_mobile": "custom",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            },
             "button_XFqL4t": {
               "type": "button",
               "name": "t:names.button",
@@ -780,7 +760,7 @@
                 "label": "Contact us",
                 "link": "shopify://pages/contact",
                 "open_in_new_tab": false,
-                "style_class": "button-secondary",
+                "style_class": "button",
                 "link_type_preset": "",
                 "use_custom_link_text_color": false,
                 "link_text_color": "#000000",
@@ -795,7 +775,6 @@
             }
           },
           "block_order": [
-            "button_XbytQj",
             "button_XFqL4t"
           ]
         }
