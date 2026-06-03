@@ -1048,8 +1048,7 @@
       "settings": {
         "collection_list": [
           "pxm-serie",
-          "xpro-serie",
-          "pxm-serie-copy"
+          "xpro-serie"
         ],
         "layout_type": "grid",
         "carousel_on_mobile": false,
