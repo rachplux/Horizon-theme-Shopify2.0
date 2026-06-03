@@ -92,7 +92,7 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#101010a9",
+        "overlay_color": "#101010a8",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "padding-block-start": 60,
@@ -834,10 +834,10 @@
         "padding-block-end": 0
       }
     },
-    "hero_NkzBcF": {
+    "hero_4J7bhJ": {
       "type": "hero",
       "blocks": {
-        "group_e6YRy6": {
+        "group_hU9tqe": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -881,7 +881,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_8b3jJ9": {
+            "text_mAh9eF": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
@@ -907,7 +907,7 @@
               },
               "blocks": {}
             },
-            "text_J9dYJ8": {
+            "text_C77yet": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -935,11 +935,11 @@
             }
           },
           "block_order": [
-            "text_8b3jJ9",
-            "text_J9dYJ8"
+            "text_mAh9eF",
+            "text_C77yet"
           ]
         },
-        "spacer_hFTCnj": {
+        "spacer_g9f8Km": {
           "type": "spacer",
           "name": "t:names.spacer",
           "disabled": true,
@@ -954,7 +954,7 @@
           },
           "blocks": {}
         },
-        "group_4fH9JY": {
+        "group_DDXFdH": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -998,34 +998,14 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "button_XbytQj": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Apply Now",
-                "link": "shopify://pages/becoming-distributors",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "link_type_preset": "",
-                "use_custom_link_text_color": false,
-                "link_text_color": "#000000",
-                "show_icon": false,
-                "icon": "arrow",
-                "width": "custom",
-                "custom_width": 40,
-                "width_mobile": "custom",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            },
-            "button_XFqL4t": {
+            "button_keX4L6": {
               "type": "button",
               "name": "t:names.button",
               "settings": {
                 "label": "Contact us",
                 "link": "shopify://pages/contact",
                 "open_in_new_tab": false,
-                "style_class": "button-secondary",
+                "style_class": "button",
                 "link_type_preset": "",
                 "use_custom_link_text_color": false,
                 "link_text_color": "#000000",
@@ -1040,15 +1020,14 @@
             }
           },
           "block_order": [
-            "button_XbytQj",
-            "button_XFqL4t"
+            "button_keX4L6"
           ]
         }
       },
       "block_order": [
-        "group_e6YRy6",
-        "spacer_hFTCnj",
-        "group_4fH9JY"
+        "group_hU9tqe",
+        "spacer_g9f8Km",
+        "group_DDXFdH"
       ],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
@@ -1092,6 +1071,6 @@
     "collection_list_TdYLag",
     "collection_list_mjDYYh",
     "divider_ThHUjG",
-    "hero_NkzBcF"
+    "hero_4J7bhJ"
   ]
 }
