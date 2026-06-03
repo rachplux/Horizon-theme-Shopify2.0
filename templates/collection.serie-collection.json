@@ -499,10 +499,10 @@
         "padding-block-end": 0
       }
     },
-    "hero_NkzBcF": {
+    "hero_6JXkzq": {
       "type": "hero",
       "blocks": {
-        "group_e6YRy6": {
+        "group_6Ftwnw": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -546,7 +546,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_8b3jJ9": {
+            "text_99z9HU": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
@@ -572,7 +572,7 @@
               },
               "blocks": {}
             },
-            "text_J9dYJ8": {
+            "text_rx8Ge3": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -600,11 +600,11 @@
             }
           },
           "block_order": [
-            "text_8b3jJ9",
-            "text_J9dYJ8"
+            "text_99z9HU",
+            "text_rx8Ge3"
           ]
         },
-        "spacer_hFTCnj": {
+        "spacer_jAXMHG": {
           "type": "spacer",
           "name": "t:names.spacer",
           "disabled": true,
@@ -619,7 +619,7 @@
           },
           "blocks": {}
         },
-        "group_4fH9JY": {
+        "group_chikdF": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -663,34 +663,14 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "button_XbytQj": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Apply Now",
-                "link": "shopify://pages/becoming-distributors",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "link_type_preset": "",
-                "use_custom_link_text_color": false,
-                "link_text_color": "#000000",
-                "show_icon": false,
-                "icon": "arrow",
-                "width": "custom",
-                "custom_width": 40,
-                "width_mobile": "custom",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            },
-            "button_XFqL4t": {
+            "button_7WYbkQ": {
               "type": "button",
               "name": "t:names.button",
               "settings": {
                 "label": "Contact us",
                 "link": "shopify://pages/contact",
                 "open_in_new_tab": false,
-                "style_class": "button-secondary",
+                "style_class": "button",
                 "link_type_preset": "",
                 "use_custom_link_text_color": false,
                 "link_text_color": "#000000",
@@ -705,15 +685,14 @@
             }
           },
           "block_order": [
-            "button_XbytQj",
-            "button_XFqL4t"
+            "button_7WYbkQ"
           ]
         }
       },
       "block_order": [
-        "group_e6YRy6",
-        "spacer_hFTCnj",
-        "group_4fH9JY"
+        "group_6Ftwnw",
+        "spacer_jAXMHG",
+        "group_chikdF"
       ],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
@@ -755,6 +734,6 @@
     "divider_B6zB8D",
     "collection_list_TdYLag",
     "divider_ThHUjG",
-    "hero_NkzBcF"
+    "hero_6JXkzq"
   ]
 }
