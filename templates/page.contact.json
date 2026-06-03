@@ -158,7 +158,7 @@
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "type_preset": "h4",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -180,7 +180,7 @@
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>US Line: +1 (305 ) 400-2340<br/>Panama Line : +507 6264-8062<br/>Email: info@cadenceamericas.com</p>",
+                "text": "<p>US Line: +1 (305 ) 400-2340<br/>Panama Line : +507 6264-8062<br/>Email: <a href=\"mailto:info@cadenceamericas.com\" title=\"Mail to Cadence America\"><em>info@cadenceamericas.com</em></a></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -209,7 +209,7 @@
             "text_HTmLVN"
           ]
         },
-        "group_LaQaCr": {
+        "group_7TbPBf": {
           "type": "group",
           "name": "t:names.column",
           "settings": {
@@ -253,15 +253,41 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_7LUGFN": {
+            "text_Q33YTJ": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
-                "text": "<h2>Quality first</h2>",
+                "text": "<h2>International</h2>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
-                "type_preset": "h4",
+                "type_preset": "h6",
+                "font": "var(--font-body--family)",
+                "font_size": "1rem",
+                "line_height": "normal",
+                "letter_spacing": "normal",
+                "case": "none",
+                "wrap": "pretty",
+                "color": "var(--color-foreground-heading)",
+                "background": false,
+                "background_color": "#00000026",
+                "corner_radius": 0,
+                "padding-block-start": 0,
+                "padding-block-end": 0,
+                "padding-inline-start": 0,
+                "padding-inline-end": 0
+              },
+              "blocks": {}
+            },
+            "text_RVCKrP": {
+              "type": "text",
+              "name": "t:names.heading",
+              "settings": {
+                "text": "<p>CADENCE SOUND INTL.</p>",
+                "width": "100%",
+                "max_width": "normal",
+                "alignment": "center",
+                "type_preset": "h3",
                 "font": "var(--font-body--family)",
                 "font_size": "1rem",
                 "line_height": "normal",
@@ -279,11 +305,11 @@
               },
               "blocks": {}
             },
-            "text_p8NtaB": {
+            "text_kQpMfG": {
               "type": "text",
               "name": "t:names.description",
               "settings": {
-                "text": "<p>We obsess over the details and strive to deliver the best products at the best prices, every time.</p>",
+                "text": "<p>Please mail to the following email address.<br/>Email:<a href=\"mailto:info@cadenceamericas.com\"><em>marketing@cadencsound.com</em></a></p>",
                 "width": "100%",
                 "max_width": "normal",
                 "alignment": "center",
@@ -307,14 +333,15 @@
             }
           },
           "block_order": [
-            "text_7LUGFN",
-            "text_p8NtaB"
+            "text_Q33YTJ",
+            "text_RVCKrP",
+            "text_kQpMfG"
           ]
         }
       },
       "block_order": [
         "group_qhitUE",
-        "group_LaQaCr"
+        "group_7TbPBf"
       ],
       "name": "t:names.multicolumn",
       "settings": {
@@ -329,7 +356,7 @@
         "section_width": "page-width",
         "section_height": "",
         "section_height_custom": 50,
-        "color_scheme": "scheme-d5572e65-b967-46f2-a899-d80954090a6f",
+        "color_scheme": "scheme-2",
         "background_media": "none",
         "video_position": "cover",
         "background_image_position": "cover",
