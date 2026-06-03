@@ -589,10 +589,10 @@
         "padding-block-end": 0
       }
     },
-    "hero_NkzBcF": {
+    "hero_pPeeeR": {
       "type": "hero",
       "blocks": {
-        "group_e6YRy6": {
+        "group_bjFE4t": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -636,7 +636,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "text_8b3jJ9": {
+            "text_axtYG7": {
               "type": "text",
               "name": "t:names.heading",
               "settings": {
@@ -662,7 +662,7 @@
               },
               "blocks": {}
             },
-            "text_J9dYJ8": {
+            "text_GUtKT4": {
               "type": "text",
               "name": "t:names.text",
               "settings": {
@@ -690,11 +690,11 @@
             }
           },
           "block_order": [
-            "text_8b3jJ9",
-            "text_J9dYJ8"
+            "text_axtYG7",
+            "text_GUtKT4"
           ]
         },
-        "spacer_hFTCnj": {
+        "spacer_4dF8Jz": {
           "type": "spacer",
           "name": "t:names.spacer",
           "disabled": true,
@@ -709,7 +709,7 @@
           },
           "blocks": {}
         },
-        "group_4fH9JY": {
+        "group_BzXypF": {
           "type": "group",
           "name": "t:names.group",
           "settings": {
@@ -753,7 +753,7 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "button_XFqL4t": {
+            "button_7MwHQc": {
               "type": "button",
               "name": "t:names.button",
               "settings": {
@@ -775,14 +775,14 @@
             }
           },
           "block_order": [
-            "button_XFqL4t"
+            "button_7MwHQc"
           ]
         }
       },
       "block_order": [
-        "group_e6YRy6",
-        "spacer_hFTCnj",
-        "group_4fH9JY"
+        "group_bjFE4t",
+        "spacer_4dF8Jz",
+        "group_BzXypF"
       ],
       "name": "t:names.hero_bottom_aligned",
       "settings": {
@@ -825,6 +825,6 @@
     "divider_B6zB8D",
     "collection_list_TdYLag",
     "divider_ThHUjG",
-    "hero_NkzBcF"
+    "hero_pPeeeR"
   ]
 }
