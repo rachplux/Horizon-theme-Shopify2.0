@@ -92,7 +92,7 @@
         "border_opacity": 100,
         "border_radius": 0,
         "toggle_overlay": true,
-        "overlay_color": "#101010a9",
+        "overlay_color": "#101010a8",
         "overlay_style": "gradient",
         "gradient_direction": "to top",
         "padding-block-start": 60,
@@ -1001,26 +1001,6 @@
             "padding-inline-end": 0
           },
           "blocks": {
-            "button_XbytQj": {
-              "type": "button",
-              "name": "t:names.button",
-              "settings": {
-                "label": "Apply Now",
-                "link": "shopify://pages/becoming-distributors",
-                "open_in_new_tab": false,
-                "style_class": "button",
-                "link_type_preset": "",
-                "use_custom_link_text_color": false,
-                "link_text_color": "#000000",
-                "show_icon": false,
-                "icon": "arrow",
-                "width": "custom",
-                "custom_width": 40,
-                "width_mobile": "custom",
-                "custom_width_mobile": 100
-              },
-              "blocks": {}
-            },
             "button_XFqL4t": {
               "type": "button",
               "name": "t:names.button",
@@ -1028,7 +1008,7 @@
                 "label": "Contact us",
                 "link": "shopify://pages/contact",
                 "open_in_new_tab": false,
-                "style_class": "button-secondary",
+                "style_class": "button",
                 "link_type_preset": "",
                 "use_custom_link_text_color": false,
                 "link_text_color": "#000000",
@@ -1043,7 +1023,6 @@
             }
           },
           "block_order": [
-            "button_XbytQj",
             "button_XFqL4t"
           ]
         }
