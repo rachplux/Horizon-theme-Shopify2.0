@@ -1229,7 +1229,7 @@
               "name": "Category Button",
               "settings": {
                 "label": "DOWNLOAD CATALOG",
-                "link": "shopify://collections/all",
+                "link": "shopify://pages/download-documents",
                 "open_in_new_tab": false,
                 "style_class": "button-secondary",
                 "link_type_preset": "",
@@ -2874,7 +2874,7 @@
                   "name": "t:names.button",
                   "settings": {
                     "label": "DOWNLOAD CATALOG",
-                    "link": "shopify://collections/all",
+                    "link": "shopify://pages/download-documents",
                     "open_in_new_tab": false,
                     "style_class": "button",
                     "link_type_preset": "",
