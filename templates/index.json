@@ -1170,10 +1170,10 @@
             "vertical_alignment": "center",
             "align_baseline": false,
             "horizontal_alignment_flex_direction_column": "flex-start",
-            "vertical_alignment_flex_direction_column": "center",
+            "vertical_alignment_flex_direction_column": "flex-start",
             "gap": 12,
-            "width": "fill",
-            "custom_width": 100,
+            "width": "custom",
+            "custom_width": 29,
             "width_mobile": "fill",
             "custom_width_mobile": 100,
             "height": "fit",
@@ -1218,9 +1218,9 @@
                 "show_icon": true,
                 "icon": "arrow",
                 "width": "custom",
-                "custom_width": 40,
-                "width_mobile": "fit-content",
-                "custom_width_mobile": 40
+                "custom_width": 100,
+                "width_mobile": "custom",
+                "custom_width_mobile": 100
               },
               "blocks": {}
             },
@@ -1238,8 +1238,8 @@
                 "show_icon": true,
                 "icon": "arrow",
                 "width": "custom",
-                "custom_width": 40,
-                "width_mobile": "fit-content",
+                "custom_width": 100,
+                "width_mobile": "custom",
                 "custom_width_mobile": 100
               },
               "blocks": {}
@@ -1250,13 +1250,12 @@
             "button_LdhfKG"
           ]
         },
-        "spacer_GWUxnJ": {
+        "spacer_JMhLgf": {
           "type": "spacer",
           "name": "t:names.spacer",
-          "disabled": true,
           "settings": {
             "size": "percent",
-            "percent_size": 61,
+            "percent_size": 56,
             "pixel_size": 120,
             "custom_mobile_size": true,
             "size_mobile": "pixel",
@@ -1269,7 +1268,7 @@
       "block_order": [
         "group_FzHTW8",
         "group_FkiaxG",
-        "spacer_GWUxnJ"
+        "spacer_JMhLgf"
       ],
       "custom_css": [],
       "name": "Become a Cadence Parnter",
