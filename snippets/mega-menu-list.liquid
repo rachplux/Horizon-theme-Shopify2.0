@@ -9,6 +9,7 @@
   @param {string} [menu_content_type] - Type of content: 'featured_products', 'featured_collections', 'collection_images', or 'text'.
   @param {number} [content_aspect_ratio] - Aspect ratio for content images.
   @param {number} [image_border_radius] - Border radius for content images.
+  @param {object} [menu_settings] - The header menu block settings.
   @param {object} [section] - The section object.
 
   @example
@@ -131,9 +132,12 @@
 
           {% render 'link-featured-image', link: link, class: 'mega-menu__link-image', sizes: collection_image_sizes %}
         {% endif %}
-        <span class="wrap-text">
-          {{- link.title -}}
-        </span>
+        <div class="menu-collection-text">
+          <span class="wrap-text">
+            {{- link.title -}}
+          </span>
+          {% render 'menu-collection-subtitle', link: link, menu_settings: menu_settings, reserve_space: true %}
+        </div>
       </a>
       {% if link.links != blank %}
         <ul
@@ -153,7 +157,14 @@
                 href="{{ childLink.url }}"
                 class="mega-menu__link"
               >
-                <span class="wrap-text">{{- childLink.title -}}</span>
+                <div class="menu-collection-text">
+                  <span class="wrap-text">{{- childLink.title -}}</span>
+                  {% render 'menu-collection-subtitle',
+                    link: childLink,
+                    menu_settings: menu_settings,
+                    reserve_space: true
+                  %}
+                </div>
               </a>
             </li>
           {% endfor %}

@@ -1,0 +1,102 @@
+{%- doc -%}
+  Renders a collection subtitle under a menu link title when enabled.
+
+  @param {object} link - The menu link to inspect.
+  @param {object} menu_settings - The header menu block settings.
+  @param {boolean} [reserve_space] - Reserve subtitle space even when the link has no subtitle.
+{%- enddoc -%}
+
+{% liquid
+  assign collection_subtitle = blank
+
+  if menu_settings.collection_subtitle_display == 'selected' and link.type == 'collection_link' and link.object != blank
+    assign collection_subtitle = link.object.metafields.system.subtitle.value | default: link.object.metafields.subtitle.value | default: link.object.metafields.custom.subtitle.value | default: link.object.metafields.system.subtitle
+  endif
+
+  assign collection_subtitle = collection_subtitle | strip
+%}
+
+{% if collection_subtitle != blank or reserve_space and menu_settings.collection_subtitle_display == 'selected' %}
+  {% liquid
+    assign subtitle_type_preset = menu_settings.collection_subtitle_type_preset | default: 'paragraph'
+    assign subtitle_type = 'body'
+    assign subtitle_color = menu_settings.collection_subtitle_color
+    assign is_placeholder = false
+
+    if collection_subtitle == blank
+      assign is_placeholder = true
+    endif
+
+    if subtitle_color == 'custom'
+      assign subtitle_color = menu_settings.collection_subtitle_custom_color
+    endif
+
+    if menu_settings.collection_subtitle_font_size != blank
+      assign subtitle_font_size_value = menu_settings.collection_subtitle_font_size | split: 'rem' | first | times: 1.0
+
+      if subtitle_font_size_value > 4.5
+        assign subtitle_type = 'display'
+      elsif subtitle_font_size_value > 3.5
+        assign subtitle_type = 'heading'
+      endif
+    endif
+
+    capture subtitle_classes
+      echo 'menu-collection-subtitle '
+      echo subtitle_type_preset
+
+      if subtitle_type_preset == 'custom'
+        echo ' custom-typography'
+
+        if menu_settings.collection_subtitle_font_size != blank
+          echo ' custom-font-size'
+        endif
+
+        if subtitle_color != blank
+          echo ' custom-color'
+        endif
+      elsif subtitle_color != blank
+        echo ' custom-color'
+      endif
+
+      if is_placeholder
+        echo ' menu-collection-subtitle--placeholder'
+      endif
+    endcapture
+  %}
+
+  <span
+    class="{{ subtitle_classes | strip }}"
+    {% if is_placeholder %}
+      aria-hidden="true"
+    {% endif %}
+    style="
+      {% if subtitle_color != blank %}
+        --color: {{ subtitle_color }};
+      {% endif %}
+      {% if subtitle_type_preset == 'custom' %}
+        --font-family: {{ menu_settings.collection_subtitle_font }};
+        {% if menu_settings.collection_subtitle_font_size != blank %}
+          --font-size: {{ menu_settings.collection_subtitle_font_size }};
+        {% endif %}
+        --font-weight: {{ menu_settings.collection_subtitle_font | replace: 'family', 'weight' }};
+        --text-transform: {{ menu_settings.collection_subtitle_case }};
+        --text-wrap: {{ menu_settings.collection_subtitle_wrap | default: 'pretty' }};
+        {% if menu_settings.collection_subtitle_font_size == blank %}
+          --line-height--display: var(--line-height--display-{{ menu_settings.collection_subtitle_line_height }});
+          --line-height--heading: var(--line-height--heading-{{ menu_settings.collection_subtitle_line_height }});
+          --line-height--body: var(--line-height--body-{{ menu_settings.collection_subtitle_line_height }});
+        {% else %}
+          --line-height: var(--line-height--{{ subtitle_type }}-{{ menu_settings.collection_subtitle_line_height }});
+        {% endif %}
+        --letter-spacing: var(--letter-spacing--{{ subtitle_type }}-{{ menu_settings.collection_subtitle_letter_spacing }});
+      {% endif %}
+    "
+  >
+    {%- if is_placeholder -%}
+      &nbsp;
+    {%- else -%}
+      {{- collection_subtitle | escape -}}
+    {%- endif -%}
+  </span>
+{% endif %}
