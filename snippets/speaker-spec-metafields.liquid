@@ -6,7 +6,7 @@
   assign amp_ns = product.metafields.amplifier
   assign model = product.metafields.system.model_number.value
 
-  assign fields_raw = 'Best Uses,best-uses,array|Speaker Type,type,text|Speaker Features,speaker-features,text|Channels,amplifier-configuration,array|Speaker Size,size,text|Sold Unit,sold_unit,text|Speakers,soundbar_speakers,text|Tweeters,soundbar_tweeters,text|Voice Coil,vc_size,text|Power Output,power_output,text|RMS Power,rms_power,integer|Peak Power,peak_power,integer|Tweeter Diaphragm,tweeter_diaphragm,text|Tweeter Design,tweeter_design,text|Midrange Design,midrange_design,text|Frequency Response,fs,text|Sensitivity @ 1M/1W,sn,integer|Impedance,impedance,text|LED lighting,integrated-led-lighting,text|IP Rating,ingress-protection-ip-rating,text|Auxiliary_input,auxiliary_input,text|Device Interface,device-interface,text|Connectivity,connectivity-technology,text|Wire Length,wire_length,text|With Grills,grills,boolean|Tweeter Mounting,mounting_type,text|Magnet Weight (oz.),magnet_weight,text|Mounting Depth,mounting_depth,text|Dimension,dimension,text|Package Contains,package_contains,text'
+  assign fields_raw = 'Best Uses,best-uses,array|Speaker Type,type,text|Speaker Features,speaker-features,text|Channels,amplifier-configuration,array|Speaker Size,size,text|Sold Unit,sold_unit,text|Speakers,soundbar_speakers,text|Tweeters,soundbar_tweeters,text|Voice Coil,voice_coil,text|Power Output,power_output,text|RMS Power,rms_power,integer|Peak Power,peak_power,integer|Tweeter Diaphragm,tweeter_diaphragm,text|Tweeter Design,tweeter_design,text|Midrange Design,midrange_design,text|Frequency Response,fs,text|Sensitivity @ 1M/1W,sn,integer|Impedance,impedance,text|LED lighting,integrated-led-lighting,text|IP Rating,ingress-protection-ip-rating,text|Auxiliary_input,auxiliary_input,text|Device Interface,device-interface,text|Connectivity,connectivity-technology,text|Wire Length,wire_length,text|With Grills,grills,boolean|Tweeter Mounting,mounting_type,text|Magnet Weight (oz.),magnet_weight,text|Mounting Depth,mounting_depth,text|Dimension,dimension,text|Package Contains,package_contains,text'
   assign fields_list = fields_raw | split: '|'
 %}
 
@@ -95,11 +95,6 @@
           when 'mounting_depth'
             if product.category contains 'Marine Tower Speakers'
               assign label = 'Mounting Clamps'
-            endif
-          when 'vc_size'
-            assign mat = serie_ns.voice_coil_material.value
-            if mat != blank
-              assign out = out | append: ' ' | append: mat
             endif
         endcase
       endif
