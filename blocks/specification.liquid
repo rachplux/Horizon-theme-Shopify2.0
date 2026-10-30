@@ -75,7 +75,7 @@
     {% if block.settings.select_table %}
       {% case block.settings.select_table %}
         {% when 'none' %}
-        {% when 'speaker_spec' | default %}
+        {% when 'speaker_spec' %}
           {% render 'speaker-spec-metafields' %}
         {% when 'subwoofer_tech_data' %}
           {% render 'subwoofer-tech-data' %}
@@ -203,4 +203,13 @@
       }
     ]
   }
-{% endschema %}
+{% endschema %}{%- comment -%}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% when 'speaker_spec' | default %}"
+  to: "{% when 'speaker_spec' %}"
+  position: 1963..1988
+{%- endcomment -%}
