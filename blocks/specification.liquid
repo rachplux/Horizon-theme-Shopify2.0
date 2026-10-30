@@ -41,7 +41,7 @@
             {% when 'speaker_spec' %}
             {% render 'speaker-spec' %}
           {% endcomment %}
-        {% when 'speaker_spec_metafields' | default %}
+        {% when 'speaker_spec_metafields' %}
           {% render 'speaker-spec-metafields' %}
         {% when 'subwoofer_tech_data' %}
           {% render 'subwoofer-tech-data' %}
@@ -108,3 +108,13 @@
   ]
 }
 {% endschema %}
+{% comment %}
+
+This file has been rewritten to preserve the original behavior.
+
+---
+Changes:
+- from: "{% when 'speaker_spec_metafields' | default %}"
+  to: "{% when 'speaker_spec_metafields' %}"
+  position: 994..1030
+{% endcomment %}
