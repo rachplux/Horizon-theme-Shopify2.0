@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "type": "header",
   "name": "Header",
@@ -19,7 +28,10 @@
           "blocks": {}
         }
       },
-      "block_order": ["announcement_BxgCk9"],
+      "block_order": [
+        "announcement_BxgCk9"
+      ],
+      "disabled": true,
       "name": "t:names.announcement_bar",
       "settings": {
         "speed": 5,
@@ -56,8 +68,8 @@
             "type_font_primary_link": "body",
             "type_case_primary_link": "none",
             "menu_style": "featured_products",
-            "featured_products_aspect_ratio": "4 \/ 5",
-            "featured_collections_aspect_ratio": "16 \/ 9",
+            "featured_products_aspect_ratio": "4 / 5",
+            "featured_collections_aspect_ratio": "16 / 9",
             "image_border_radius": 0,
             "navigation_bar": false,
             "color_scheme_navigation_bar": "",
@@ -69,7 +81,7 @@
         }
       },
       "settings": {
-        "logo_position": "left",
+        "logo_position": "center",
         "menu_position": "left",
         "menu_row": "top",
         "show_search": true,
@@ -91,14 +103,17 @@
         "color_scheme_top": "scheme-2",
         "color_scheme_bottom": "",
         "color_scheme_transparent": "scheme-6",
-        "enable_transparent_header_home": false,
+        "enable_transparent_header_home": true,
         "home_color_scheme": "inverse",
-        "enable_transparent_header_product": false,
+        "enable_transparent_header_product": true,
         "product_color_scheme": "default",
         "enable_transparent_header_collection": false,
         "collection_color_scheme": "default"
       }
     }
   },
-  "order": ["header_announcements_9jGBFp", "header_section"]
+  "order": [
+    "header_announcements_9jGBFp",
+    "header_section"
+  ]
 }
